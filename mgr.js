@@ -20,7 +20,13 @@ define(['managerAPI',
             buttonText: 'Continue'
         }],
 
-        consent: [{ type: 'quest', name: 'consent', scriptUrl: 'consent.js', header: 'Consent', title: 'Consent Agreement', buttonText: 'Invia' }],	    
+        consent: [{
+		type: 'quest', 
+		name: 'consent', 
+		scriptUrl: 'consent.js', 
+		header: 'Consent', 
+		title: 'Consent Agreement', 
+		buttonText: 'Invia' }],	    
 
         intro: [{
             inherit: 'instructions',
@@ -166,17 +172,17 @@ define(['managerAPI',
         inherit: 'raceiat_instructions'
     },
     {
-        inherit: 'BIAT'
+        inherit: 'biat'
     },
     {
-        inherit: 'explicit_IAT'
+        inherit: 'explicits'
     },
     {
         inherit: 'questdemo'
     }, 
     {
         inherit: 'debriefing'
-    }
+    },
 	{inherit: 'uploading'},
         {inherit: 'lastpage'},
         {inherit: 'redirect'}
