@@ -58,7 +58,7 @@ define(['/maryabby90.github.io/B-IAT_prova/extensionpractice.js'], function(batE
        	practiceBlock : false, 
 		
 		base_url : {//Where are your images?
-			image : '/implicit/user/mmarini/racenancy_discrimination2/'	},
+			image : global.baseURL	},
 			
 			
 		fb_strong_Att1WithCatB_Att2WithCatA : 'Your data suggest a strong association Female-Good and Male-Bad.',
@@ -128,7 +128,7 @@ define(['/maryabby90.github.io/B-IAT_prova/extensionpractice.js'], function(batE
 		
 		practiceBlock : false, 
 		base_url : {//Where are your images?
-			image : '/implicit/user/mmarini/nancyracepics/'
+			image : global.baseURL
 		}
 	});
 });*/
