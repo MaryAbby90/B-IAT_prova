@@ -1,4 +1,4 @@
-define(['/maryabby90.github.io/B-IAT_prova/extensionpractice.js'], function(batExtension){
+define(['/extensionpractice.js'], function(batExtension){
 	return batExtension({
 		categories : [ 
             {
