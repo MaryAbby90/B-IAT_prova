@@ -171,7 +171,7 @@ define(['managerAPI',
                     mixer: 'wrapper',
                     data: [
                         {inherit: 'raceiat_instructions'},
-                        {inherit: 'biat'}
+                        {inherit: 'raceiat'}
                     ]
                 }
             ]
