@@ -37,7 +37,7 @@ define(['pipAPI' ,'https://maryabby90.github.io/B-IAT_prova/extension_biat.js'],
         ],
         "stimulusCss": {
             "color": "#31b404",
-            "font-size": "4em"
+            "font-size": "2em"
         }
     },
     "practiceCategory2": {
