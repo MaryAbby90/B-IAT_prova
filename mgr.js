@@ -28,7 +28,7 @@ define(['managerAPI',
     }
 
     API.addGlobal({
-        raceiat:{},
+        biatrace:{},
         //YBYB: change when copying back to the correct folder
         baseURL: './images/',
         raceSet:raceSet,
@@ -86,7 +86,7 @@ define(['managerAPI',
             scriptUrl: 'explicits.js'
         }],
 
-        raceiat: [{
+        biatrace: [{
             type: 'time',
             name: 'biatrace',
             scriptUrl: 'biatrace.js'
