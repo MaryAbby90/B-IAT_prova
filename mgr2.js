@@ -41,7 +41,7 @@ define(['managerAPI',
         explicits: [{
             type: 'quest',
             name: 'explicits',
-            scriptUrl: 'explicits.js'
+            scriptUrl: 'explicits_IAT.js'
         }],
 
         raceiat: [{
@@ -80,7 +80,7 @@ define(['managerAPI',
         lastpage: [{
             type: 'message',
             name: 'lastpage',
-            templateUrl: 'lastpage.jst',
+            templateUrl: 'debriefing.jst',
             title: 'End',
             //Uncomment the following if you want to end the study here.
             //last:true, 
