@@ -1,4 +1,4 @@
-define(['/extensionpractice.js'], function(batExtension){
+define(['extensionpractice.js'], function(batExtension){
 	return batExtension({
 		categories : [ 
             {
