@@ -1,6 +1,4 @@
-define(['pipAPI','https://maryabby90.github.io/B-IAT_prova/extensionpractice.js'], function(APIConstructor, batExtension){
-    let API = new APIConstructor();
-    let global = API.getGlobal();
+define(['/maryabby90.github.io/B-IAT_prova/extensionpractice.js'], function(batExtension){
 	return batExtension({
 		categories : [ 
             {
@@ -60,7 +58,7 @@ define(['pipAPI','https://maryabby90.github.io/B-IAT_prova/extensionpractice.js'
        	practiceBlock : false, 
 		
 		base_url : {//Where are your images?
-			image : 'https://maryabby90.github.io/B-IAT_prova/'	},
+			image : '/implicit/user/mmarini/racenancy_discrimination2/'	},
 			
 			
 		fb_strong_Att1WithCatB_Att2WithCatA : 'Your data suggest a strong association Female-Good and Male-Bad.',
@@ -130,10 +128,29 @@ define(['pipAPI','https://maryabby90.github.io/B-IAT_prova/extensionpractice.js'
 		
 		practiceBlock : false, 
 		base_url : {//Where are your images?
-			image : 'https://maryabby90.github.io/B-IAT_prova/'
+			image : '/implicit/user/mmarini/nancyracepics/'
 		}
 	});
 });*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
