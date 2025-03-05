@@ -91,7 +91,13 @@ define(['managerAPI',
             name: 'raceiat',
             scriptUrl: 'raceiat.js'
         }],
-
+	    
+	practice: [{
+            type: 'time',
+            name: 'practice',
+            scriptUrl: 'practice.js'
+        }],
+	    
 	biat: [{
             type: 'time',
             name: 'biat',
@@ -165,11 +171,14 @@ define(['managerAPI',
             mixer:'random',
             data:[
                 {inherit: 'explicits'},
+		  
 
                 // force the instructions to preceed the iat
                 {
                     mixer: 'wrapper',
                     data: [
+			{inherit: 'raceiat_instructions'},
+                        {inherit: 'practice'}
                         {inherit: 'raceiat_instructions'},
                         {inherit: 'biat'}
                     ]
