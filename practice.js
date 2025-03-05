@@ -129,6 +129,7 @@ define(['extensionpractice.js'], function(batExtension){
 		practiceBlock : false, 
 		base_url : {//Where are your images?
 			image : global.baseURL
-		}
+		},
+ 		 isTouch : global.$isTouch
 	});
 });*/
