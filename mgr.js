@@ -36,19 +36,19 @@ define(['managerAPI',
             header: 'Welcome'
         }],
 
-        raceiat_instructions: [{
+        biat_instructions: [{
             inherit: 'instructions',
-            name: 'raceiat_instructions',
-            templateUrl: 'raceiat_instructions.jst',
+            name: 'biat_instructions',
+            templateUrl: 'biat_instructions.jst',
             title: 'Istruzioni',
             header: 'Istruzioni'
         }],
 	    
-        realstart: [{
+        practice_instructions: [{
             inherit: 'instructions',
-            name: 'realstart',
-            templateUrl: 'realstart.jst',
-            title: 'IAT Instructions',
+            name: 'practice_instructions',
+            templateUrl: 'practice_instructions.jst',
+            title: 'Istruzioni',
             buttonText: 'Continua',
             piTemplate: true
         }],
@@ -164,7 +164,7 @@ define(['managerAPI',
             ],
             data: [
                     {
-                        inherit: 'realstart'
+                        inherit: 'practice_instructions'
                     }
             ],
             elseData: [// if participants does not agree to participate, they are redirected.
@@ -180,7 +180,7 @@ define(['managerAPI',
         inherit: 'practice'
     },
     {
-        inherit: 'raceiat_instructions'
+        inherit: 'biat_instructions'
     },
     {
         inherit: 'biat'
