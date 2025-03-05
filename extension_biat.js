@@ -1200,4 +1200,3 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 		
 	return iatExtension;
 });
-
