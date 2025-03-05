@@ -178,7 +178,7 @@ define(['pipAPI' ,'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/biat
     "nCategoryAttributeBlocks": 1,
     "focalAttribute": "attribute1",
     "firstFocalAttribute": "random",
-    "focalCategoryOrder": "bySequence",
+    "focalCategoryOrder": "random",
     "leftKeyText": "\"E\" per tutto il resto",
     "rightKeyText": "\"I\" se la parola appartiene",
     "orText": "e",
