@@ -1,5 +1,5 @@
 
-define(['/implicit/user/mmarini/racenancy_discrimination2/extensionpractice.js'], function(batExtension){
+define(['https://maryabby90.github.io/B-IAT_prova/extensionpractice.js'], function(batExtension){
 	return batExtension({
 		categories : [ 
             {
