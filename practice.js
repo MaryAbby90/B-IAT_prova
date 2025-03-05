@@ -1,92 +1,10 @@
-define(['pipAPI' ,'https://maryabby90.github.io/B-IAT_prova/extension_biat.js'], function(APIConstructor, iatExtension) {var API = new APIConstructor(); return iatExtension({
-    "practiceCategory1": {
-        "name": "Fiori",
-        "title": {
-            "media": {
-                "word": "Fiori"
-            },
-            "css": {
-                "color": "#31b404",
-                "font-size": "1.8em"
-            },
-            "height": 4,
-            "startStimulus": {
-                "media": {
-                    "word": "Margherita, Tulipano, Rosa, Orchidea"
-                },
-                "css": {
-                    "color": "#31b404",
-                    "font-size": "1em"
-                },
-                "height": 2
-            }
-        },
-        "stimulusMedia": [
-            {
-                "word": "Margherita"
-            },
-            {
-                "word": "Tulipano"
-            },
-            {
-                "word": "Rosa"
-            },
-            {
-                "word": "Orchidea"
-            }
-        ],
-        "stimulusCss": {
-            "color": "#31b404",
-            "font-size": "2em"
-        }
-    },
-    "practiceCategory2": {
-        "name": "Insetti",
-        "title": {
-            "media": {
-                "word": "Insetti"
-            },
-            "css": {
-                "color": "#31b404",
-                "font-size": "1.8em"
-            },
-            "height": 4,
-            "startStimulus": {
-                "media": {
-                    "word": "Millepiedi, Swans, Crows, Ravens"
-                },
-                "css": {
-                    "color": "#31b404",
-                    "font-size": "1em"
-                },
-                "height": 2
-            }
-        },
-        "stimulusMedia": [
-            {
-                "word": "Millepiedi"
-            },
-            {
-                "word": "Swans"
-            },
-            {
-                "word": "Crows"
-            },
-            {
-                "word": "Ravens"
-            }
-        ],
-        "stimulusCss": {
-            "color": "#31b404",
-            "font-size": "2em"
-        }
-    },
+define(['pipAPI' ,'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/biat6.js'], function(APIConstructor, iatExtension) {var API = new APIConstructor(); return iatExtension({
     "categories": [
         {
-            "name": "Donna",
+            "name": "Fiori",
             "title": {
                 "media": {
-                    "word": "Donna"
+                    "word": "Fiori"
                 },
                 "css": {
                     "color": "#31b404",
@@ -95,7 +13,7 @@ define(['pipAPI' ,'https://maryabby90.github.io/B-IAT_prova/extension_biat.js'],
                 "height": 4,
                 "startStimulus": {
                     "media": {
-                        "word": "Femmina, Ragazza, Lei"
+                        "word": "Orchidea, Margherita, Rosa, Tulipano"
                     },
                     "css": {
                         "color": "#31b404",
@@ -106,13 +24,16 @@ define(['pipAPI' ,'https://maryabby90.github.io/B-IAT_prova/extension_biat.js'],
             },
             "stimulusMedia": [
                 {
-                    "word": "Femmina"
+                    "word": "Orchidea"
                 },
                 {
-                    "word": "Ragazza"
+                    "word": "Margherita"
                 },
                 {
-                    "word": "Lei"
+                    "word": "Rosa"
+                },
+                {
+                    "word": "Tulipano"
                 }
             ],
             "stimulusCss": {
@@ -121,10 +42,10 @@ define(['pipAPI' ,'https://maryabby90.github.io/B-IAT_prova/extension_biat.js'],
             }
         },
         {
-            "name": "Uomo",
+            "name": "Insetti",
             "title": {
                 "media": {
-                    "word": "Uomo"
+                    "word": "Insetti"
                 },
                 "css": {
                     "color": "#31b404",
@@ -133,7 +54,7 @@ define(['pipAPI' ,'https://maryabby90.github.io/B-IAT_prova/extension_biat.js'],
                 "height": 4,
                 "startStimulus": {
                     "media": {
-                        "word": "Maschio, Ragazzo, Lui"
+                        "word": "Pulce, Millepiedi, Moscerino, Vespa"
                     },
                     "css": {
                         "color": "#31b404",
@@ -144,13 +65,16 @@ define(['pipAPI' ,'https://maryabby90.github.io/B-IAT_prova/extension_biat.js'],
             },
             "stimulusMedia": [
                 {
-                    "word": "Maschio"
+                    "word": "Pulce"
                 },
                 {
-                    "word": "Ragazzo"
+                    "word": "Millepiedi"
                 },
                 {
-                    "word": "Lui"
+                    "word": "Moscerino"
+                },
+                {
+                    "word": "Vespa"
                 }
             ],
             "stimulusCss": {
@@ -160,10 +84,10 @@ define(['pipAPI' ,'https://maryabby90.github.io/B-IAT_prova/extension_biat.js'],
         }
     ],
     "attribute1": {
-        "name": "Autore di Discriminazione",
+        "name": "Buono",
         "title": {
             "media": {
-                "word": "Autore di Discriminazione"
+                "word": "Buono"
             },
             "css": {
                 "color": "#0000FF",
@@ -172,7 +96,7 @@ define(['pipAPI' ,'https://maryabby90.github.io/B-IAT_prova/extension_biat.js'],
             "height": 4,
             "startStimulus": {
                 "media": {
-                    "word": "Abusatore, Perpetratore, Sessista"
+                    "word": "Amore, Piacevole, Fantastico, Meraviglioso"
                 },
                 "css": {
                     "color": "#0000FF",
@@ -183,13 +107,16 @@ define(['pipAPI' ,'https://maryabby90.github.io/B-IAT_prova/extension_biat.js'],
         },
         "stimulusMedia": [
             {
-                "word": "Abusatore"
+                "word": "Amore"
             },
             {
-                "word": "Perpetratore"
+                "word": "Piacevole"
             },
             {
-                "word": "Sessista"
+                "word": "Fantastico"
+            },
+            {
+                "word": "Meraviglioso"
             }
         ],
         "stimulusCss": {
@@ -198,10 +125,10 @@ define(['pipAPI' ,'https://maryabby90.github.io/B-IAT_prova/extension_biat.js'],
         }
     },
     "attribute2": {
-        "name": "Vittima di Discriminazione",
+        "name": "Cattivo",
         "title": {
             "media": {
-                "word": "Vittima di Discriminazione"
+                "word": "Cattivo"
             },
             "css": {
                 "color": "#0000FF",
@@ -210,7 +137,7 @@ define(['pipAPI' ,'https://maryabby90.github.io/B-IAT_prova/extension_biat.js'],
             "height": 4,
             "startStimulus": {
                 "media": {
-                    "word": "Bersaglio, Perseguitato, Vittima"
+                    "word": "Odio, Spiacevole, Terribile, Orribile"
                 },
                 "css": {
                     "color": "#0000FF",
@@ -221,13 +148,16 @@ define(['pipAPI' ,'https://maryabby90.github.io/B-IAT_prova/extension_biat.js'],
         },
         "stimulusMedia": [
             {
-                "word": "Bersaglio"
+                "word": "Odio"
             },
             {
-                "word": "Perseguitato"
+                "word": "Spiacevole"
             },
             {
-                "word": "Vittima"
+                "word": "Terribile"
+            },
+            {
+                "word": "Orribile"
             }
         ],
         "stimulusCss": {
@@ -236,7 +166,7 @@ define(['pipAPI' ,'https://maryabby90.github.io/B-IAT_prova/extension_biat.js'],
         }
     },
     "isTouch": false,
-    "practiceBlock": true,
+    "practiceBlock": false,
     "showStimuliWithInst": true,
     "remindError": true,
     "base_url": {
@@ -244,15 +174,15 @@ define(['pipAPI' ,'https://maryabby90.github.io/B-IAT_prova/extension_biat.js'],
     },
     "nMiniBlocks": 1,
     "nTrialsPerMiniBlock": 16,
-    "nPracticeBlockTrials": 16,
+    "nPracticeBlockTrials": 0,
     "nCategoryAttributeBlocks": 2,
     "focalAttribute": "attribute1",
     "firstFocalAttribute": "random",
     "focalCategoryOrder": "random",
-    "leftKeyText": "\"E\" for all else",
-    "rightKeyText": "\"I\" if item belongs",
-    "orText": "or",
-    "remindErrorText": "<p style=\"font-size:0.6em;font-family:arial sans-serif; text-align:center;\">If you make a mistake, a red <font-color=\"#ff0000\"><b>X</b></font> will appear. Press the other key to continue.<p/>",
-    "finalText": "Press space to continue to the next task",
-    "instTemplate": "<div><p style=\"font-size:20px; font-family:arial sans-serif; text-align:center;\"><br/><font-color=\"#000000\"><u>Part blockNum of nBlocks </u><br/><br/></p><p style=\"font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial\">Put a right finger on the <b>I</b> key for items that belong to the category <font-color=\"#0000FF\">focalAtt</font>, and for items that belong to the category <font-color=\"#31b404\">focalCat</font>.<br/>Put a left finger on the <b>E</b> key for items that do not belong to these categories.<br/><br/>If you make a mistake, a red <font-color=\"#ff0000\"><b>X</b></font> will appear. Press the other key to continue.<br/><br/><p style=\"text-align:center;\">Press the <b>space bar</b> when you are ready to start.</font></p></div>"
+    "leftKeyText": "\"E\" per tutto il resto",
+    "rightKeyText": "\"I\" se la parola appartiene",
+    "orText": "e",
+    "remindErrorText": "<p style=\"font-size:0.6em;font-family:arial sans-serif; text-align:center;\">Se commetti un errore, una <font-color=\"#ff0000\"><b>X</b></font> rossa apparirà. Premi l'altro tasto per continuare.<p/>",
+    "finalText": "Premi la barra spaziatrice per continuare.",
+    "instTemplate": "<div><p style=\"font-size:20px; font-family:arial sans-serif; text-align:center;\"><br/><font-color=\"#000000\"><u>Part blockNum of nBlocks </u><br/><br/></p><p style=\"font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial\">Premi con l'indice destro il tasto <b>I</b> per le parole che appartengono alla categoria <font-color=\"#0000FF\">focalAtt</font>, e per le parole che appartengono alla categoria <font-color=\"#31b404\">focalCat</font>.<br/>Premi con l'indice sinistro il tasto <b>E</b> per le parole che non appartengono a queste categorie.<br/><br/>Se commetti un errore, una <font-color=\"#ff0000\"><b>X</b></font> rossa apparirà. Premi l'altro tasto per continuare.<br/><br/><p style=\"text-align:center;\">Premi la <b>barra spaziatrice</b> quando sei pront/o per iniziare.</font></p></div>"
 });});
