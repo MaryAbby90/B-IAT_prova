@@ -95,7 +95,7 @@ define(['managerAPI',
 	biat: [{
             type: 'time',
             name: 'biat',
-            scriptUrl: 'biat6.js'
+            scriptUrl: 'biatrace.js'
         }],
 
         lastpage: [{
@@ -171,7 +171,7 @@ define(['managerAPI',
                     mixer: 'wrapper',
                     data: [
                         {inherit: 'raceiat_instructions'},
-                        {inherit: 'raceiat'}
+                        {inherit: 'biat'}
                     ]
                 }
             ]
