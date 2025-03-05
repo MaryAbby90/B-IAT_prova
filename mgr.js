@@ -43,7 +43,16 @@ define(['managerAPI',
             title: 'IAT Instructions',
             header: 'Implicit Association Test'
         }],
-
+	    
+        realstart: [{
+            inherit: 'instructions',
+            name: 'realstart',
+            templateUrl: 'realstart.jst',
+            title: 'IAT Instructions',
+            buttonText: 'Continua',
+            piTemplate: true
+        }],
+	    
         explicits: [{
             type: 'quest',
             name: 'explicits',
