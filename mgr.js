@@ -174,7 +174,7 @@ define(['managerAPI',
 		  
 
                 // force the instructions to preceed the iat
-                {
+		{
                     mixer: 'wrapper',
                     data: [
 			{inherit: 'raceiat_instructions'},
