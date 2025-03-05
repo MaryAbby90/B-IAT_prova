@@ -40,8 +40,8 @@ define(['managerAPI',
             inherit: 'instructions',
             name: 'raceiat_instructions',
             templateUrl: 'raceiat_instructions.jst',
-            title: 'IAT Instructions',
-            header: 'Implicit Association Test'
+            title: 'Istruzioni',
+            header: 'Istruzioni'
         }],
 	    
         realstart: [{
