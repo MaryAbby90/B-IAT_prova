@@ -1,5 +1,5 @@
-define(['https://MaryAbby90.github.io/B-IAT_prova/extensionpractice.js'], function(batExtension){
-	return batExtension({
+define(['https://MaryAbby90.github.io/B-IAT_prova/extensionpractice.js'], function(iatExtension){
+	return iatExtension({
 		categories : [ 
             {
 				name : 'Insects',
