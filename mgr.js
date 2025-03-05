@@ -95,7 +95,7 @@ define(['managerAPI',
 	biat: [{
             type: 'time',
             name: 'biat',
-            scriptUrl: 'practice.js'
+            scriptUrl: 'BIAT.js'
         }],
 
         lastpage: [{
