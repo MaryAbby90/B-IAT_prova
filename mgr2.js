@@ -1,162 +1,186 @@
-define(['managerAPI'], function(Manager){
+define(['managerAPI',
+		'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@1.*/datapipe.min.js'], function(Manager){
 
-	// This code is responsible for styling the miQuest tasks as panels (like piMessage)
-	// Don't touch unless you know what you're doing
-	var css = '[pi-quest]{background-color: #fff;border: 1px solid transparent;border-radius: 4px;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);margin-bottom: 20px;border-color: #bce8f1;padding:15px;}';
-	window.angular.element(document).find('head').prepend('<style type="text/css">@charset "UTF-8";' + css + '</style>');
 
-	var API = new Manager();
+	//You can use the commented-out code to get parameters from the URL.
+	//const queryString = window.location.search;
+    //const urlParams = new URLSearchParams(queryString);
+    //const pt = urlParams.get('pt');
 
-	API.addSettings('skip',true);
-	
-	API.setName('mgr');
+	var API    = new Manager();
+	//const subid = Date.now().toString(16)+Math.floor(Math.random()*10000).toString(16);
+	init_data_pipe(API, 'QDDGHx7qdUtn', {file_type:'csv'});	
 
-	/**********
-	***Define all the tasks in advance.
-	**********/	
-	API.addTasksSet({
-		instructions: 
-			[{type:'message', buttonText:'Continue'}], 
+    API.setName('mgr');
+    API.addSettings('skip',true);
+
+    API.addTasksSet({
+        instructions: [{
+            type: 'message',
+            buttonText: 'Continue'
+        }],
+
+        consent: [{ type: 'quest', name: 'consent', scriptUrl: 'consent.js', header: 'Consent', title: 'Consent Agreement', buttonText: 'Invia' }],	    
+
+        intro: [{
+            inherit: 'instructions',
+            name: 'intro',
+            templateUrl: 'intro.jst',
+            title: 'Intro',
+            header: 'Welcome'
+        }],
+
+        raceiat_instructions: [{
+            inherit: 'instructions',
+            name: 'raceiat_instructions',
+            templateUrl: 'raceiat_instructions.jst',
+            title: 'IAT Instructions',
+            header: 'Implicit Association Test'
+        }],
+
+        explicits: [{
+            type: 'quest',
+            name: 'explicits',
+            scriptUrl: 'explicits.js'
+        }],
+
+        raceiat: [{
+            type: 'time',
+            name: 'raceiat',
+            scriptUrl: 'raceiat.js'
+        }],
+	    
+	practice: [{
+            type: 'time',
+            name: 'practice',
+            scriptUrl: 'practice.js'
+        }],
+	    
+	biat: [{
+            type: 'time',
+            name: 'biat',
+            scriptUrl: 'BIAT.js'
+        }],
+
+        questdemo: [{
+            type: 'quest',
+            name: 'questdemo',
+            scriptUrl: 'questdemo.js',
+            title: 'Questionario',
+            header: 'Questionario'
+        }],
+	    
+        debriefing: [{
+            type: 'quest',
+            name: 'lastpage',
+            scriptUrl: 'debriefing.js',
+            last: true
+        }],	    
+
+        lastpage: [{
+            type: 'message',
+            name: 'lastpage',
+            templateUrl: 'lastpage.jst',
+            title: 'End',
+            //Uncomment the following if you want to end the study here.
+            //last:true, 
+            header: 'You have completed the study'
+        }], 
+        
+        //Use if you want to redirect the participants elsewhere at the end of the study
+        redirect:
+        [{ 
+			//Replace with any URL you need to put at the end of your study, or just remove this task from the sequence below
+            type:'redirect', name:'redirecting', url: 'https://www.google.com/search' 
+        }],
 		
-		consent : [{ 
-			inherit:'instructions', name:'consent', templateUrl: 'consent.jst', title:'Consent', 
-			piTemplate:true, header:'Consent Agreement: Implicit Social Cognition on the Internet'
-		}], 
-		
-		realstart : [{
-			inherit:'instructions', name:'realstart', templateUrl: 'intro.jst', title:'Introduction',
-			piTemplate:true, header:'Welcome'
-		}], 
-		
-		selectq : [{
-			type: 'quest', name: 'selectq', scriptUrl: 'selectq.js'
-		}],
+		//This task waits until the data are sent to the server.
+        uploading: uploading_task({header: 'just a moment', body:'Please wait, sending data... '})
+    });
 
-		instnfc : [{
-			inherit:'instructions', name:'instnfc', templateUrl: 'instnfc.jst', title:'Questionnaire',
-			piTemplate:true, header:'Instructions'
-		}], 
-		nfc : [{
-			type: 'quest', name: 'nfc', scriptUrl: 'nfc.js'
-		}],
+    API.addSequence([
+        { type: 'isTouch' }, //Use Minno's internal touch detection mechanism. 
+        
+        { type: 'post', path: ['$isTouch', 'raceSet', 'blackLabels', 'whiteLabels'] },
 
+        // apply touch only styles
+        {
+            mixer:'branch',
+            conditions: {compare:'global.$isTouch', to: true},
+            data: [
+                {
+                    type: 'injectStyle',
+                    css: [
+                        '* {color:red}',
+                        '[piq-page] {background-color: #fff; border: 1px solid transparent; border-radius: 4px; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); margin-bottom: 20px; border-color: #bce8f1;}',
+                        '[piq-page] > ol {margin: 15px;}',
+                        '[piq-page] > .btn-group {margin: 0px 15px 15px 15px;}',
+                        '.container {padding:5px;}',
+                        '[pi-quest]::before, [pi-quest]::after {content: " ";display: table;}',
+                        '[pi-quest]::after {clear: both;}',
+                        '[pi-quest] h3 { border-bottom: 1px solid transparent; border-top-left-radius: 3px; border-top-right-radius: 3px; padding: 10px 15px; color: inherit; font-size: 2em; margin-bottom: 20px; margin-top: 0;background-color: #d9edf7;border-color: #bce8f1;color: #31708f;}',
+                        '[pi-quest] .form-group > label {font-size:1.2em; font-weight:normal;}',
 
-		userprevresp : [{
-			type: 'quest', name: 'userprevresp', scriptUrl: 'userprevresp.js'
-		}],
+                        '[pi-quest] .btn-toolbar {margin:15px;float:none !important; text-align:center;position:relative;}',
+                        '[pi-quest] [ng-click="decline($event)"] {position:absolute;right:0;bottom:0}',
+                        '[pi-quest] [ng-click="submit()"] {width:30%;line-height: 1.3333333;border-radius: 6px;}',
+                        // larger screens
+                        '@media (min-width: 480px) {',
+                        ' [pi-quest] [ng-click="submit()"] {width:30%;padding: 10px 16px;font-size: 1.6em;}',
+                        '}',
+                        // phones and smaller screens
+                        '@media (max-width: 480px) {',
+                        ' [pi-quest] [ng-click="submit()"] {padding: 8px 13px;font-size: 1.2em;}',
+                        ' [pi-quest] [ng-click="decline($event)"] {font-size: 0.9em;padding:3px 6px;}',
+                        '}'
+                    ]
+                }
+            ]
+        },
+        
+        
+        {inherit: 'consent'},
+        {
+            mixer: 'branch',// if participants choose "I decline", they are taken to a transition page telling them they are being redirected
+            conditions: [
+                function(){ return piGlobal.consent.questions.userconsent.response === true;} // if the question name or response options were changed in consent.js, adapt this too 
+            ],
+            data: [
+                    {
+                        inherit: 'realstart'
+                    }
+            ],
+            elseData: [// if participants does not agree to participate, they are redirected.
+                {
+                    inherit: 'redirectpage'
+                },
+                {
+                    inherit: 'redirect'
+                }
+            ]
+    },
+    {
+        inherit: 'practice'
+    },
+    {
+        inherit: 'raceiat_instructions'
+    },
+    {
+        inherit: 'BIAT'
+    },
+    {
+        inherit: 'explicit_IAT'
+    },
+    {
+        inherit: 'questdemo'
+    }, 
+    {
+        inherit: 'debriefing'
+    }
+	{inherit: 'uploading'},
+        {inherit: 'lastpage'},
+        {inherit: 'redirect'}
+    ]);
 
-		dependency : [{
-			type: 'quest', name: 'dependency', scriptUrl: 'dependency.js'
-		}],
-		
-		openended : [{
-			type: 'quest', name: 'openended', scriptUrl: 'openended.js'
-		}],
-		openendedlong : [{
-			type: 'quest', name: 'openendedlong', scriptUrl: 'openendedlong.js'
-		}],
-
-		instgrid : [{
-			inherit:'instructions', name:'instgrid', templateUrl: 'instgrid.jst', title:'Questionnaire',
-			piTemplate:true, header:'Instructions'
-		}], 
-		grid : [{
-			type: 'quest', name: 'grid', scriptUrl: 'grid.js'
-		}],
-
-		slider : [{
-			type: 'quest', name: 'slider', scriptUrl: 'slider.js'
-		}],
-		buttons : [{
-			type: 'quest', name: 'buttons', scriptUrl: 'buttons.js'
-		}],
-		buttonsadvanced : [{
-			type: 'quest', name: 'buttonsadvanced', scriptUrl: 'buttonsadvanced.js'
-		}],
-		buttonsonepage : [{
-			type: 'quest', name: 'buttonsonepage', scriptUrl: 'buttonsonepage.js'
-		}],
-
-		instimages : [{
-			inherit:'instructions', name:'instimages', templateUrl: 'instimages.jst', title:'Image Rating',
-			piTemplate:true, header:'Instructions'
-		}], 
-		rateimages : [{
-			type: 'quest', name: 'rateimages', scriptUrl: 'rateimages.js'
-		}],
-		rateimagessizes : [{
-			type: 'quest', name: 'rateimagessizes', scriptUrl: 'rateimagessizes.js'
-		}]
-	});
-
-	
-
-	API.addSequence([
-		{inherit:'consent'},
-		{inherit:'realstart'},
-		{inherit:'selectq'},
-		
-		//Select one questionnaire, based on the user's response in selectq.
-		{
-			mixer : 'multiBranch',
-			branches : 
-			[
-				{
-					conditions : [{compare:'global.selectq.questions.selectq.response', to:'basicScale'}],
-					data : [{inherit:'instnfc'}, {inherit:'nfc'}]
-				},
-				{
-					conditions : [{compare:'global.selectq.questions.selectq.response', to:'rateimages'}],
-					data : [{inherit:'instimages'}, {inherit:'rateimages'}]
-				},
-				{
-					conditions : [{compare:'global.selectq.questions.selectq.response', to:'rateimagessizes'}],
-					data : [{inherit:'instimages'}, {inherit:'rateimagessizes'}]
-				},
-				{
-					conditions : [{compare:'global.selectq.questions.selectq.response', to:'buttons'}],
-					data : [{inherit:'instgrid'}, {inherit:'buttons'}]
-				},
-				{
-					conditions : [{compare:'global.selectq.questions.selectq.response', to:'buttonsadvanced'}],
-					data : [{inherit:'instgrid'}, {inherit:'buttonsadvanced'}]
-				},
-				{
-					conditions : [{compare:'global.selectq.questions.selectq.response', to:'buttonsonepage'}],
-					data : [{inherit:'instgrid'}, {inherit:'buttonsonepage'}]
-				},
-				{
-					conditions : [{compare:'global.selectq.questions.selectq.response', to:'slider'}],
-					data : [{inherit:'instgrid'}, {inherit:'slider'}]
-				},
-				{
-					conditions : [{compare:'global.selectq.questions.selectq.response', to:'grid'}],
-					data : [{inherit:'instgrid'}, {inherit:'grid'}]
-				},
-				{
-					conditions : [{compare:'global.selectq.questions.selectq.response', to:'userprevresp'}],
-					data : [{inherit:'userprevresp'}]
-				},
-				{
-					conditions : [{compare:'global.selectq.questions.selectq.response', to:'dependency'}],
-					data : [{inherit:'dependency'}]
-				},
-				{
-					conditions : [{compare:'global.selectq.questions.selectq.response', to:'openended'}],
-					data : [{inherit:'openended'}]
-				},
-				{
-					conditions : [{compare:'global.selectq.questions.selectq.response', to:'openendedlong'}],
-					data : [{inherit:'openendedlong'}]
-				}
-			]
-		},
-		
-		{			
-			inherit:'instructions', name:'end', title:'THE END', 
-			piTemplate:true, header:'THE END',  template: '<div><br/>You chose <%=global.selectq.questions.selectq.response%>, and now we are DONE.</div>'
-		}
-	]);
-
-	return API.script;
+    return API.script;
 });
