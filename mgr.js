@@ -1,4 +1,4 @@
-define(['managerAPI',
+cidefine(['managerAPI',
 		'https://cdn.jsdelivr.net/gh/minnojs/minno-datapipe@1.*/datapipe.min.js'], function(Manager){
 
 
@@ -53,10 +53,12 @@ define(['managerAPI',
             piTemplate: true
         }],
 	    
-        explicits: [{
+         explicit_IAT: [{
             type: 'quest',
-            name: 'explicits',
-            scriptUrl: 'explicits_IAT.js'
+            name: 'explicit_IAT',
+            scriptUrl: 'explicit_IAT.js',
+            title: 'Questionario',
+            header: 'Questionario'
         }],
 
         raceiat: [{
