@@ -13,7 +13,7 @@ define(['pipAPI' ,'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/biat
                 "height": 4,
                 "startStimulus": {
                     "media": {
-                        "word": "Tyron, Malik, Terrell, Jazmin, Tiara, Shanice"
+                        "word": "Femmina, Ragazza, Lei"
                     },
                     "css": {
                         "color": "#31b404",
@@ -24,22 +24,10 @@ define(['pipAPI' ,'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/biat
             },
             "stimulusMedia": [
                 {
-                    "word": "Tyron"
+                    "word": "Femmina"
                 },
                 {
-                    "word": "Malik"
-                },
-                {
-                    "word": "Terrell"
-                },
-                {
-                    "word": "Jazmin"
-                },
-                {
-                    "word": "Tiara"
-                },
-                {
-                    "word": "Shanice"
+                    "word": "Ragazza"
                 }
             ],
             "stimulusCss": {
@@ -60,7 +48,7 @@ define(['pipAPI' ,'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/biat
                 "height": 4,
                 "startStimulus": {
                     "media": {
-                        "word": "Jake, Connor, Bradley, Alison, Emma, Emily"
+                        "word": "Maschio, Ragazzo, Lui"
                     },
                     "css": {
                         "color": "#31b404",
@@ -71,22 +59,13 @@ define(['pipAPI' ,'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/biat
             },
             "stimulusMedia": [
                 {
-                    "word": "Jake"
+                    "word": "Maschio"
                 },
                 {
-                    "word": "Connor"
+                    "word": "Ragazzo"
                 },
                 {
-                    "word": "Bradley"
-                },
-                {
-                    "word": "Allison"
-                },
-                {
-                    "word": "Emma"
-                },
-                {
-                    "word": "Emily"
+                    "word": "Lui"
                 }
             ],
             "stimulusCss": {
@@ -108,7 +87,7 @@ define(['pipAPI' ,'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/biat
             "height": 4,
             "startStimulus": {
                 "media": {
-                    "word": "Joy, Love, Happy, Good"
+                    "word": "Bersaglio, Oppresso, Perseguitato"
                 },
                 "css": {
                     "color": "#0000FF",
@@ -119,16 +98,13 @@ define(['pipAPI' ,'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/biat
         },
         "stimulusMedia": [
             {
-                "word": "Joy"
+                "word": "Bersaglio"
             },
             {
-                "word": "Love"
+                "word": "Oppresso"
             },
             {
-                "word": "Happy"
-            },
-            {
-                "word": "Good"
+                "word": "Perseguitato"
             }
         ],
         "stimulusCss": {
@@ -149,7 +125,7 @@ define(['pipAPI' ,'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/biat
             "height": 4,
             "startStimulus": {
                 "media": {
-                    "word": "Horrible, Evil, Nasty, Bad"
+                    "word": "Perpretatore, Sessista, Abusatore"
                 },
                 "css": {
                     "color": "#0000FF",
@@ -160,16 +136,13 @@ define(['pipAPI' ,'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/biat
         },
         "stimulusMedia": [
             {
-                "word": "Horrible"
+                "word": "Perpretatore"
             },
             {
-                "word": "Nasty"
+                "word": "Sessista"
             },
             {
-                "word": "Bad"
-            },
-            {
-                "word": "Evil"
+                "word": "Abusatore"
             }
         ],
         "stimulusCss": {
@@ -187,7 +160,7 @@ define(['pipAPI' ,'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/biat
     "nMiniBlocks": 1,
     "nTrialsPerMiniBlock": 16,
     "nPracticeBlockTrials": 0,
-    "nCategoryAttributeBlocks": 4,
+    "nCategoryAttributeBlocks": 2,
     "focalAttribute": "attribute1",
     "firstFocalAttribute": "random",
     "focalCategoryOrder": "random",
