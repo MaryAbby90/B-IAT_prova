@@ -1,5 +1,6 @@
-
-define(['https://maryabby90.github.io/B-IAT_prova/extensionpractice'], function(batExtension){
+define(['pipAPI','https://maryabby90.github.io/B-IAT_prova/extensionpractice.js'], function(APIConstructor, batExtension){
+    let API = new APIConstructor();
+    let global = API.getGlobal();
 	return batExtension({
 		categories : [ 
             {
