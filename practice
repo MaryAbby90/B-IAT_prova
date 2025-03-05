@@ -59,7 +59,7 @@ define(['https://maryabby90.github.io/B-IAT_prova/extensionpractice'], function(
        	practiceBlock : false, 
 		
 		base_url : {//Where are your images?
-			image : global.baseURL	},
+			image : 'https://maryabby90.github.io/B-IAT_prova/'	},
 			
 			
 		fb_strong_Att1WithCatB_Att2WithCatA : 'Your data suggest a strong association Female-Good and Male-Bad.',
@@ -129,7 +129,7 @@ define(['https://maryabby90.github.io/B-IAT_prova/extensionpractice'], function(
 		
 		practiceBlock : false, 
 		base_url : {//Where are your images?
-			image : global.baseURL
+			image : 'https://maryabby90.github.io/B-IAT_prova/'
 		}
 	});
 });*/
