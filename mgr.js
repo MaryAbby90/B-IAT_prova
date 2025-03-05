@@ -92,6 +92,12 @@ define(['managerAPI',
             scriptUrl: 'raceiat.js'
         }],
 
+	practice: [{
+            type: 'time',
+            name: 'practice',
+            scriptUrl: 'practice.js'
+        }],
+
         lastpage: [{
             type: 'message',
             name: 'lastpage',
@@ -165,7 +171,7 @@ define(['managerAPI',
                     mixer: 'wrapper',
                     data: [
                         {inherit: 'raceiat_instructions'},
-                        {inherit: 'raceiat'}
+                        {inherit: 'practice'}
                     ]
                 }
             ]
