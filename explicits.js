@@ -7,11 +7,11 @@ define(['questAPI'], function(Quest){
 	*/
     API.addPagesSet('basicPage',{
         noSubmit:false, //Change to true if you don't want to show the submit button.
-        header: 'Questionnaire',
-        decline: true,
-        declineText: isTouch ? 'Decline' : 'Decline to Answer', 
-        autoFocus:true, 
-        progressBar:  'Page <%= pagesMeta.number %> out of 3'
+        header: 'Questionario',
+	submitText: "Invia",
+        decline: false,/*
+        declineText: isTouch ? 'Decline' : 'Decline to Answer',*/
+        autoFocus:true
     });
 	
     /**
@@ -22,8 +22,8 @@ define(['questAPI'], function(Quest){
         required : true, 		
         errorMsg: {
             required: isTouch 
-                ? 'Please select an answer, or click \'Decline\'' 
-                : 'Please select an answer, or click \'Decline to Answer\''
+                ? 'Per favore seleziona una risposta' 
+                : 'Per favore seleziona una risposta'
         },
         autoSubmit:'true',
         numericValues:'true',
@@ -63,31 +63,49 @@ define(['questAPI'], function(Quest){
     /**
 	*Specific questions
 	*/	
-    API.addQuestionsSet('attributes7',{
+    API.addQuestionsSet('att',{
         inherit : 'basicSelect',
-        name: 'attributes7',
+        name: 'att',
         stem: 'Which statement best describes you?',
         answers: [
-            {text:'I strongly prefer <%= global.whiteLabels %> to <%= global.blackLabels %>.',value:7},
-            {text:'I moderately prefer <%= global.whiteLabels %> to <%= global.blackLabels %>.',value:6},
-            {text:'I slightly prefer <%= global.whiteLabels %> to <%= global.blackLabels %>.',value:5},
-            {text:'I like <%= global.whiteLabels %> and <%= global.blackLabels %> equally.',value:4},
-            {text:'I slightly prefer <%= global.blackLabels %> to <%= global.whiteLabels %>.',value:3},
-            {text:'I moderately prefer <%= global.blackLabels %> to <%= global.whiteLabels %>.',value:2},
-            {text:'I strongly prefer <%= global.blackLabels %> to <%= global.whiteLabels %>.',value:1}
+		{text:'Preferisco fortemente le persone eterosessuali alle persone LGBT.',value:1},
+		{text:'Preferisco moderatamente le persone eterosessuali alle persone LGBT.',value:2},
+		{text:'Preferisco leggermente le persone eterosessuali alle persone LGBT.',value:3},
+		{text:'Mi piacciono allo stesso modo le persone eterosessuali e le persone LGBT.',value:4},
+		{text:'Preferisco leggermente le persone LGBT alle persone eterosessuali.',value:5},
+		{text:'Preferisco moderatamente le persone LGBT alle persone eterosessuali.',value:6},
+		{text:'Preferisco fortemente le persone LGBT alle persone eterosessuali.',value:7}
         ]
     });
 	
-    API.addQuestionsSet('thermBlack',{
-        inherit : 'therm',
-        name: 'Tblack_0to10',
-        stem: 'How warm or cold do you feel towards <b><%= global.blackLabels %></b>?'
+    API.addQuestionsSet('vittima',{
+        inherit : 'basicSelect',
+        name: 'vittima',
+        stem: 'Quanto fortemente associ il seguente concetto alla donna o all’uomo: <font color="red"><i>Vittima di Discriminazione</i></font></b>?',
+        answers: [
+		{text:'Fortemente all’uomo.',value:1},
+		{text:'Moderatamente all’uomo',value:2},
+		{text:'Leggermente all’uomo',value:3},
+		{text:'Né all’uomo né alla donna',value:4},
+		{text:'Leggermente alla donna',value:5},
+		{text:'Moderatamente alla donna',value:6},
+		{text:'Fortemente alla donna',value:7}
+        ]
     });
 
-    API.addQuestionsSet('thermWhite',{
-        inherit : 'therm',
-        name: 'Twhite_0to10',
-        stem: 'How warm or cold do you feel towards <b><%= global.whiteLabels %></b>?'
+    API.addQuestionsSet('autore',{
+        inherit : 'basicSelect',
+        name: 'autore',
+        stem: 'Quanto fortemente associ il seguente concetto alla donna o all’uomo: <font color="red"><i>Vittima di Discriminazione</i></font></b>?',
+        answers: [
+		{text:'Fortemente all’uomo.',value:1},
+		{text:'Moderatamente all’uomo',value:2},
+		{text:'Leggermente all’uomo',value:3},
+		{text:'Né all’uomo né alla donna',value:4},
+		{text:'Leggermente alla donna',value:5},
+		{text:'Moderatamente alla donna',value:6},
+		{text:'Fortemente alla donna',value:7}
+        ]
     });
 
     API.addSequence([
@@ -100,17 +118,17 @@ define(['questAPI'], function(Quest){
                     data : [
                         {
                             inherit:'basicPage', 
-                            questions: {inherit:'thermBlack'}
+                            questions: {inherit:'vittima'}
                         },
                         {
                             inherit:'basicPage', 
-                            questions: {inherit:'thermWhite'}							
+                            questions: {inherit:'autore'}							
                         }
                     ]
                 },
                 {
                     inherit:'basicPage', 
-                    questions: {inherit:'attributes7'}
+                    questions: {inherit:'att'}
                 }
             ]
         }
