@@ -181,7 +181,8 @@ define(['pipAPI' ,'https://cdn.jsdelivr.net/gh/baranan/minno-tasks@0.*/BIAT/biat
     "focalCategoryOrder": "random",
     "leftKeyText": "\"E\" per tutto il resto",
     "rightKeyText": "\"I\" se la parola appartiene",
-    "orText": "e",
+    orText : 'e', 
+	orCss : {'font-size':'1.2em', color:'#000000'}
     "remindErrorText": "<p style=\"font-size:1em;font-family:arial sans-serif; text-align:center;\">Se commetti un errore, una <span style=\"color:#ff0000\"><b>X</b></span> rossa apparirà. Premi l'altro tasto per continuare.<p/>",
     "finalText": "Premi la barra spaziatrice per continuare.",
     "instTemplate": "<div><p style=\"font-size:20px; font-family:arial sans-serif; text-align:center;\"><br/><span style=\"color=\"#ff0000\"><u>Part blockNum of nBlocks </u><br/><br/></span></p><p style=\"font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial\">Premi con l'indice destro il tasto <b>I</b> per le parole che appartengono alla categoria <span style=\"color:#0000FF\">focalAtt</span>, e per le parole che appartengono alla categoria <span style=\"color:#31b404\">focalCat</span>.<br/>Premi con l'indice sinistro il tasto <b>E</b> per le parole che non appartengono a queste categorie.<br/><br/>Se commetti un errore, una <span style=\"color:#ff0000\"><b>X</b></span> rossa apparirà. Premi l'altro tasto per continuare.<br/><br/><p style=\"text-align:center;\">Premi la <b>barra spaziatrice</b> quando sei pront/o per iniziare.</span></p></div>"
