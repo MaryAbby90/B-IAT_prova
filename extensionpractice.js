@@ -31,7 +31,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 		//You can also do that from the outside, with a dedicated jsp file.
 		var batObj = 
 		{
-			istouch:false, //Set whether the task is on a touch device.
+			isTouch:false, //Set whether the task is on a touch device.
 			//Set the canvas of the task
 			canvas : {
 				maxWidth: 725,
@@ -43,45 +43,45 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 			}, 
 			practiceCategory1 : 
 			{
-				name : 'Insects', //Will appear in the data.
+				name : 'Mammals', //Will appear in the data.
 				title : {
-					media : {word : 'Insects'}, //Name of the category presented in the task.
+					media : {word : 'Mammals'}, //Name of the category presented in the task.
 					css : {color:'#31b404','font-size':'1.8em'}, //Style of the category title.
 					height : 4, //Height (because we need to know where to put the next item in the title)
 					startStimulus : { 
 					//If you're using a startStimulus, set here. If not, set the parameter showStimuliWithInst to false (see later below)
-						media : {word : 'Flea, Centipede, Gnat, Wasp'}, 
+						media : {word : 'Dogs, Horses, Cows, Lions'}, 
 						css : {color:'#31b404','font-size':'1em'}, 
 						height : 2
 					}
 				}, 
 				stimulusMedia : [ //Stimuli content as PIP's media objects
-					{word : 'Flea'}, 
-					{word : 'Centipede'}, 
-					{word : 'Gnat'}, 
-					{word : 'Wasp'}
+					{word : 'Dogs'}, 
+					{word : 'Horses'}, 
+					{word : 'Lions'}, 
+					{word : 'Cows'}
 				], 
 				//Stimulus css (style of the stimuli)
 				stimulusCss : {color:'#31b404','font-size':'2em'}
 			},	
 			practiceCategory2 : 
 			{
-				name : 'Flowers', 
+				name : 'Birds', 
 				title : {
-					media : {word : 'Flowers'}, 
+					media : {word : 'Birds'}, 
 					css : {color:'#31b404','font-size':'1.8em'}, 
 					height : 4,
 					startStimulus : {
-						media : {word : 'Orchid, Lilac, Rose, Tulip'}, 
+						media : {word : 'Pigeons, Swans, Crows, Ravens'}, 
 						css : {color:'#31b404','font-size':'1em'}, 
 						height : 2
 					}
 				}, 
 				stimulusMedia : [ //Stimuli content as PIP's media objects
-					{word : 'Orchid'}, 
-					{word : 'Lilac'}, 
-					{word : 'Rose'}, 
-					{word : 'Tulip'}
+					{word : 'Pigeons'}, 
+					{word : 'Swans'}, 
+					{word : 'Crows'}, 
+					{word : 'Ravens'}
 				], 
 				//Stimulus css
 				stimulusCss : {color:'#31b404','font-size':'2em'}
@@ -129,45 +129,44 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 			],
 			attribute1 : 
 			{
-				name : 'Good', 
+				name : 'Pleasant', 
 				title : {
-					media : {word : 'Good'}, 
+					media : {word : 'Pleasant'}, 
 					css : {color:'#0000FF','font-size':'1.8em'}, 
 					height : 4,
 					startStimulus : {
-						media : {word : 'Love, Pleasant, Great, Wonderful'}, 
+						media : {word : 'Joy, Love, Happy, Good'}, 
 						css : {color:'#0000FF','font-size':'1em'}, 
 						height : 2
 					}
 				}, 
 				stimulusMedia : [ //Stimuli content as PIP's media objects
+					{word : 'Joy'}, 
 					{word : 'Love'}, 
-					{word : 'Pleasant'}, 
-					{word : 'Great'},
-					{word : 'Wonderful'}
+					{word : 'Happy'}, 
+					{word : 'Good'}
 				], 
 				//Stimulus css
 				stimulusCss : {color:'#0000FF','font-size':'2em'}
-			},
-			
+			},	
 			attribute2 : 
 			{
-				name : 'Bad', 
+				name : 'Unpleasant', 
 				title : {
-					media : {word : 'Bad'}, 
+					media : {word : 'Unpleasant'}, 
 					css : {color:'#0000FF','font-size':'1.8em'}, 
 					height : 4,
 					startStimulus : {
-						media : {word : 'Hate, Unpleasant, Awful, Terrible'}, 
+						media : {word : 'Horrible, Evil, Nasty, Bad'}, 
 						css : {color:'#0000FF','font-size':'1em'}, 
 						height : 2
 					}
 				}, 
 				stimulusMedia : [ //Stimuli content as PIP's media objects
-					{word : 'Hate'},
-					{word : 'Unpleasant'}, 
-					{word : 'Awful'},
-					{word : 'Terrible'}
+					{word : 'Horrible'}, 
+					{word : 'Nasty'}, 
+					{word : 'Bad'}, 
+					{word : 'Evil'}
 				], 
 				//Stimulus css
 				stimulusCss : {color:'#0000FF','font-size':'2em'} 
@@ -194,11 +193,11 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 			
 			//Whether to start with a practice block.
 			practiceBlock : true, 
-			nPracticeBlockTrials : 16, //Should be at least 8 trials.
+			nPracticeBlockTrials : 8, //Should be at least 8 trials.
 
 			//Number of blocks per focal category-attribute combination.
-			//nCategoryAttributeBlocks : 4, 
-            nCategoryAttributeBlocks : 1, 
+			nCategoryAttributeBlocks : 4, 
+
 			//Whether to switch the focal attribute only once in the task (after all the blocks with the first focal attribute), 
 			//Or after every exhaustion of all the category-attribute combinations (e.g., twice if nCategoryAttributeBlocks).
 			//Relevant only when nCategoryAttributeBlocks>1, 
@@ -221,19 +220,21 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 			remindErrorText : '<p align="center" style="font-size:"0.6em"; font-family:arial">' + 
 			'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' + 
 			'Press the other key to continue.<p/>',
-	remindErrorTextTouch : '<p align="center" style="font-size:"1.4em"; font-family:arial">' +
+	        remindErrorTextTouch : '<p align="center" style="font-size:"1.4em"; font-family:arial">' +
 			'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' +
 			'Touch the other side to continue.<p/>',				
 			base_url : {//Where are your images?
 				image : '/implicit/user/yba/pipexample/biat/images/'
 			}, 
 			ITIDuration : 250, //Duration between trials.
-fontColor : '#000000', //The default color used for printed messages.
+            fontColor : '#000000', //The default color used for printed messages.
 			
 			//Text and style for key instructions displayed about the category labels.
-			leftKeyText : 'Press "E" for', 
-			rightKeyText : 'Press "I" for', 
+			leftKeyText : '"E" for all else', 
+			rightKeyText : '"I" if item belongs', 
 			keysCss : {'font-size':'0.8em', 'font-family':'courier', color:'#000000'},
+			leftKeyTextTouch : 'Left for all else', 
+			rightKeyTextTouch : 'Right if item belongs', 
 			//Text and style for the separator between the top and bottom category labels.
 			orText : 'or', 
 			orCss : {'font-size':'1.8em', color:'#000000'},
@@ -246,14 +247,14 @@ fontColor : '#000000', //The default color used for printed messages.
 			touchMaxStimulusWidth : '50%', 
 			touchMaxStimulusHeight : '50%', 
 			bottomTouchCss: {              
-                        height: '20%',
+                        height: '20%'
                     }, //Add any CSS value you want for changing the css of the bottom touch area.
 			//This is the template for the instructions in the task. 
 			
 			// Some variables will be replaced with their values: 
 			// blockNum, nBlocks, focalAtt, focalCat.
 			// Notice that this is HTML code.
-			instTemplate: '<div><p align="center" style="font-size:20px;font-family:arial"><br/>' +
+			instTemplate: '<div><p align="center" style="font-size:20px; font-family:arial"><br/>' +
 				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' + 
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
 				'Put a right finger on the <b>I</b> key for items that belong to the category ' + 
@@ -263,7 +264,7 @@ fontColor : '#000000', //The default color used for printed messages.
 				'If you make a mistake, a red <font color="#ff0000"><b>X</b></font> will appear. ' + 
 				'Press the other key to continue.<br/><br/>' + 
 				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>', 
-instTemplateTouch: '<div><p align="center" ' +
+            instTemplateTouch: '<div><p align="center" ' +
 				'<br/><font color="#000000"><u>Part blockNum of nBlocks </u><br/></p>' + 
 				'<p align="left" style="margin-left:5px"> ' +
 				'Put a right finger on the <b>right</b> green area for items that belong to the category ' + 
@@ -295,7 +296,7 @@ instTemplateTouch: '<div><p align="center" ' +
 			//Error messages in the feedback
 			manyErrors: 'There were too many errors made to determine a result.',
 			tooFast: 'There were too many fast trials to determine a result.',
-			notEnough: 'There were not enough trials to determine a result.',
+			notEnough: 'There were not enough trials to determine a result.'
 		};
 		
 		// extend the current object with the default
@@ -312,11 +313,7 @@ instTemplateTouch: '<div><p align="center" ' +
 		*/
 		API.addSettings('canvas',piCurrent.canvas);
 		API.addSettings('base_url',piCurrent.base_url);
-		API.addSettings('logger',{
-			pulse: 20,
-			url : '/implicit/PiPlayerApplet'
-		});
-	var leftInput = !isTouch ? {handle:'left',on:'keypressed',key:'e'} : {handle:'left',on:'click', stimHandle:'left'};
+	    var leftInput = !isTouch ? {handle:'left',on:'keypressed',key:'e'} : {handle:'left',on:'click', stimHandle:'left'};
 		var rightInput = !isTouch ? {handle:'right',on:'keypressed',key:'i'} : {handle:'right',on:'click', stimHandle:'right'};
 		var proceedInput = !isTouch ? {handle:'space',on:'space'} : {handle:'space',on:'bottomTouch', css:piCurrent.bottomTouchCss};
 		/**
@@ -589,23 +586,33 @@ instTemplateTouch: '<div><p align="center" ' +
 		//Helper function to create the trial's layout
 		function getLayout(params)
 		{
-		if(params.isTouch)
-		{
-		var leftText={word:'Left for all else'};
-		var rightText={word:'Right if item belongs'};
-		}
-		else
-		{
-		var leftText={word:'"E" for all else'};
-		var rightText={word:'"I" if item belongs'};
-		}
+		    var leftText = { word:piCurrent.leftKeyText };
+		    var rightText = { word:piCurrent.rightKeyText };
+    		if (params.isTouch)
+    		{
+    		    leftText = { word:piCurrent.leftKeyTextTouch };
+    		    rightText = { word:piCurrent.rightKeyTextTouch };
+    		}
 			var layout = [
-				{location:{left:6,top:1}, media:leftText, css:{color:'#000000','font-size':'1.1em'},isTouch: isTouch,},
-				{location:{right:6,top:1}, media:rightText, css:{color:'#000000','font-size':'1.1em'},isTouch: isTouch,}, 
-				{location:{top:1}, media : params.focalCatTitle.media, css: params.focalCatTitle.css, isTouch: isTouch,},
-				
+				{
+				    location:{left:6,top:1}, media:leftText, 
+				    css:piCurrent.keysCss,
+				    isTouch: isTouch
+				},
+				{
+				    location:{right:6,top:1}, 
+				    media:rightText, 
+				    css:piCurrent.keysCss,
+				    isTouch: isTouch
+				}, 
+				{
+				    location:{top:1}, 
+				    media : params.focalCatTitle.media, 
+				    css: params.focalCatTitle.css, 
+				    isTouch: isTouch
+				}
 			];
-if (!params.isInst && params.isTouch){
+            if (!params.isInst && params.isTouch){
 				layout.push({inherit:{type:'byData', set:'touchInputStimuli', data:{handle:'right'}}});
 				layout.push({inherit:{type:'byData', set:'touchInputStimuli', data:{handle:'left'}}});
 			}			
@@ -634,14 +641,11 @@ if (!params.isInst && params.isTouch){
 			
 			if (!params.isInst && params.remindError)
 			{//Show a reminder about the error throughout the task
-			if(params.isTouch)
-			{
-			var htmlText={html: params.remindErrorTextTouch};
-			}
-			else
-			{
-			var htmlText={html: params.remindErrorText};
-			}
+    			var htmlText={html: params.remindErrorText};
+			    if(params.isTouch)
+			    {
+			        htmlText={html: params.remindErrorTextTouch};
+			    }
 				layout.push({
 					location:{bottom:1}, css: {color:'#000000','font-size':'1em'}, 
 					media : htmlText
@@ -674,7 +678,7 @@ if (!params.isInst && params.isTouch){
 			params.focalAttName = (params.focalAtt == 'attribute2') ? attribute2.name : attribute1.name;
 			
 			var instParams = {isInst : true};
-			$.extend(instParams, params);
+			_.extend(instParams, params);
 			
 			var instTrial = {
 				inherit : 'instructions', 
@@ -684,7 +688,8 @@ if (!params.isInst && params.isTouch){
 					{ 
 						inherit : 'instructions', 
 						media : {html : getInstFromTemplate(params)}, 
-						location : {top:(params.nCats == 2) ? 25 : 27}
+						//location : {top:(params.nCats == 2) ? 25 : 27}
+						location : {bottom:1}
 					}
 				]
 			};
@@ -861,7 +866,7 @@ if (!params.isInst && params.isTouch){
 					{inherit:{set:'practiceCats', type:'exRandom'}, data:blockData, layout : blockLayout}, 
 					{inherit:{set:'practiceAtts', type:'exRandom'}, data:blockData, layout : blockLayout}
 				]
-			}
+			};
 			
 			return mixer;
 		}
@@ -886,12 +891,13 @@ if (!params.isInst && params.isTouch){
 
 		//reset iBlock
 		var iBlock = 1;
+		var instTemplateVar;
 
 		//First, push the practice block into the sequence
 		if (piCurrent.practiceBlock)
 		{
 			nBlocks++;
-					var instTemplateVar = isTouch ? piCurrent.instTemplateTouch : piCurrent.instTemplate;
+			instTemplateVar = isTouch ? piCurrent.instTemplateTouch : piCurrent.instTemplate;
 			var pracParams = {
 				 instTemplate: instTemplateVar, 
 				focalAtt:focalAttribute, 
@@ -932,7 +938,7 @@ if (!params.isInst && params.isTouch){
 			categoryOrder = _.shuffle(categoryOrder);
 		}
 		//These parameters are used to create trials.
-		var instTemplateVar = isTouch ? piCurrent.instTemplateTouch : piCurrent.instTemplate;
+		instTemplateVar = isTouch ? piCurrent.instTemplateTouch : piCurrent.instTemplate;
 		var blockParams = {
 			instTemplate: instTemplateVar, 
 			focalAtt:focalAttribute, 
@@ -945,7 +951,7 @@ if (!params.isInst && params.isTouch){
 			remindError : piCurrent.remindError, 
 			remindErrorText : piCurrent.remindErrorText,
 			remindErrorTextTouch : piCurrent.remindErrorTextTouch, 
-			isTouch: piCurrent.isTouch,
+			isTouch: piCurrent.isTouch
 		};
 		var iCycle1Att;
 		for (iCycle1Att = 0; iCycle1Att < piCurrent.nCategoryAttributeBlocks; iCycle1Att++)
@@ -954,7 +960,7 @@ if (!params.isInst && params.isTouch){
 			for (iCatBlocks = 0; iCatBlocks < cats.length; iCatBlocks++)
 			{//One block per category
 				//Extend the block's params object with parameters specific for this block.
-				var curBlockParams1 = $.extend(blockParams, 
+				var curBlockParams1 = _.extend(blockParams, 
 						{blockNum:iBlock, focalCatIndex:categoryOrder[iCatBlocks], 
 						focalCatName:cats[categoryOrder[iCatBlocks]-1].name, 
 						focalCatTitle:cats[categoryOrder[iCatBlocks]-1].title});
@@ -976,7 +982,7 @@ if (!params.isInst && params.isTouch){
 				for (iCatBlocks2 = 0; iCatBlocks2 < cats.length; iCatBlocks2++)
 				{
 					//Extend the block's params object with parameters specific for this block.
-					var curBlockParams2 = $.extend(blockParams, 
+					var curBlockParams2 = _.extend(blockParams, 
 						{blockNum:iBlock, focalCatIndex:categoryOrder[iCatBlocks2], 
 						focalCatName:cats[categoryOrder[iCatBlocks2]-1].name, 
 						focalCatTitle:cats[categoryOrder[iCatBlocks2]-1].title});
@@ -1005,7 +1011,7 @@ if (!params.isInst && params.isTouch){
 				var iCat2Att;
 				for (iCat2Att = 0; iCat2Att < cats.length; iCat2Att++)
 				{
-					var curBlockParams3 = $.extend(blockParams, 
+					var curBlockParams3 = _.extend(blockParams, 
 						{blockNum:iBlock, focalCatIndex:categoryOrder[iCat2Att], 
 						focalCatName:cats[categoryOrder[iCat2Att]-1].name, 
 						focalCatTitle:cats[categoryOrder[iCat2Att]-1].title});
@@ -1194,8 +1200,3 @@ if (!params.isInst && params.isTouch){
 		
 	return iatExtension;
 });
-
-
-
-
-
