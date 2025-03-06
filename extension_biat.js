@@ -321,7 +321,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 		 */
 		API.addTrialSets('sort',{
 			// by default each trial is correct, this is modified in case of an error
-			data: {score:0, parcel:'first'}, //We're using only one parcel for computing the score.
+			data: {error:0, parcel:'first'}, //We're using only one parcel for computing the score.
 			// set the interface for trials
 			input: [
 				{handle:'skip1',on:'keypressed', key:27}, //Esc + Enter will skip blocks
