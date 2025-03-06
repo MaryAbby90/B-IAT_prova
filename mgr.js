@@ -42,7 +42,8 @@ define(['managerAPI',
             templateUrl: 'biat_instructions.jst',
             title: 'Istruzioni',
             buttonText: 'Continua',
-        }],
+	    piTemplate: true
+        }]
 	    
         practice_instructions: [{
             inherit: 'instructions',
