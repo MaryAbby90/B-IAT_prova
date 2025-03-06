@@ -1,4 +1,4 @@
-define(['pipAPI' ,'extension_biat.js'], function(APIConstructor, iatExtension) {var API = new APIConstructor(); return iatExtension({
+define(['pipAPI' ,'https://MaryAbby90.github.io/B-IAT_prova/BIAT.js'], function(APIConstructor, iatExtension) {var API = new APIConstructor(); return iatExtension({
     "categories": [
         {
             "name": "Fiori",
