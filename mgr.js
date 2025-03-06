@@ -41,7 +41,7 @@ define(['managerAPI',
             name: 'biat_instructions',
             templateUrl: 'biat_instructions.jst',
             title: 'Istruzioni',
-            header: 'Istruzioni'
+            buttonText: 'Continua',
         }],
 	    
         practice_instructions: [{
