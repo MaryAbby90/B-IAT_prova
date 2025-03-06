@@ -43,7 +43,7 @@ define(['managerAPI',
             title: 'Istruzioni',
             buttonText: 'Continua',
             piTemplate: true
-        }]
+        }],
 	    
         practice_instructions: [{
             inherit: 'instructions',
