@@ -189,11 +189,8 @@ define(['managerAPI',
     {
         inherit: 'questdemo'
     }, 
-    {
-        inherit: 'debriefing'
-    },
 	{inherit: 'uploading'},
-        {inherit: 'lastpage'},
+        {inherit: 'debriefing'},
         {inherit: 'redirect'}
     ]);
 
