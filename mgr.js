@@ -54,7 +54,7 @@ define(['managerAPI',
             piTemplate: true
         }],
 	    
-         explicit_IAT: [{
+         explicit: [{
             type: 'quest',
             name: 'explicit_IAT',
             scriptUrl: 'explicit_IAT.js',
