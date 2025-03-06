@@ -56,8 +56,8 @@ define(['managerAPI',
 	    
          explicit: [{
             type: 'quest',
-            name: 'explicit_IAT',
-            scriptUrl: 'explicit_IAT.js',
+            name: 'explicits.',
+            scriptUrl: 'explicits.js',
             title: 'Questionario',
             header: 'Questionario'
         }],
