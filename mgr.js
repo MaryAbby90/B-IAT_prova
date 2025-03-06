@@ -187,9 +187,6 @@ define(['managerAPI',
         inherit: 'biat'
     },
     {
-        inherit: 'explicits'
-    },
-    {
         inherit: 'questdemo'
     }, 
     {
