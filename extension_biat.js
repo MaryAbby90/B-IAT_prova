@@ -255,7 +255,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 			// blockNum, nBlocks, focalAtt, focalCat.
 			// Notice that this is HTML code.
 			instTemplate: '<div><p align="center" style="font-size:20px; font-family:arial"><br/>' +
-				'<font color="#000000"><u>Part blockNum of nBlocks </u><br/><br/></p>' + 
+				'<font color="#000000"><u>Parte blockNum di nBlocks </u><br/><br/></p>' + 
 				'<p style="font-size:20px; text-align:left; vertical-align:bottom; margin-left:10px; font-family:arial">' +
 				'Put a right finger on the <b>I</b> key for items that belong to the category ' + 
 				'<font color="#00cccc">focalAtt</font>, ' + 
@@ -265,7 +265,7 @@ define(['pipAPI','pipScorer','underscore'], function(APIConstructor,Scorer, _) {
 				'Press the other key to continue.<br/><br/>' + 
 				'<p align="center">Press the <b>space bar</b> when you are ready to start.</font></p></div>', 
             instTemplateTouch: '<div><p align="center" ' +
-				'<br/><font color="#000000"><u>Part blockNum of nBlocks </u><br/></p>' + 
+				'<br/><font color="#000000"><u>Parte blockNum di nBlocks </u><br/></p>' + 
 				'<p align="left" style="margin-left:5px"> ' +
 				'Put a right finger on the <b>right</b> green area for items that belong to the category ' + 
 				'<font color="#00cccc">focalAtt</font>, ' + 
