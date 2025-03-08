@@ -113,7 +113,7 @@ define(['managerAPI',
         }],
 		
 		//This task waits until the data are sent to the server.
-        uploading: uploading_task({header: 'Solo un momento...', body:'Si prega di attendere l'invio dei dati. '})
+        uploading: uploading_task({header: 'Solo un momento...', body:'Si prega di attendere il salvataggio dei dati.'})
     });
 
     API.addSequence([
