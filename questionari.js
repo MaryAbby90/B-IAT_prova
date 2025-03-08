@@ -73,7 +73,7 @@ API.addQuestionsSet('basicDropdown2', {
 		]
 	});
 	
-    API.addQuestionsSet('vittima',{
+    API.addQuestionsSet('sex',{
         inherit : 'singleChoice',
         name: 'sex',
         stem: 'Indica il tuo sesso biologico',
@@ -128,27 +128,32 @@ API.addPagesSet('basicPage',
 });
 	
 
-    API.addSequence([
-        {
-            mixer : 'random', 
-            data : [
-                {
-                    mixer : 'random', 
-                    wrapper:true, 
-                    data : [
-                        {
-                            inherit:'basicPage', 
-                            questions: {inherit:'vittima'}
-                        },
-                        {
-                            inherit:'basicPage', 
-                            questions: {inherit:'autore'}							
-                        }
-                    ]
-                }
-            ]
-        }
-    ]);
+	{
+		API.addSequence([
+			//First, we present the three direct liking questions.
+			{
+			    mixer : 'random', 
+				wrapper:true, 
+				data : [
+							{
+								inherit:'basicPage', 
+								questions: {inherit:'autore'}
+							},
+							{
+								inherit:'basicPage', 
+								questions: {inherit:'vittima'}							
+							}
+					]},
+					{
+						inherit:'basicPage', 
+						questions: {inherit:'sex'}
+					}
+					
+		
+					
+			
+		]);
+	}
 
     return API.script;
 });
