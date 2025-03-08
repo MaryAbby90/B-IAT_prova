@@ -1,12 +1,22 @@
 define(['questAPI'], function(Quest){
 	var API = new Quest();
-	var isTouch = API.getGlobal().isTouch;
+
 	// ### Questions
 	// Create the template
-    API.addQuestionsSet('basicSelect',{
-        inherit :'basicQ',
-        type: 'selectOne'
-    });
+
+	API.addQuestionsSet('singleChoice', [
+     {
+        type: 'selectOne',
+        autoSubmit: false,
+        numericValues: true,
+        required: true,
+        help: '<%= pagesMeta.number < 100 %>',
+    	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+	    errorMsg: {
+    		required: "Per favore, rispondi a questa domanda"
+    	}
+		}]);
+	
 	API.addQuestionsSet('basicGrid',
 	{
 		type: 'grid',
@@ -38,7 +48,7 @@ define(['questAPI'], function(Quest){
 	});
 
     API.addQuestionsSet('vittima',{
-        inherit : 'basicSelect',
+        inherit : 'singleChoice',
         name: 'vittima',
         stem: 'Quanto fortemente associ il seguente concetto alla donna o all’uomo: <font color="red"><i>Vittima di Discriminazione</i></font></b>?',
         answers: [
@@ -53,7 +63,7 @@ define(['questAPI'], function(Quest){
     });
 
     API.addQuestionsSet('autore',{
-        inherit : 'basicSelect',
+        inherit : 'singleChoice',
         name: 'autore',
         stem: 'Quanto fortemente associ il seguente concetto alla donna o all’uomo: <font color="red"><i>Vittima di Discriminazione</i></font></b>?',
         answers: [
@@ -70,16 +80,14 @@ define(['questAPI'], function(Quest){
 	/**
 	* Page prototype
 	*/
-	API.addPagesSet('basicPage',{
-		noSubmit:false, //Change to true if you don't want to show the submit button.
-		v1style: 2,
-		header: 'Questionario',
-		submitText: "Invia",
-		decline: false,/*
-		declineText: isTouch ? 'Decline' : 'Decline to Answer',*/ 
-		autoFocus:true/*, 1111
-		progressBar: isTouch ? 'Page <%= pagesMeta.number %> out of 3' : 'Page <%= pagesMeta.number %> out of 15'*/
-	});
+API.addPagesSet('basicPage',
+{
+	v1style:2,
+	numbered: false,
+	noSubmit: false,
+	numericValues:true,
+	submitText: "Invia"
+});
 	
 
     API.addSequence([
