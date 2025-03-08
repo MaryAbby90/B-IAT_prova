@@ -74,10 +74,10 @@ define(['managerAPI',
             header: 'Questionario'
         }],
 
-        questionari: [{
+        questionario: [{
             type: 'quest',
-            name: 'questdemo',
-            scriptUrl: 'questionari.js',
+            name: 'questionario',
+            scriptUrl: 'questionario.js',
             title: 'Questionario',
             header: 'Questionario'
         }],
@@ -172,7 +172,7 @@ define(['managerAPI',
             ]
     },
     {
-        inherit: 'questionari'
+        inherit: 'questionario'
     },
     {
         inherit: 'practice'
