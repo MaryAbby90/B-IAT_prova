@@ -16,7 +16,17 @@ API.addQuestionsSet('basicDropdown', {
 		required: "Per favore, rispondi a questa domanda"
 	}
 });
-
+	
+API.addQuestionsSet('eod3',{
+	type : 'grid',
+	name: 'eod3',
+	stem: 'Have you ever experienced discrimination, been prevented from doing something, or been hassled or made to feel inferior in any of the following situations because of your race, ethnicity, or color?', 
+                    rows: ['At School?' , 'Getting hired or getting a job?' , 'At work?' , 'Getting housing?' , 'Getting medical care?', 'Getting service in a store or restaurant?', 'Getting credit, bank loans, or a mortgage?','On the street or in a public setting?','From the police or in the courts?'],
+                    columns: ['Never', 'Once', 'Twice or three times', 'Four or more times']
+	
+	});
+	
+	
 API.addQuestionsSet('basicDropdown2', {
     type: 'dropdown',
     autoSubmit: false,
@@ -29,6 +39,17 @@ API.addQuestionsSet('basicDropdown2', {
 	}
 });
 
+	API.addQuestionsSet('individualdiscrimination',{
+	inherit : 'basicSelect',
+	name: 'individualdiscrimination',
+	stem: 'How often do you feel that you, personally, have been discriminated against because of your race, ethnicity, or color?',
+	answers: [
+		{text:'Never',value: 1},
+		{text:'Rarely',value: 2},
+		{text:'Sometimes',value: 3},
+		{text:'oroften',value: 4}
+		]
+	});	
 	
 	API.addQuestionsSet('singleChoice', [
      {
@@ -128,32 +149,32 @@ API.addPagesSet('basicPage',
 });
 	
 
-	{
+
 		API.addSequence([
 			//First, we present the three direct liking questions.
 			{
-			    mixer : 'random', 
-				wrapper:true, 
+				mixer : 'random', 
 				data : [
+						mixer : 'random', 
+						wrapper:true, 
+						data : {[
 							{
 								inherit:'basicPage', 
-								questions: {inherit:'autore'}
+								questions: {inherit:'vittima'}
 							},
 							{
 								inherit:'basicPage', 
-								questions: {inherit:'vittima'}							
+								questions: {inherit:'autore'}							
 							}
-					]},
+						]
+					},
 					{
 						inherit:'basicPage', 
 						questions: {inherit:'sex'}
 					}
-					
-		
-					
 			
 		]);
-	}
+
 
     return API.script;
 });
