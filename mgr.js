@@ -194,7 +194,7 @@ define(['managerAPI',
             status: status
         }];
 
-        API.save({ file_name: 'time_log.csv', data: timeData });
+        API.save({ file_name: 'session.csv', data: timeData });
     });
 
     // Se il partecipante chiude la pagina prima di finire
