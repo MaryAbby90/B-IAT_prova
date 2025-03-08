@@ -3,7 +3,33 @@ define(['questAPI'], function(Quest){
 
 	// ### Questions
 	// Create the template
+API.addQuestionsSet('basicDropdown', {
+    type: 'selectOne',
+    style: 'multiButtons',
+    minWidth: '150px',
+    autoSubmit: true,
+    numericValues: true,
+    required:true,
+    help: '<%= pagesMeta.number < 100 %>',
+	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+	errorMsg: {
+		required: "Per favore, rispondi a questa domanda"
+	}
+});
 
+API.addQuestionsSet('basicDropdown2', {
+    type: 'dropdown',
+    autoSubmit: false,
+    numericValues: true,
+    required:true,
+    help: '<%= pagesMeta.number < 100 %>',
+	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+	errorMsg: {
+		required: "Per favore, rispondi a questa domanda"
+	}
+});
+
+	
 	API.addQuestionsSet('singleChoice', [
      {
         type: 'selectOne',
@@ -46,7 +72,19 @@ define(['questAPI'], function(Quest){
 			{left:'Completamente in disaccordo', right:'Completamente d’accordo', name:'<%=questionsData.name%>.agree'}
 		]
 	});
+	
+    API.addQuestionsSet('vittima',{
+        inherit : 'singleChoice',
+        name: 'sex',
+        stem: 'Indica il tuo sesso biologico',
+        answers: [
+		{text:'Maschio',value:1},
+		{text:'Femmina',value:2},
+		{text:'Altro',value:3}
+        ]
+    });
 
+	
     API.addQuestionsSet('vittima',{
         inherit : 'singleChoice',
         name: 'vittima',
