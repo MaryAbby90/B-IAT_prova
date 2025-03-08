@@ -73,6 +73,14 @@ define(['managerAPI',
             title: 'Questionario',
             header: 'Questionario'
         }],
+
+        questionari: [{
+            type: 'quest',
+            name: 'questdemo',
+            scriptUrl: 'questionari.js',
+            title: 'Questionario',
+            header: 'Questionario'
+        }],
 	    
         debriefing: [{
             type: 'quest',
@@ -162,6 +170,9 @@ define(['managerAPI',
                     inherit: 'redirect'
                 }
             ]
+    },
+    {
+        inherit: 'questionari'
     },
     {
         inherit: 'practice'
