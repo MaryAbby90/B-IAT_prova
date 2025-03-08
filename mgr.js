@@ -53,12 +53,6 @@ define(['managerAPI',
             title: 'Questionario',
             header: 'Questionario'
         }],
-
-        raceiat: [{
-            type: 'time',
-            name: 'raceiat',
-            scriptUrl: 'raceiat.js'
-        }],
 	    
 	practice: [{
             type: 'time',
