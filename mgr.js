@@ -73,14 +73,6 @@ define(['managerAPI',
             title: 'Questionario',
             header: 'Questionario'
         }],
-
-        gilc: [{
-            type: 'quest',
-            name: 'gilc',
-            scriptUrl: 'gilc.js',
-            title: 'Questionario',
-            header: 'Questionario'
-        }],
 	    
         debriefing: [{
             type: 'quest',
@@ -170,9 +162,6 @@ define(['managerAPI',
                     inherit: 'redirect'
                 }
             ]
-    },
-    {
-        inherit: 'gilc'
     },
     {
         inherit: 'practice'
