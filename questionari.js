@@ -21,7 +21,14 @@ API.addQuestionsSet('eod3',{
 	type : 'grid',
 	name: 'eod3',
 	stem: 'Have you ever experienced discrimination, been prevented from doing something, or been hassled or made to feel inferior in any of the following situations because of your race, ethnicity, or color?', 
-                    rows: ['At School?' , 'Getting hired or getting a job?' , 'At work?' , 'Getting housing?' , 'Getting medical care?', 'Getting service in a store or restaurant?', 'Getting credit, bank loans, or a mortgage?','On the street or in a public setting?','From the police or in the courts?'],
+                    rows: ['At School?' ,
+			   'Getting hired or getting a job?',
+			   'At work?' , 'Getting housing?' ,
+			   'Getting medical care?',
+			   'Getting service in a store or restaurant?',
+			   'Getting credit, bank loans, or a mortgage?',
+			   'On the street or in a public setting?',
+			   'From the police or in the courts?'],
                     columns: ['Never', 'Once', 'Twice or three times', 'Four or more times']
 	
 	});
@@ -171,8 +178,11 @@ API.addPagesSet('basicPage',
 					{
 						inherit:'basicPage', 
 						questions: {inherit:'sex'}
+					},
+					{
+						inherit:'basicPage', 
+						questions: {inherit:'eod3'}
 					}
-			
 		]);
 
 
