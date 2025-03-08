@@ -1,6 +1,6 @@
 define(['questAPI'], function(Quest){
 	var API = new Quest();
-
+	var isTouch = API.getGlobal().isTouch;
 	// ### Questions
 	// Create the template
     API.addQuestionsSet('basicSelect',{
@@ -67,15 +67,20 @@ define(['questAPI'], function(Quest){
         ]
     });
 
-	// ### Pages
-	API.addPagesSet('basicPage',
-	{
-		v1style:2,
-		numbered: false,
-		noSubmit: false,
-		numericValues:true,
-		submitText: "Invia"
+	/**
+	* Page prototype
+	*/
+	API.addPagesSet('basicPage',{
+		noSubmit:false, //Change to true if you don't want to show the submit button.
+		v1style: 2,
+		header: 'Questionario',
+		submitText: "Invia",
+		decline: false,/*
+		declineText: isTouch ? 'Decline' : 'Decline to Answer',*/ 
+		autoFocus:true/*, 1111
+		progressBar: isTouch ? 'Page <%= pagesMeta.number %> out of 3' : 'Page <%= pagesMeta.number %> out of 15'*/
 	});
+	
 
     API.addSequence([
         {
