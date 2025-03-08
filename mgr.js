@@ -8,12 +8,14 @@ define(['managerAPI',
     //const pt = urlParams.get('pt');
 
 	var API    = new Manager();
+	var startTime = new Date().toISOString(); // Registra il timestamp di inizio
+	var status = 0; // Status iniziale: il partecipante potrebbe abbandonare
 	//const subid = Date.now().toString(16)+Math.floor(Math.random()*10000).toString(16);
 	init_data_pipe(API, 'QDDGHx7qdUtn', {file_type:'csv'});	
 
     API.setName('mgr');
     API.addSettings('skip',true);
-
+    
     API.addTasksSet({
         instructions: [{
             type: 'message',
@@ -179,6 +181,33 @@ define(['managerAPI',
         {inherit: 'debriefing'},
         {inherit: 'redirect'}
     ]);
+
+   // Quando il partecipante completa l'esperimento
+    API.addSettings('onEnd', function(){
+        var endTime = new Date().toISOString();
+        status = 1; // Segna il completamento
+
+        var timeData = [{
+	    sessionId: sessionId,
+            start_time: startTime,
+            end_time: endTime,
+            status: status
+        }];
+
+        API.save({ file_name: 'time_log.csv', data: timeData });
+    });
+
+    // Se il partecipante chiude la pagina prima di finire
+    window.addEventListener('beforeunload', function(){
+        var timeData = [{
+	    sessionId: sessionId,
+            start_time: startTime,
+            end_time: null, // Non completato
+            status: status // Rimane 0 perché non ha finito
+        }];
+
+        API.save({ file_name: 'session.csv', data: timeData });
+    });
 
     return API.script;
 });
