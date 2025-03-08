@@ -46,14 +46,6 @@ define(['managerAPI',
             piTemplate: true
         }],
 	    
-         explicit: [{
-            type: 'quest',
-            name: 'explicits',
-            scriptUrl: 'explicits.js',
-            title: 'Questionario',
-            header: 'Questionario'
-        }],
-	    
 	practice: [{
             type: 'time',
             name: 'practice',
@@ -172,7 +164,7 @@ define(['managerAPI',
             ]
     },
     {
-        inherit: 'questionario'
+        inherit: 'questionari'
     },
     {
         inherit: 'practice'
