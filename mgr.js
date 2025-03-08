@@ -74,10 +74,10 @@ define(['managerAPI',
             header: 'Questionario'
         }],
 
-        questionario: [{
+        questionari: [{
             type: 'quest',
-            name: 'questionario',
-            scriptUrl: 'explicit_IAT.js',
+            name: 'questionari',
+            scriptUrl: 'questionari.js',
             title: 'Questionario',
             header: 'Questionario'
         }],
