@@ -28,14 +28,6 @@ define(['managerAPI',
 		title: 'Consent Agreement', 
 		buttonText: 'Invia' }],	    
 
-        intro: [{
-            inherit: 'instructions',
-            name: 'intro',
-            templateUrl: 'intro.jst',
-            title: 'Intro',
-            header: 'Welcome'
-        }],
-
         biat_instructions: [{
             inherit: 'instructions',
             name: 'biat_instructions',
