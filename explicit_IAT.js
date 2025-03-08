@@ -20,28 +20,28 @@ define(['questAPI'], function(Quest){
     /**
 	* Question prototypes
 	*/
-	API.addQuestionsSet('basicQ',{
-		decline: 'true',
-		required : true, 		
-		errorMsg: {
-			required: isTouch ? "Per favore seleziona una risposta" : 
-			"Per favore seleziona una risposta"
-		}
-	});
+API.addQuestionsSet('singleChoice', [
+     {
+        type: 'selectOne',
+        autoSubmit: false,
+        numericValues: true,
+        required: true,
+        help: '<%= pagesMeta.number < 100 %>',
+    	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+	    errorMsg: {
+    		required: "Per favore, rispondi a questa domanda"
+    	}
+		}]);
 
-	API.addQuestionsSet('basicSelect',{
-		inherit :'basicQ',
-		type: 'selectOne'
-	});
 	
     API.addQuestionsSet('basicDropdown',{
-		inherit :'basicQ',
+		inherit :'singleChoice',
 		type : 'dropdown',
 		autoSubmit:false
 	});
 	
     API.addQuestionsSet('therm',{
-		inherit: 'basicSelect',
+		inherit: 'singleChoice',
 		answers: [
 			{text:'10 - Extremely warm', value:10},
 			{text:'9 - Very warm', value:9},
@@ -62,7 +62,7 @@ define(['questAPI'], function(Quest){
 	*/	
 	
 	    API.addQuestionsSet('att',{
-		inherit : 'basicSelect',
+		inherit : 'singleChoice',
 		name: 'att',
 		stem: 'Seleziona la frase che ti descrive meglio:',
 		answers: [
@@ -77,7 +77,7 @@ define(['questAPI'], function(Quest){
 	});
 	
 		API.addQuestionsSet('cospirazione',{
-		inherit : 'basicSelect',
+		inherit : 'singleChoice',
 		name: 'vittima_discriminazione',
 		stem: 'Quanto associ il concetto di “COSPIRAZIONE” con le categorie persone eterosessuali e persone LGBT?',
 		answers: [
@@ -93,7 +93,7 @@ define(['questAPI'], function(Quest){
 	
 	
 	API.addQuestionsSet('verità',{
-		inherit : 'basicSelect',
+		inherit : 'singleChoice',
 		name: 'stato',
 		stem: 'Quanto associ il concetto “VERITÀ” con le categorie persone eterosessuali e persone LGBT?',
 		answers: [
