@@ -124,7 +124,7 @@ API.addQuestionsSet('basicDropdown2', {
     API.addQuestionsSet('autore',{
         inherit : 'singleChoice',
         name: 'autore',
-        stem: 'Quanto fortemente associ il seguente concetto alla donna o all’uomo: <font color="red"><i>Vittima di Discriminazione</i></font></b>?',
+        stem: 'Quanto fortemente associ il seguente concetto alla donna o all’uomo: <font color="red"><i>Autore di Discriminazione</i></font></b>?',
         answers: [
 		{text:'Fortemente all’uomo.',value:1},
 		{text:'Moderatamente all’uomo',value:2},
