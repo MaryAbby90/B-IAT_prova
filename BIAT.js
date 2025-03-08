@@ -1,4 +1,4 @@
-define(['pipAPI' ,'./extension_biat.js'], function(APIConstructor, iatExtension) {var API = new APIConstructor(); return iatExtension({
+define(['pipAPI' ,'./parent_biat.js'], function(APIConstructor, iatExtension) {var API = new APIConstructor(); return iatExtension({
     "categories": [
         {
             "name": "Donna",
