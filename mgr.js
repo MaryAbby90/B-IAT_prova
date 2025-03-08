@@ -195,9 +195,6 @@ define(['managerAPI',
                 var endTime = new Date().toISOString();  // Data di fine in formato ISO
                 var status = 1;  // Assumiamo che il partecipante completi l'esperimento
 
-                if (!piGlobal.lastpage) { // Se il partecipante non ha raggiunto la pagina di debriefing
-                    status = 0;  // Status 0 per abbandono
-                }
 
                 // Se il partecipante ha abbandonato, lo status sarà 0
                 // Puoi aggiungere una logica per determinare se il partecipante ha abbandonato
