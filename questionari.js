@@ -154,8 +154,6 @@ API.addPagesSet('basicPage',
 	numericValues:true,
 	submitText: "Invia"
 });
-	
-
 
 		API.addSequence([
 			//First, we present the three direct liking questions.
