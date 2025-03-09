@@ -521,12 +521,12 @@ API.addPagesSet('basicPage',
             //mixer: 'repeat',
 	    //times : 3,
            // data: [
-                {inherit: {set: 'COWS_1'}},
-		{inherit: {set: 'COWS_2'}},
-		{inherit: {set: 'COWS_3'}},
-		{inherit: {set: 'COWS_4'}},
-	        {inherit: {set: 'COWS_5'}},
-		{inherit: {set: 'COWS_6'}}
+                {inherit: {set: 'COWS_1', type: 'sequential'}},
+		{inherit: {set: 'COWS_2', type: 'sequential'}},
+		{inherit: {set: 'COWS_3', type: 'sequential'}},
+		{inherit: {set: 'COWS_4', type: 'sequential'}},
+	        {inherit: {set: 'COWS_5', type: 'sequential'}},
+		{inherit: {set: 'COWS_6', type: 'sequential'}}
             ],
         v1style:2,
         decline:false,
