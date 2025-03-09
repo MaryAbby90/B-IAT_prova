@@ -104,7 +104,7 @@ API.addQuestionsSet('BPNSFS',{
 	 	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	stem: '<b>Di seguito sono riportate delle affermazioni che si riferiscono a sentimenti vissuti nella propria vita. Leggi ciascuna affermazione con attenzione. Puoi rispondere scegliendo un numero da 1=(Completamente in disaccordo) a 5=(Completamente d’accordo) per indicare il grado d’accordo a ciascuna affermazione in riferimento a come ti senti <font color="red"><i>nel tuo contesto universitario.</i></font></b>', 
+	stem: 'Di seguito sono riportate delle affermazioni che si riferiscono a sentimenti vissuti nella propria vita. Leggi ciascuna affermazione con attenzione. Puoi rispondere scegliendo un numero da 1=(Completamente in disaccordo) a 5=(Completamente d’accordo) per indicare il grado d’accordo a ciascuna affermazione in riferimento a come ti senti <font color="red"><i>nel tuo contesto universitario.</i></font>', 
                     rows: [
 			   'Sento un senso di possibilità di scelta e di libertà nelle cose in cui mi impegno',
 			   'La maggior parte delle cose faccio, le faccio perché "le devo fare"',
@@ -152,11 +152,11 @@ API.addQuestionsSet('SoddAcc',{
 			   ],
                     columns: [
 			{type:'text', textProperty:'left', css : {width:'13.5%'}},
-			{stem:'1. Fortemente in disaccordo', css : {width:'7%'}},
-			{stem:'2. In disaccordo', css : {width:'7%'}},
-			{stem:'3. Né in disaccordo né in accordo', css : {width:'7%'}},
-			{stem:'4. D’accordo', css : {width:'7%'}},
-			{stem:'5. Fortemente d’accordo', css : {width:'7%'}},
+			{stem:'1. Fortemente in disaccordo', css : {width:'12%'}},
+			{stem:'2. In disaccordo', css : {width:'12%'}},
+			{stem:'3. Né in disaccordo né in accordo', css : {width:'12%'}},
+			{stem:'4. D’accordo', css : {width:'12%'}},
+			{stem:'5. Fortemente d’accordo', css : {width:'12%'}},
 			{type:'text', textProperty:'right', css : {width:'13.5%'}}
 		],
 	});
