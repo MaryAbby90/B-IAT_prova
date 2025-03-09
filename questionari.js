@@ -122,11 +122,11 @@ API.addQuestionsSet('BPNSFS',{
 			   ],
                     columns: [
 			{type:'text', textProperty:'left', css : {width:'5%'}},
-			{stem:'1. Completamente in disaccordo', css : {width:'7%'}},
-			{stem:'2.', css : {width:'7%'}},
-			{stem:'3.', css : {width:'7%'}},
-			{stem:'4.', css : {width:'7%'}},
-			{stem:'5. Completamente d’accordo', css : {width:'7%'}},
+			{stem:'1. Completamente in disaccordo', css : {width:'12%'}},
+			{stem:'2.', css : {width:'12%'}},
+			{stem:'3.', css : {width:'12%'}},
+			{stem:'4.', css : {width:'12%'}},
+			{stem:'5. Completamente d’accordo', css : {width:'12%'}},
 			{type:'text', textProperty:'right', css : {width:'5%'}}
 			],
 	
@@ -181,13 +181,13 @@ API.addQuestionsSet('AspirCar',{
 			   ],
                     columns: [
 			{type:'text', textProperty:'left', css : {width:'5%'}},
-			{stem:'1. Per niente vero', css : {width:'7%'}},
-			{stem:'2.', css : {width:'7%'}},
-			{stem:'3.', css : {width:'7%'}},
-			{stem:'4.', css : {width:'7%'}},
-			{stem:'5.', css : {width:'7%'}},
-			{stem:'6.', css : {width:'7%'}},
-			{stem:'7. Completamente vero', css : {width:'7%'}},
+			{stem:'1. Per niente vero', css : {width:'12%'}},
+			{stem:'2.', css : {width:'12%'}},
+			{stem:'3.', css : {width:'12%'}},
+			{stem:'4.', css : {width:'12%'}},
+			{stem:'5.', css : {width:'12%'}},
+			{stem:'6.', css : {width:'12%'}},
+			{stem:'7. Completamente vero', css : {width:'12%'}},
 			{type:'text', textProperty:'right', css : {width:'5%'}}
 			],
 	
@@ -254,35 +254,6 @@ API.addQuestionsSet('Resilienza',{
 	
 	});	
 
-/* API.addQuestionsSet('COWS',{
-	type : 'grid',
-	name: 'COWS',
-	checkboxType : 'colorMark',
-	required : true,
-	errorMsg: {
-		required: "Per favore, rispondi a questa domanda."
-	 	  },
-	help: '<%= pagesMeta.number < 100 %>',
-	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	stem: '<b>1. La/il tua/o docente ti ha informato dell’introduzione di nuove procedure che potrebbero aiutarti a migliorare il tuo rendimento accademico. La prima cosa che pensi è:</b>', 
-                    rows: [
-			'Questo sarà interessante e importante per me provarlo',
-			'Sentirò la pressione di dover fare come dice la/il mia/o docente',
-			'Probabilmente sarà inutile per me farlo',
-			   ],
-                    columns: [
-			{type:'text', textProperty:'left', css : {width:'5%'}},
-			{stem:'1. Fortemente in disaccordo', css : {width:'7%'}},
-			{stem:'2.', css : {width:'7%'}},
-			{stem:'3.', css : {width:'7%'}},
-			{stem:'4.', css : {width:'7%'}},
-			{stem:'5.', css : {width:'7%'}},
-			{stem:'6.', css : {width:'7%'}},
-			{stem:'7. Fortemente d’accordo', css : {width:'7%'}},
-			{type:'text', textProperty:'right', css : {width:'5%'}}
-			],
-	
-	});	*/
 
 API.addQuestionsSet('Distress',{
 	type : 'grid',
@@ -375,16 +346,6 @@ API.addQuestionsSet('basicDropdown2', {
 		]
 	});
 	
-    API.addQuestionsSet('sex',{
-        inherit : 'singleChoice',
-        name: 'sex',
-        stem: 'Indica il tuo sesso biologico',
-        answers: [
-		{text:'Maschio',value:1},
-		{text:'Femmina',value:2},
-		{text:'Altro',value:3}
-        ]
-    });
 
     API.addQuestionsSet('basicSelect',
     {
@@ -526,6 +487,17 @@ API.addQuestionsSet('basicDropdown2', {
 			stem : 'Sento che, onestamente, non posso fare molto per modificare il mio atteggiamento sociale'
 		}
 	]);	
+
+    API.addQuestionsSet('sex',{
+        inherit : 'singleChoice',
+        name: 'sex',
+        stem: 'Indica il tuo sesso biologico',
+        answers: [
+		{text:'Maschio',value:1},
+		{text:'Femmina',value:2},
+		{text:'Altro',value:3}
+        ]
+    });
 	
 	/**
 	* Page prototype
@@ -563,8 +535,7 @@ API.addPagesSet('basicPage',
     });
 
 	API.addSequence([
-
-	{inherit : 'basicPage2'},
+	
 	    {
 	        mixer : 'random', 
 	        wrapper: true, 
@@ -594,29 +565,37 @@ API.addPagesSet('basicPage',
 	        ]
 	    },
 	    {
-	        inherit:'basicPage', 
-	        questions: {inherit:'BPNSFS'}
-	    },
-	    {
-	        inherit:'basicPage', 
-	        questions: {inherit:'SoddAcc'}
-	    },	
-	    {
-	        inherit:'basicPage', 
-	        questions: {inherit:'AspirCar'}
-	    },
-	    {
-	        inherit:'basicPage', 
-	        questions: {inherit:'AspettCarr'}
-	    },	
-	    {
-	        inherit:'basicPage', 
-	        questions: {inherit:'Resilienza'}
-	    },	
-	    {
-	        inherit:'basicPage', 
-	        questions: {inherit:'Distress'}
-	    }	
+		mixer : 'random', 
+	        wrapper: true, 
+	        data : [
+		    {
+	        	inherit:'basicPage', 
+	        	questions: {inherit:'BPNSFS'}
+	            },
+	    	    {
+	        	inherit:'basicPage', 
+	        	questions: {inherit:'SoddAcc'}
+	   	    },	
+	   	    {
+	    		inherit:'basicPage', 
+	   		questions: {inherit:'AspirCar'}
+		    },
+		    {
+	  		inherit:'basicPage', 
+	      		questions: {inherit:'AspettCarr'}
+		    },	
+		    {
+	 	        inherit:'basicPage', 
+	        	questions: {inherit:'Resilienza'}
+	  	    },	
+		    {
+			inherit : 'basicPage2'
+		    },	
+	   	    {
+	   		inherit:'basicPage', 
+	 		questions: {inherit:'Distress'}
+	 	    }
+		]
 	]);
 
 
