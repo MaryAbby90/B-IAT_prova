@@ -391,12 +391,6 @@ API.addQuestionsSet('basicDropdown2', {
         type: 'selectOne',
         autoSubmit:false,
         numericValues:true,
-        required : true,
-	errorMsg: {
-		required: "Per favore, rispondi a questa domanda."
-	  	  },
-	help: '<%= pagesMeta.number < 100 %>',
-	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
         style:'multiButtons',
         answers : [
             '1 - Fortemente in disaccordo',
@@ -447,7 +441,14 @@ API.addPagesSet('basicPage',
     API.addPagesSet('basicPage2',
     {
         header: '<b>Immagina di ritrovarti nelle sei situazioni sottoelencate ed indica il tuo grado di accordo con ciascuna delle seguenti affermazioni, su una scala da 1 (= Fortemente in disaccordo) a 7 (=Fortemente d’accordo).</b>',
-        headerStyle : {'font-size':'2em'},
+        headerStyle : {'font-size':'1.5em'},
+	required : true,
+	errorMsg: {
+		required: "Per favore, rispondi a questa domanda."
+	  	  },
+	help: '<%= pagesMeta.number < 100 %>',
+	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+	submitText: "Invia",
         questions : {
             mixer: 'repeat',
 	    times : 3,
