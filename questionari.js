@@ -181,13 +181,13 @@ API.addQuestionsSet('AspirCar',{
 			   ],
                     columns: [
 			{type:'text', textProperty:'left', css : {width:'5%'}},
-			{stem:'1. Per niente vero', css : {width:'12%'}},
-			{stem:'2.', css : {width:'12%'}},
-			{stem:'3.', css : {width:'12%'}},
-			{stem:'4.', css : {width:'12%'}},
-			{stem:'5.', css : {width:'12%'}},
-			{stem:'6.', css : {width:'12%'}},
-			{stem:'7. Completamente vero', css : {width:'12%'}},
+			{stem:'1. Per niente vero', css : {width:'7%'}},
+			{stem:'2.', css : {width:'7%'}},
+			{stem:'3.', css : {width:'7%'}},
+			{stem:'4.', css : {width:'7%'}},
+			{stem:'5.', css : {width:'7%'}},
+			{stem:'6.', css : {width:'7%'}},
+			{stem:'7. Completamente vero', css : {width:'7%'}},
 			{type:'text', textProperty:'right', css : {width:'5%'}}
 			],
 	
