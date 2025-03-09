@@ -531,7 +531,7 @@ API.addQuestionsSet('basicDropdown2', {
 		name: 'eta',
 		stem: '<b>Indica la tua età</b>',
 		answers: [
-			{text: 'Seleziona un'opzione', value: '', isCorrect: false, disabled: true },
+			{text: 'Seleziona un’opzione', value: '', isCorrect: false, disabled: true },
 			{text:'2009',value:2009},
 			{text:'2008',value:2008},
 			{text:'2007',value:2007},
