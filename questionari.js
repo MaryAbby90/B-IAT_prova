@@ -518,32 +518,29 @@ API.addPagesSet('basicPage',
         headerStyle : {'font-size':'1.5em'},
 	submitText: "Invia",
         questions : [
-            //mixer: 'repeat',
-	    //times : 3,
-           // data: [
-                {inherit: {set: 'COWS_1', type: 'sequential'}},
-        {inherit: {set: 'COWS_1', type: 'sequential', index: 1}},
-        {inherit: {set: 'COWS_1', type: 'sequential', index: 2}},
+                 {inherit: {set: 'COWS_1', type: 'sequential'}},
+      		 {inherit: {set: 'COWS_1', type: 'sequential', index: 1}},
+       		 {inherit: {set: 'COWS_1', type: 'sequential', index: 2}},
         
-        {inherit: {set: 'COWS_2', type: 'sequential'}},
-        {inherit: {set: 'COWS_2', type: 'sequential', index: 1}},
-        {inherit: {set: 'COWS_2', type: 'sequential', index: 2}},
+        	 {inherit: {set: 'COWS_2', type: 'sequential'}},
+        	 {inherit: {set: 'COWS_2', type: 'sequential', index: 1}},
+        	 {inherit: {set: 'COWS_2', type: 'sequential', index: 2}},
 
-        {inherit: {set: 'COWS_3', type: 'sequential'}},
-        {inherit: {set: 'COWS_3', type: 'sequential', index: 1}},
-        {inherit: {set: 'COWS_3', type: 'sequential', index: 2}},
+       		 {inherit: {set: 'COWS_3', type: 'sequential'}},
+      		 {inherit: {set: 'COWS_3', type: 'sequential', index: 1}},
+       		 {inherit: {set: 'COWS_3', type: 'sequential', index: 2}},
 
-        {inherit: {set: 'COWS_4', type: 'sequential'}},
-        {inherit: {set: 'COWS_4', type: 'sequential', index: 1}},
-        {inherit: {set: 'COWS_4', type: 'sequential', index: 2}},
+       		 {inherit: {set: 'COWS_4', type: 'sequential'}},
+       		 {inherit: {set: 'COWS_4', type: 'sequential', index: 1}},
+      		 {inherit: {set: 'COWS_4', type: 'sequential', index: 2}},
 
-        {inherit: {set: 'COWS_5', type: 'sequential'}},
-        {inherit: {set: 'COWS_5', type: 'sequential', index: 1}},
-        {inherit: {set: 'COWS_5', type: 'sequential', index: 2}},
+        	 {inherit: {set: 'COWS_5', type: 'sequential'}},
+     		 {inherit: {set: 'COWS_5', type: 'sequential', index: 1}},
+       		 {inherit: {set: 'COWS_5', type: 'sequential', index: 2}},
 
-        {inherit: {set: 'COWS_6', type: 'sequential'}},
-        {inherit: {set: 'COWS_6', type: 'sequential', index: 1}},
-        {inherit: {set: 'COWS_6', type: 'sequential', index: 2}}
+       		 {inherit: {set: 'COWS_6', type: 'sequential'}},
+       		 {inherit: {set: 'COWS_6', type: 'sequential', index: 1}},
+        	 {inherit: {set: 'COWS_6', type: 'sequential', index: 2}}
             ],
         v1style:2,
         decline:false,
@@ -552,9 +549,6 @@ API.addPagesSet('basicPage',
 
 	API.addSequence([
 	
-	 	    {
-			inherit : 'basicPage2'
-		    },
 		{
 	        mixer : 'random', 
 	        wrapper: true, 
@@ -607,6 +601,9 @@ API.addPagesSet('basicPage',
 	 	        inherit:'basicPage', 
 	        	questions: {inherit:'Resilienza'}
 	  	    },	
+		    {
+			inherit : 'basicPage2'
+		    },
 	   	    {
 	   		inherit:'basicPage', 
 	 		questions: {inherit:'Distress'}
