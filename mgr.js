@@ -158,6 +158,7 @@ define(['managerAPI',
     {
         inherit: 'questionari'
     },
+	    /*
     {
         inherit: 'practice'
     },
@@ -167,7 +168,7 @@ define(['managerAPI',
     {
         inherit: 'biat'
     },
- 
+            */
 	{inherit: 'uploading'},
         {inherit: 'debriefing'},
         {inherit: 'redirect'}
