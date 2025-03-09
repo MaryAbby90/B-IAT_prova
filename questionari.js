@@ -552,7 +552,10 @@ API.addPagesSet('basicPage',
 
 	API.addSequence([
 	
-	    {
+	 	    {
+			inherit : 'basicPage2'
+		    },
+		{
 	        mixer : 'random', 
 	        wrapper: true, 
 	        data : [
@@ -604,9 +607,6 @@ API.addPagesSet('basicPage',
 	 	        inherit:'basicPage', 
 	        	questions: {inherit:'Resilienza'}
 	  	    },	
-		    {
-			inherit : 'basicPage2'
-		    },	
 	   	    {
 	   		inherit:'basicPage', 
 	 		questions: {inherit:'Distress'}
