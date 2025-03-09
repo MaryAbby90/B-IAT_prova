@@ -20,6 +20,12 @@ API.addQuestionsSet('basicDropdown', {
 API.addQuestionsSet('SoddAcc',{
 	type : 'grid',
 	name: 'SoddAcc',
+	required : true,
+	errorMsg: {
+		required: "Per favore, rispondi a questa domanda."
+	  	  },
+	help: '<%= pagesMeta.number < 100 %>',
+	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
 	stem: 'Utilizzando la scala sottostante, indica il tuo grado di accordo con ciascuna delle seguenti affermazioni.', 
                     rows: [
 			    'Sono soddisfatta/o della decisione di laurearmi nel mio campo di studi' ,
@@ -38,6 +44,12 @@ API.addQuestionsSet('SoddAcc',{
 API.addQuestionsSet('BPNSFS',{
 	type : 'grid',
 	name: 'BPNSFS',
+	required : true,
+	errorMsg: {
+		required: "Per favore, rispondi a questa domanda."
+	 	  },
+	help: '<%= pagesMeta.number < 100 %>',
+	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
 	stem: 'Utilizzando la scala sottostante, indica il tuo grado di accordo con ciascuna delle seguenti affermazioni.', 
                     rows: [
 			    'Sono soddisfatta/o della decisione di laurearmi nel mio campo di studi' ,
