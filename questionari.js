@@ -521,8 +521,8 @@ API.addQuestionsSet('basicDropdown2', {
         ]
     });	
 
-    API.addQuestionsSet('età',{
-        inherit : 'basicDropdown',
+    API.addQuestionsSet('basicDropdown',{
+        inherit : 'singleChoice',
         name: 'età',
         stem: '<b>Indica la tua età</b>',
         answers: [
