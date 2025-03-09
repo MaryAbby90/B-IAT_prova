@@ -522,11 +522,28 @@ API.addPagesSet('basicPage',
 	    //times : 3,
            // data: [
                 {inherit: {set: 'COWS_1', type: 'sequential'}},
-		{inherit: {set: 'COWS_2', type: 'sequential'}},
-		{inherit: {set: 'COWS_3', type: 'sequential'}},
-		{inherit: {set: 'COWS_4', type: 'sequential'}},
-	        {inherit: {set: 'COWS_5', type: 'sequential'}},
-		{inherit: {set: 'COWS_6', type: 'sequential'}}
+        {inherit: {set: 'COWS_1', type: 'sequential', index: 1}},
+        {inherit: {set: 'COWS_1', type: 'sequential', index: 2}},
+        
+        {inherit: {set: 'COWS_2', type: 'sequential'}},
+        {inherit: {set: 'COWS_2', type: 'sequential', index: 1}},
+        {inherit: {set: 'COWS_2', type: 'sequential', index: 2}},
+
+        {inherit: {set: 'COWS_3', type: 'sequential'}},
+        {inherit: {set: 'COWS_3', type: 'sequential', index: 1}},
+        {inherit: {set: 'COWS_3', type: 'sequential', index: 2}},
+
+        {inherit: {set: 'COWS_4', type: 'sequential'}},
+        {inherit: {set: 'COWS_4', type: 'sequential', index: 1}},
+        {inherit: {set: 'COWS_4', type: 'sequential', index: 2}},
+
+        {inherit: {set: 'COWS_5', type: 'sequential'}},
+        {inherit: {set: 'COWS_5', type: 'sequential', index: 1}},
+        {inherit: {set: 'COWS_5', type: 'sequential', index: 2}},
+
+        {inherit: {set: 'COWS_6', type: 'sequential'}},
+        {inherit: {set: 'COWS_6', type: 'sequential', index: 1}},
+        {inherit: {set: 'COWS_6', type: 'sequential', index: 2}}
             ],
         v1style:2,
         decline:false,
