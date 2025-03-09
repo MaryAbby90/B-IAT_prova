@@ -17,19 +17,20 @@ API.addQuestionsSet('basicDropdown', {
 	}
 });
 	
-API.addQuestionsSet('eod3',{
+API.addQuestionsSet('SoddAcc',{
 	type : 'grid',
-	name: 'eod3',
-	stem: 'Have you ever experienced discrimination, been prevented from doing something, or been hassled or made to feel inferior in any of the following situations because of your race, ethnicity, or color?', 
-                    rows: ['At School?' ,
-			   'Getting hired or getting a job?',
-			   'At work?' , 'Getting housing?' ,
-			   'Getting medical care?',
-			   'Getting service in a store or restaurant?',
-			   'Getting credit, bank loans, or a mortgage?',
-			   'On the street or in a public setting?',
-			   'From the police or in the courts?'],
-                    columns: ['Never', 'Once', 'Twice or three times', 'Four or more times']
+	name: 'SoddAcc',
+	stem: 'Utilizzando la scala sottostante, indica il tuo grado di accordo con ciascuna delle seguenti affermazioni.', 
+                    rows: [
+			    'Sono soddisfatta/o della decisione di laurearmi nel mio campo di studi' ,
+			   'Mi sento a mio agio nell’ambiente universitario e accademico del mio corso di studi',
+			   'In generale, mi piacciono le attività del mio corso di laurea',
+			   'Sono complessivamente soddisfatta/o della mia vita universitaria e accademica',
+			   'Apprezzo molto il livello di stimolazione intellettuale che trovo nei miei corsi',
+			   'Mi sento entusiasta riguardo agli argomenti trattati nel mio corso di studi',
+			   'Mi piace quello che sto imparando durante le mie lezioni'
+			   ],
+                    columns: ['Fortemente in disaccordo', 'In disaccordo', 'Né in disaccordo né in accordo', 'D'accordo', 'Fortemente d'accordo']
 	
 	});
 	
@@ -176,7 +177,7 @@ API.addPagesSet('basicPage',
 	    },
 	    {
 	        inherit:'basicPage', 
-	        questions: {inherit:'eod3'}
+	        questions: {inherit:'SoddAcc'}
 	    }
 	]);
 
