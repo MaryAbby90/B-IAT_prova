@@ -303,6 +303,19 @@ API.addQuestionsSet('basicDropdown2', {
     	}
 		}]);
 	
+	API.addQuestionsSet('multiChoice', [
+     {
+        type: 'selectMulti',
+        autoSubmit: false,
+        numericValues: true,
+        required: true,
+        help: '<%= pagesMeta.number < 100 %>',
+    	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+	    errorMsg: {
+    		required: "Per favore, rispondi a questa domanda"
+    	}
+		}]);
+	
 	API.addQuestionsSet('basicGrid',
 	{
 		type: 'grid',
@@ -688,7 +701,7 @@ API.addQuestionsSet('basicDropdown2', {
     });	
 
 	    API.addQuestionsSet('occupazione',{
-        inherit : 'singleChoice',
+        inherit : 'multiChoice',
         name: 'occupazione',
         stem: '<b>Indica la tua occupazione (puoi selezionare più risposte)</b>',
         answers: [
