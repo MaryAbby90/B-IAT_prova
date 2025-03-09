@@ -596,6 +596,7 @@ API.addPagesSet('basicPage',
 	 		questions: {inherit:'Distress'}
 	 	    }
 		]
+	    }
 	]);
 
 
