@@ -525,9 +525,10 @@ API.addQuestionsSet('basicDropdown2', {
 		decline: true,
 		required : true,
 		errorMsg: {
-			required: isTouch ? "Please select an answer, or click 'Decline'" : 
-			"Please select an answer, or click 'Decline to Answer'"
-		},
+			required: "Per favore, rispondi a questa domanda."
+		  	  },
+		help: '<%= pagesMeta.number < 100 %>',
+		helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
 		autoSubmit:true,
 		numericValues:true
 	});
