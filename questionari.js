@@ -33,6 +33,32 @@ API.addQuestionsSet('SoddAcc',{
                     columns: ['Fortemente in disaccordo', 'In disaccordo', 'Né in disaccordo né in accordo', 'D'accordo', 'Fortemente d'accordo']
 	
 	});
+
+
+API.addQuestionsSet('BPNSFS',{
+	type : 'grid',
+	name: 'BPNSFS',
+	stem: 'Utilizzando la scala sottostante, indica il tuo grado di accordo con ciascuna delle seguenti affermazioni.', 
+                    rows: [
+			    'Sono soddisfatta/o della decisione di laurearmi nel mio campo di studi' ,
+			   'Mi sento a mio agio nell’ambiente universitario e accademico del mio corso di studi',
+			   'In generale, mi piacciono le attività del mio corso di laurea',
+			   'Sono complessivamente soddisfatta/o della mia vita universitaria e accademica',
+			   'Apprezzo molto il livello di stimolazione intellettuale che trovo nei miei corsi',
+			   'Mi sento entusiasta riguardo agli argomenti trattati nel mio corso di studi',
+			   'Mi piace quello che sto imparando durante le mie lezioni'
+			   ],
+                    columns: [
+			{type:'text', textProperty:'left', css : {width:'13.5%'}},
+			{stem:'1. Completamente in disaccordo', css : {width:'7%'}},
+			{stem:'2', css : {width:'7%'}},
+			{stem:'3', css : {width:'7%'}},
+			{stem:'4', css : {width:'7%'}},
+			{stem:'5. Completamente d’accordo', css : {width:'7%'}},
+			{type:'text', textProperty:'right', css : {width:'13.5%'}}
+		],
+	
+	});
 	
 	
 API.addQuestionsSet('basicDropdown2', {
@@ -178,6 +204,10 @@ API.addPagesSet('basicPage',
 	    {
 	        inherit:'basicPage', 
 	        questions: {inherit:'SoddAcc'}
+	    },
+	    {
+	        inherit:'basicPage', 
+	        questions: {inherit:'BPNSFS'}
 	    }
 	]);
 
