@@ -414,7 +414,8 @@ API.addQuestionsSet('basicDropdown2', {
 		{
 			inherit : 'basicSelect',
 			name : 'COWS_1_1',
-			stem : 'Questo sarà interessante e importante per me provarlo'
+			stem : '<b>1. La/il tua/o docente ti ha informato dell’introduzione di nuove procedure che potrebbero aiutarti a migliorare il tuo rendimento accademico. La prima cosa che pensi è:</b></br>', + 
+				'Questo sarà interessante e importante per me provarlo'
 		},
 		{
 			inherit : 'basicSelect',
@@ -445,7 +446,7 @@ API.addPagesSet('basicPage',
 
     API.addPagesSet('basicPage2',
     {
-        header: '1. La/il tua/o docente ti ha informato dell’introduzione di nuove procedure che potrebbero aiutarti a migliorare il tuo rendimento accademico. La prima cosa che pensi è:',
+        header: '<b>Immagina di ritrovarti nelle sei situazioni sottoelencate ed indica il tuo grado di accordo con ciascuna delle seguenti affermazioni, su una scala da 1 (= Fortemente in disaccordo) a 7 (=Fortemente d’accordo).</b>',
         headerStyle : {'font-size':'1em'},
         questions : {
             mixer: 'repeat',
