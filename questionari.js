@@ -267,11 +267,11 @@ API.addQuestionsSet('Distress',{
 			   ],
                     columns: [
 			{type:'text', textProperty:'left', css : {width:'5%'}},
-			{stem:'1. Nemmeno una volta', value:0, css : {width:'12%'}},
-			{stem:'2. Poche volte', value:1, css : {width:'12%'}},
-			{stem:'3. Diverse volte', value:2, css : {width:'12%'}},
-			{stem:'4. Quasi sempre', value:3, css : {width:'12%'}},
-			{stem:'5. Sempre', value:4, css : {width:'12%'}},
+			{stem:'Nemmeno una volta', value:0, css : {width:'12%'}},
+			{stem:'Poche volte', value:1, css : {width:'12%'}},
+			{stem:'Diverse volte', value:2, css : {width:'12%'}},
+			{stem:'Quasi sempre', value:3, css : {width:'12%'}},
+			{stem:'Sempre', value:4, css : {width:'12%'}},
 			{type:'text', textProperty:'right', css : {width:'5%'}}
 			],
 	
