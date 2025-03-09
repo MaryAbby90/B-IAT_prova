@@ -26,8 +26,7 @@ API.addQuestionsSet('basicDropdown', {
 	  	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-        stem: '<b>Quanto fortemente associ il seguente concetto alla donna o all’uomo:',
-	    '<font color="red">Vittima di Discriminazione</font></b>?',
+        stem: '<b>Quanto fortemente associ il seguente concetto alla donna o all’uomo: <font color="red">Vittima di Discriminazione</font></b>?',
         answers: [
 		{text:'Fortemente all’uomo.',value:1},
 		{text:'Moderatamente all’uomo',value:2},
@@ -48,8 +47,7 @@ API.addQuestionsSet('basicDropdown', {
 	  	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-        stem: '<b>Quanto fortemente associ il seguente concetto alla donna o all’uomo:',
-	    '<font color="red">Autore di Discriminazione</font></b>?',
+        stem: '<b>Quanto fortemente associ il seguente concetto alla donna o all’uomo: <font color="red">Autore di Discriminazione</font></b>?',
         answers: [
 		{text:'Fortemente all’uomo',value:1},
 		{text:'Moderatamente all’uomo',value:2},
