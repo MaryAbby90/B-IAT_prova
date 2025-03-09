@@ -158,8 +158,7 @@ API.addPagesSet('basicPage',
 		API.addSequence([
 			//First, we present the three direct liking questions.
 			{
-				mixer : 'random', 
-				data : [
+
 						mixer : 'random', 
 						wrapper:true, 
 						data : {[
@@ -175,12 +174,13 @@ API.addPagesSet('basicPage',
 					},
 					{
 						inherit:'basicPage', 
-						questions: {inherit:'sex'}
+						questions: {inherit:'sex'
 					},
 					{
 						inherit:'basicPage', 
-						questions: {inherit:'eod3'}
+						questions: {inherit:'eod3'
 					}
+			}
 		]);
 
 
