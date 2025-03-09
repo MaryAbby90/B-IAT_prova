@@ -488,16 +488,53 @@ API.addQuestionsSet('basicDropdown2', {
 		}
 	]);	
 
-    API.addQuestionsSet('sex',{
+    API.addQuestionsSet('nazione',{
         inherit : 'singleChoice',
-        name: 'sex',
-        stem: 'Indica il tuo sesso biologico',
+        name: 'nazione',
+        stem: '<b>Indica la tua nazionalità</b>',
+        answers: [
+		{text:'Italiana',value:1},
+		{text:'Altro',value:2}
+        ]
+    });
+	
+    API.addQuestionsSet('sesso',{
+        inherit : 'singleChoice',
+        name: 'sesso',
+        stem: '<b>Indica il tuo sesso biologico</b>',
         answers: [
 		{text:'Maschio',value:1},
 		{text:'Femmina',value:2},
 		{text:'Altro',value:3}
         ]
     });
+
+    API.addQuestionsSet('genere',{
+        inherit : 'singleChoice',
+        name: 'genere',
+        stem: '<b>Indica il genere con cui ti identifichi</b>',
+        answers: [
+		{text:'Uomo',value:1},
+		{text:'Donna',value:2},
+		{text:'Non Binario',value:3},
+		{text:'Altro',value:4}
+        ]
+    });	
+
+    API.addQuestionsSet('età',{
+        inherit : 'basicDropdown',
+        name: 'età',
+        stem: '<b>Indica la tua età</b>',
+        answers: [
+			'18','19','20',
+			'21','22','23','24','25','26','27','28','29','30','31','32','33','34','35',
+            	        '36','37','38','39','40','41','42','43','44','45','46','47','48','49','50',
+            					   '51','52','53','54','55','56','57','58','59','60','61','62','63','64','65',
+            					   '66','67','68','69','70','71','72','73','74','75','76','77','78','79','80',
+            					   '81','82','83','84','85','86','87','88','89','90','91','92','93','94','95',
+            					   '96','97','98','99'
+        ]
+    });		
 	
 	/**
 	* Page prototype
@@ -548,7 +585,10 @@ API.addPagesSet('basicPage',
     });
 
 	API.addSequence([
-	
+	            {
+	               inherit:'età'							
+	            }
+		
 		{
 	        mixer : 'random', 
 	        wrapper: true, 
