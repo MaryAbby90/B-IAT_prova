@@ -65,14 +65,6 @@ define(['managerAPI',
             title: 'Questionario',
             header: 'Questionario'
         }],
-
-        demographics: [{
-            type: 'quest',
-            name: 'demographics',
-            scriptUrl: 'demographics.js',
-            title: 'Questionario',
-            header: 'Questionario'
-        }],
 	    
         debriefing: [{
             type: 'quest',
