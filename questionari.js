@@ -441,13 +441,16 @@ API.addPagesSet('basicPage',
 
     API.addPagesSet('basicPage2',
     {
-        progressBar: '<%= pagesMeta.number %> out of 4',
+        progressBar: '<%= pagesMeta.number %> out of 1',
         header: 'How positive or negative are your feelings toward the people and apples listed below?',
         headerStyle : {'font-size':'1em'},
-        questions : [
-            {inherit:'people'}, // Mostra una domanda casuale da "people"
-            {inherit:'mele'}    // Mostra una domanda casuale da "mele"
-        ],
+        questions : {
+            mixer: 'repeat',
+            data: [
+                {inherit: 'people'},  // Prende tutte le domande di "people"
+                {inherit: 'mele'}     // Prende tutte le domande di "mele"
+            ]
+	},
         v1style:2,
         decline:false,
         numbered: false
