@@ -539,9 +539,9 @@ API.addQuestionsSet('basicDropdown2', {
 		type: 'dropdown'
 	});	
 	
-	API.addQuestionsSet('età',{
+	API.addQuestionsSet('eta',{
 		inherit: 'singleChoicedrop',
-		name: 'età',
+		name: 'eta',
 		stem: '<b>Indica la tua età</b>',
 		answers: [
 			{text:'2009',value:2009},
