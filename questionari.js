@@ -77,7 +77,36 @@ API.addQuestionsSet('BPNSFS',{
 		],
 	
 	});
+
+
+API.addQuestionsSet('AspirCar',{
+	type : 'grid',
+	name: 'AspirCar',
+	required : true,
+	errorMsg: {
+		required: "Per favore, rispondi a questa domanda."
+	 	  },
+	help: '<%= pagesMeta.number < 100 %>',
+	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+	stem: ': <b>Utilizzando la scala sottostante, indica quanto sia vera o falsa per te ciascuna delle seguenti affermazioni.</b>', 
+                    rows: [
+			   'Mi piacerebbe lavorare in un settore in cui le mie competenze nelle discipline STEM siano particolarmente valorizzate',
+			   'Mi piacerebbe lavorare in un ambiente in cui le competenze STEM siano fondamentali per il successo professionale',
+			   'Sto considerando una carriera nel campo delle STEM',
+			   ],
+                    columns: [
+			{type:'text', textProperty:'left', css : {width:'13.5%'}},
+			{stem:'1. Per niente vero', css : {width:'7%'}},
+			{stem:'2.', css : {width:'7%'}},
+			{stem:'3.', css : {width:'7%'}},
+			{stem:'4.', css : {width:'7%'}},
+			{stem:'5.', css : {width:'7%'}},
+			{stem:'6.', css : {width:'7%'}},
+			{stem:'7. Completamente vero', css : {width:'7%'}},
+			{type:'text', textProperty:'right', css : {width:'13.5%'}}
+		],
 	
+	});	
 	
 API.addQuestionsSet('basicDropdown2', {
     type: 'dropdown',
@@ -226,6 +255,10 @@ API.addPagesSet('basicPage',
 	    {
 	        inherit:'basicPage', 
 	        questions: {inherit:'BPNSFS'}
+	    },
+	    {
+	        inherit:'basicPage', 
+	        questions: {inherit:'AspirCar'}
 	    }
 	]);
 
