@@ -213,11 +213,11 @@ API.addQuestionsSet('AspettCarr',{
 			   ],
                     columns: [
 			{type:'text', textProperty:'left', css : {width:'5%'}},
-			{stem:'1. Fortemente in disaccordo', css : {width:'7%'}},
-			{stem:'2.', css : {width:'7%'}},
-			{stem:'3.', css : {width:'7%'}},
-			{stem:'4.', css : {width:'7%'}},
-			{stem:'5. Fortemente d’accordo', css : {width:'7%'}},
+			{stem:'1. Fortemente in disaccordo', css : {width:'12%'}},
+			{stem:'2.', css : {width:'12%'}},
+			{stem:'3.', css : {width:'12%'}},
+			{stem:'4.', css : {width:'12%'}},
+			{stem:'5. Fortemente d’accordo', css : {width:'12%'}},
 			{type:'text', textProperty:'right', css : {width:'5%'}}
 			],
 	
@@ -244,11 +244,11 @@ API.addQuestionsSet('Resilienza',{
 			   ],
                     columns: [
 			{type:'text', textProperty:'left', css : {width:'5%'}},
-			{stem:'1. Forte disaccordo', css : {width:'7%'}},
-			{stem:'2. Disaccordo', css : {width:'7%'}},
-			{stem:'3. Indifferente', css : {width:'7%'}},
-			{stem:'4. D’accordo', css : {width:'7%'}},
-			{stem:'5. Molto d’accordo', css : {width:'7%'}},
+			{stem:'1. Forte disaccordo', css : {width:'12%'}},
+			{stem:'2. Disaccordo', css : {width:'12%'}},
+			{stem:'3. Indifferente', css : {width:'12%'}},
+			{stem:'4. D’accordo', css : {width:'12%'}},
+			{stem:'5. Molto d’accordo', css : {width:'12%'}},
 			{type:'text', textProperty:'right', css : {width:'5%'}}
 			],
 	
@@ -414,7 +414,7 @@ API.addQuestionsSet('basicDropdown2', {
 		{
 			inherit : 'basicSelect',
 			name : 'COWS_1_1',
-			stem : '<b>1. La/il tua/o docente ti ha informato dell’introduzione di nuove procedure che potrebbero aiutarti a migliorare il tuo rendimento accademico. La prima cosa che pensi è:</b><br/>' + 
+			stem : '<b>1. La/il tua/o docente ti ha informato dell’introduzione di nuove procedure che potrebbero aiutarti a migliorare il tuo rendimento accademico. La prima cosa che pensi è:</b><br/><br/>' + 
 				'Questo sarà interessante e importante per me provarlo'
 		},
 		{
@@ -447,7 +447,7 @@ API.addPagesSet('basicPage',
     API.addPagesSet('basicPage2',
     {
         header: '<b>Immagina di ritrovarti nelle sei situazioni sottoelencate ed indica il tuo grado di accordo con ciascuna delle seguenti affermazioni, su una scala da 1 (= Fortemente in disaccordo) a 7 (=Fortemente d’accordo).</b>',
-        headerStyle : {'font-size':'1em'},
+        headerStyle : {'font-size':'2em'},
         questions : {
             mixer: 'repeat',
 	    times : 3,
