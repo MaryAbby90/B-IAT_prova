@@ -446,7 +446,7 @@ API.addPagesSet('basicPage',
             mixer: 'repeat',
 	    times : 3,
             data: [
-                {inherit: {set: 'people'}}
+                {inherit: {set: 'COWS'}}
             ]
 	},
         v1style:2,
