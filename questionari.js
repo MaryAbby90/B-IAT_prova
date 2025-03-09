@@ -50,15 +50,21 @@ API.addQuestionsSet('BPNSFS',{
 	 	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	stem: 'Utilizzando la scala sottostante, indica il tuo grado di accordo con ciascuna delle seguenti affermazioni.', 
+	stem: '<b>Di seguito sono riportate delle affermazioni che si riferiscono a sentimenti vissuti nella propria vita. Leggi ciascuna affermazione con attenzione.',
+	'Puoi rispondere scegliendo un numero da 1=(Completamente in disaccordo) a 5=(Completamente d’accordo) per indicare il grado d’accordo a ciascuna affermazione in riferimento a come ti senti <font color="red"><i>nel tuo contesto universitario.</i></font></b>', 
                     rows: [
-			    'Sono soddisfatta/o della decisione di laurearmi nel mio campo di studi' ,
-			   'Mi sento a mio agio nell’ambiente universitario e accademico del mio corso di studi',
-			   'In generale, mi piacciono le attività del mio corso di laurea',
-			   'Sono complessivamente soddisfatta/o della mia vita universitaria e accademica',
-			   'Apprezzo molto il livello di stimolazione intellettuale che trovo nei miei corsi',
-			   'Mi sento entusiasta riguardo agli argomenti trattati nel mio corso di studi',
-			   'Mi piace quello che sto imparando durante le mie lezioni'
+			   'Sento un senso di possibilità di scelta e di libertà nelle cose in cui mi impegno',
+			   'La maggior parte delle cose faccio, le faccio perché "le devo fare"',
+			   'Mi sento fiduciosa/o di poter fare le cose bene',
+			   'Mi sento delusa/o da molte delle mie prestazioni',
+			   'Mi sento in sintonia con le persone che si prendono cura di me e alle quali tengo',
+			   'Sento che le persone che sono importanti per me sono fredde e distanti nei miei confronti',
+			   'Sento che le mie decisioni rispecchiano quello che voglio veramente',
+			   'Mi sento costretta/o a fare molte cose che io non avrei scelto di fare',
+			   'Mi sento competente per raggiungere i miei obiettivi',
+			   'Mi sento insicura/o delle mie capacità',
+			   'Provo un sentimento di calore con le persone con cui passo il mio tempo',
+			   'Mi sento esclusa/o dal gruppo a cui vorrei appartenere',
 			   ],
                     columns: [
 			{type:'text', textProperty:'left', css : {width:'13.5%'}},
@@ -155,7 +161,7 @@ API.addQuestionsSet('basicDropdown2', {
     API.addQuestionsSet('vittima',{
         inherit : 'singleChoice',
         name: 'vittima',
-        stem: 'Quanto fortemente associ il seguente concetto alla donna o all’uomo: <font color="red"><i>Vittima di Discriminazione</i></font></b>?',
+        stem: '<b>Quanto fortemente associ il seguente concetto alla donna o all’uomo: <font color="red"><i>Vittima di Discriminazione</i></font></b>?',
         answers: [
 		{text:'Fortemente all’uomo.',value:1},
 		{text:'Moderatamente all’uomo',value:2},
@@ -170,7 +176,7 @@ API.addQuestionsSet('basicDropdown2', {
     API.addQuestionsSet('autore',{
         inherit : 'singleChoice',
         name: 'autore',
-        stem: 'Quanto fortemente associ il seguente concetto alla donna o all’uomo: <font color="red"><i>Autore di Discriminazione</i></font></b>?',
+        stem: '<b>Quanto fortemente associ il seguente concetto alla donna o all’uomo: <font color="red"><i>Autore di Discriminazione</i></font></b>?',
         answers: [
 		{text:'Fortemente all’uomo.',value:1},
 		{text:'Moderatamente all’uomo',value:2},
