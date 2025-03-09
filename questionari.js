@@ -151,13 +151,13 @@ API.addQuestionsSet('SoddAcc',{
 			   'Mi piace quello che sto imparando durante le mie lezioni'
 			   ],
                     columns: [
-			{type:'text', textProperty:'left', css : {width:'13.5%'}},
+			{type:'text', textProperty:'left', css : {width:'20%'}},
 			{stem:'1. Fortemente in disaccordo', css : {width:'12%'}},
 			{stem:'2. In disaccordo', css : {width:'12%'}},
 			{stem:'3. Né in disaccordo né in accordo', css : {width:'12%'}},
 			{stem:'4. D’accordo', css : {width:'12%'}},
 			{stem:'5. Fortemente d’accordo', css : {width:'12%'}},
-			{type:'text', textProperty:'right', css : {width:'13.5%'}}
+			{type:'text', textProperty:'right', css : {width:'2%'}}
 		],
 	});
 	
