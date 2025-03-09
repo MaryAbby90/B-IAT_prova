@@ -3,19 +3,6 @@ define(['questAPI'], function(Quest){
 
 	// ### Questions
 	// Create the template
-API.addQuestionsSet('basicDropdown', {
-    type: 'selectOne',
-    style: 'multiButtons',
-    minWidth: '150px',
-    autoSubmit: true,
-    numericValues: true,
-    required:true,
-    help: '<%= pagesMeta.number < 100 %>',
-	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	errorMsg: {
-		required: "Per favore, rispondi a questa domanda"
-	}
-});
 
     API.addQuestionsSet('vittima',{
         inherit : 'singleChoice',
