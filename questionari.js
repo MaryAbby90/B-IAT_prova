@@ -386,6 +386,43 @@ API.addQuestionsSet('basicDropdown2', {
         ]
     });
 
+    API.addQuestionsSet('basicSelect',
+    {
+        type: 'selectOne',
+        autoSubmit:false,
+        numericValues:true,
+        required:false,
+        style:'multiButtons',
+        answers : [
+            '1 - Extremely negative',
+            '2',
+            '3',
+            '4',
+            '5',
+            '6',
+            '7',
+            '8',
+            '9 - Extremely positive'
+        ]
+    });
+
+    // Set di domande per "people"
+    API.addQuestionsSet('people',
+    [
+        { inherit : 'basicSelect', name : 'Obama', stem : 'Barack Obama' },
+        { inherit : 'basicSelect', name : 'Beyonce', stem : 'Beyonce Knowles' },
+        { inherit : 'basicSelect', name : 'Colbert', stem : 'Stephen Colbert' },
+        { inherit : 'basicSelect', name : 'Letterman', stem : 'David Letterman' }
+    ]);
+
+    // Set di domande per "mele"
+    API.addQuestionsSet('mele',
+    [
+        { inherit : 'basicSelect', name : 'Fuji', stem : 'Mela Fuji' },
+        { inherit : 'basicSelect', name : 'GrannySmith', stem : 'Mela Granny Smith' },
+        { inherit : 'basicSelect', name : 'Gala', stem : 'Mela Gala' },
+        { inherit : 'basicSelect', name : 'Honeycrisp', stem : 'Mela Honeycrisp' }
+    ]);
 	
 
 
@@ -402,7 +439,23 @@ API.addPagesSet('basicPage',
 	submitText: "Invia"
 });
 
+    API.addPagesSet('basicPage2',
+    {
+        progressBar: '<%= pagesMeta.number %> out of 4',
+        header: 'How positive or negative are your feelings toward the people and apples listed below?',
+        headerStyle : {'font-size':'1em'},
+        questions : [
+            {inherit:{set:'people', type:'exRandom'}}, // Mostra una domanda casuale da "people"
+            {inherit:{set:'mele', type:'exRandom'}}    // Mostra una domanda casuale da "mele"
+        ],
+        v1style:2,
+        decline:false,
+        numbered: false
+    });
+
 	API.addSequence([
+
+	{inherit : 'basicPage2'},
 	    {
 	        mixer : 'random', 
 	        wrapper: true, 
