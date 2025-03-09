@@ -697,7 +697,7 @@ API.addPagesSet('basicPage',
 
 	API.addSequence([
 	            {
-	               inherit:'età'							
+	               inherit:'eta'							
 	            },
 		{
 	        mixer : 'random', 
