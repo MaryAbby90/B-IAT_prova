@@ -164,9 +164,6 @@ define(['managerAPI',
             ]
     },
     {
-        inherit: 'demographics'
-    },    
-    {
         inherit: 'questionari'
     },
 	    /*
