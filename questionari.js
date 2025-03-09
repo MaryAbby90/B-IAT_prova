@@ -407,7 +407,7 @@ API.addQuestionsSet('basicDropdown2', {
         ]
     });
 
-	API.addQuestionsSet('COWS',
+	API.addQuestionsSet('COWS_1',
 	[
 		{
 			inherit : 'basicSelect',
@@ -427,8 +427,106 @@ API.addQuestionsSet('basicDropdown2', {
 		}
 	]);
 	
+	API.addQuestionsSet('COWS_2',
+	[
+		{
+			inherit : 'basicSelect',
+			name : 'COWS_2_1',
+			stem : '<b>2. La/il tua/o docente desidera che tu sia più autonoma/o e indipendente nello studio. La prima cosa che probabilmente penserai sarà:</b><br/><br/>' + 
+				'Sarà importante per me mettermi alla prova per vedere se funziona'
+		},
+		{
+			inherit : 'basicSelect',
+			name : 'COWS_2_2',
+			stem : 'Sentirò la pressione di seguire ciò che mi dice la/il mia/o docente'
+		},
+		{
+			inherit : 'basicSelect',
+			name : 'COWS_2_3',
+			stem : 'È difficile cambiare su aspetti come l’indipendenza, sono fatta/o così'
+		}
+	]);
 
+	API.addQuestionsSet('COWS_3',
+	[
+		{
+			inherit : 'basicSelect',
+			name : 'COWS_3_1',
+			stem : '<b>3. La/il tua/o docente ti ha chiesto di affrontare la questione del tuo interesse per lo studio, che ultimamente sembra essere un po’ calato. Probabilmente penserai/sentirai:</b><br/><br/>' + 
+				'Vorrei parlare con la/il mia/o docente per cercare insieme una soluzione adeguata'
+		},
+		{
+			inherit : 'basicSelect',
+			name : 'COWS_3_2',
+			stem : 'Mi sentirò sotto pressione per fare qualcosa che soddisfi la/il mia/o docente'
+		},
+		{
+			inherit : 'basicSelect',
+			name : 'COWS_3_3',
+			stem : 'Onestamente, penso di non poter realmente cambiare il mio interesse di base per lo studio'
+		}
+	]);
 
+	API.addQuestionsSet('COWS_4',
+	[
+		{
+			inherit : 'basicSelect',
+			name : 'COWS_4_1',
+			stem : '<b>4. La/il tua/o docente ti ha chiesto di frequentare un corso per migliorare le tue competenze accademiche. Probabilmente penserai/sentirai:</b><br/><br/>' + 
+				'Penso che potrebbe essere interessante e stimolante'
+		},
+		{
+			inherit : 'basicSelect',
+			name : 'COWS_4_2',
+			stem : 'Mi sentirò sotto pressione per farlo e soddisfare le aspettative della/del mia/o docente'
+		},
+		{
+			inherit : 'basicSelect',
+			name : 'COWS_4_3',
+			stem : 'Ritengo di avere già una certa competenza, e non c’è molto che io possa fare per migliorarla'
+		}
+	]);
+
+	API.addQuestionsSet('COWS_5',
+	[
+		{
+			inherit : 'basicSelect',
+			name : 'COWS_5_1',
+			stem : '<b>5. La/il tua/o docente ti ha suggerito di lavorare con una/o studentessa/e più esperta/o per migliorare le tue competenze. Probabilmente penserai o sentirai:</b><br/><br/>' + 
+				'Ritengo che questa possa essere un’opportunità importante per me'
+		},
+		{
+			inherit : 'basicSelect',
+			name : 'COWS_5_2',
+			stem : 'Mi sentirò sotto pressione a farlo per adempiere ai miei incarichi di studio'
+		},
+		{
+			inherit : 'basicSelect',
+			name : 'COWS_5_3',
+			stem : 'A dire il vero, penso di non essere in grado di cambiare significativamente il mio livello di competenza'
+		}
+	]);
+
+	API.addQuestionsSet('COWS_6',
+	[
+		{
+			inherit : 'basicSelect',
+			name : 'COWS_6_1',
+			stem : '<b>6. La/il tua/o docente ti ha chiesto di collaborare di più con i tuoi colleghi di corso. Probabilmente penserai, sentirai o farai:</b><br/><br/>' + 
+				'Mi impegnerò a individuare con chi collaborare e li contatterò'
+		},
+		{
+			inherit : 'basicSelect',
+			name : 'COWS_6_2',
+			stem : 'Avvertirò la pressione di dover collaborare su qualcosa che preferirei affrontare da sola/o'
+		},
+		{
+			inherit : 'basicSelect',
+			name : 'COWS_6_3',
+			stem : 'Sento che, onestamente, non posso fare molto per modificare il mio atteggiamento sociale'
+		}
+	]);	
+	
 	/**
 	* Page prototype
 	*/
@@ -451,7 +549,12 @@ API.addPagesSet('basicPage',
             mixer: 'repeat',
 	    times : 3,
             data: [
-                {inherit: {set: 'COWS', type:'sequential'}}
+                {inherit: {set: 'COWS_1', type:'sequential'}},
+		{inherit: {set: 'COWS_2', type:'sequential'}},
+		{inherit: {set: 'COWS_3', type:'sequential'}},
+		{inherit: {set: 'COWS_4', type:'sequential'}},
+	        {inherit: {set: 'COWS_5', type:'sequential'}},
+		{inherit: {set: 'COWS_6', type:'sequential'}}
             ]
 	},
         v1style:2,
