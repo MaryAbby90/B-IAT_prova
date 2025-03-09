@@ -519,7 +519,7 @@ API.addPagesSet('basicPage',
 	submitText: "Invia",
         questions : {
             mixer: 'repeat',
-	    times : 3,
+	    times : 18,
             data: [
                 {inherit: {set: 'COWS_1', type:'sequential'}},
 		{inherit: {set: 'COWS_2', type:'sequential'}},
