@@ -17,6 +17,20 @@ API.addQuestionsSet('basicDropdown', {
 	}
 });
 
+API.addQuestionsSet('required_true', {
+    type: 'selectOne',
+    style: 'multiButtons',
+    minWidth: '150px',
+    autoSubmit: true,
+    numericValues: true,
+    required:true,
+    help: '<%= pagesMeta.number < 100 %>',
+	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+	errorMsg: {
+		required: "Per favore, rispondi a questa domanda"
+	}
+});
+
     API.addQuestionsSet('vittima',{
         inherit : 'singleChoice',
         name: 'vittima',
@@ -449,6 +463,7 @@ API.addPagesSet('basicPage',
         header: '<b>Immagina di ritrovarti nelle sei situazioni sottoelencate ed indica il tuo grado di accordo con ciascuna delle seguenti affermazioni, su una scala da 1 (= Fortemente in disaccordo) a 7 (=Fortemente d’accordo).</b>',
         headerStyle : {'font-size':'1.5em'},
 	submitText: "Invia",
+	inherit: 'required_true',
         questions : {
             mixer: 'repeat',
 	    times : 3,
