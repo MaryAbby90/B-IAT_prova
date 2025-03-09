@@ -51,9 +51,9 @@ API.addQuestionsSet('BPNSFS',{
                     columns: [
 			{type:'text', textProperty:'left', css : {width:'13.5%'}},
 			{stem:'1. Completamente in disaccordo', css : {width:'7%'}},
-			{stem:'2', css : {width:'7%'}},
-			{stem:'3', css : {width:'7%'}},
-			{stem:'4', css : {width:'7%'}},
+			{stem:'2.', css : {width:'7%'}},
+			{stem:'3.', css : {width:'7%'}},
+			{stem:'4.', css : {width:'7%'}},
 			{stem:'5. Completamente d’accordo', css : {width:'7%'}},
 			{type:'text', textProperty:'right', css : {width:'13.5%'}}
 		],
