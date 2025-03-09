@@ -104,8 +104,8 @@ API.addQuestionsSet('BPNSFS',{
 	 	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	stem: '<b>Di seguito sono riportate delle affermazioni che si riferiscono a sentimenti vissuti nella propria vita. Leggi ciascuna affermazione con attenzione.',
-	'Puoi rispondere scegliendo un numero da 1=(Completamente in disaccordo) a 5=(Completamente d’accordo) per indicare il grado d’accordo a ciascuna affermazione in riferimento a come ti senti <font color="red"><i>nel tuo contesto universitario.</i></font></b>', 
+	stem: '<p><b>Di seguito sono riportate delle affermazioni che si riferiscono a sentimenti vissuti nella propria vita. Leggi ciascuna affermazione con attenzione.</b></p>', +
+	'<p><b>Puoi rispondere scegliendo un numero da 1=(Completamente in disaccordo) a 5=(Completamente d’accordo) per indicare il grado d’accordo a ciascuna affermazione in riferimento a come ti senti <font color="red"><i>nel tuo contesto universitario.</i></font></b></p>', 
                     rows: [
 			   'Sento un senso di possibilità di scelta e di libertà nelle cose in cui mi impegno',
 			   'La maggior parte delle cose faccio, le faccio perché "le devo fare"',
@@ -141,7 +141,7 @@ API.addQuestionsSet('SoddAcc',{
 	  	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	stem: 'Utilizzando la scala sottostante, indica il tuo grado di accordo con ciascuna delle seguenti affermazioni.', 
+	stem: '<b>Utilizzando la scala sottostante, indica il tuo grado di accordo con ciascuna delle seguenti affermazioni.</b>', 
                     rows: [
 			   'Sono soddisfatta/o della decisione di laurearmi nel mio campo di studi' ,
 			   'Mi sento a mio agio nell’ambiente universitario e accademico del mio corso di studi',
