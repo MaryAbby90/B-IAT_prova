@@ -697,7 +697,8 @@ API.addPagesSet('basicPage',
 
 	API.addSequence([
 	            {
-	               inherit:'eta'							
+		       inherit:'basicPage', 
+	               questions: {inherit:'eta'}							
 	            },
 		{
 	        mixer : 'random', 
