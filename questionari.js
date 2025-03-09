@@ -51,7 +51,7 @@ API.addQuestionsSet('basicDropdown', {
         stem: '<b>Quanto fortemente associ il seguente concetto alla donna o all’uomo:',
 	    '<font color="red">Autore di Discriminazione</font></b>?',
         answers: [
-		{text:'Fortemente all’uomo.',value:1},
+		{text:'Fortemente all’uomo',value:1},
 		{text:'Moderatamente all’uomo',value:2},
 		{text:'Leggermente all’uomo',value:3},
 		{text:'Né all’uomo né alla donna',value:4},
@@ -145,7 +145,7 @@ API.addQuestionsSet('SoddAcc',{
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
 	stem: 'Utilizzando la scala sottostante, indica il tuo grado di accordo con ciascuna delle seguenti affermazioni.', 
                     rows: [
-			    'Sono soddisfatta/o della decisione di laurearmi nel mio campo di studi' ,
+			   'Sono soddisfatta/o della decisione di laurearmi nel mio campo di studi' ,
 			   'Mi sento a mio agio nell’ambiente universitario e accademico del mio corso di studi',
 			   'In generale, mi piacciono le attività del mio corso di laurea',
 			   'Sono complessivamente soddisfatta/o della mia vita universitaria e accademica',
@@ -153,8 +153,15 @@ API.addQuestionsSet('SoddAcc',{
 			   'Mi sento entusiasta riguardo agli argomenti trattati nel mio corso di studi',
 			   'Mi piace quello che sto imparando durante le mie lezioni'
 			   ],
-                    columns: ['Fortemente in disaccordo', 'In disaccordo', 'Né in disaccordo né in accordo', 'D’accordo', 'Fortemente d’accordo']
-	
+                    columns: [
+			{type:'text', textProperty:'left', css : {width:'13.5%'}},
+			{stem:'1. Fortemente in disaccordo', css : {width:'7%'}},
+			{stem:'2. In disaccordo', css : {width:'7%'}},
+			{stem:'3. Né in disaccordo né in accordo', css : {width:'7%'}},
+			{stem:'4. D’accordo', css : {width:'7%'}},
+			{stem:'5. Fortemente d’accordo', css : {width:'7%'}},
+			{type:'text', textProperty:'right', css : {width:'13.5%'}}
+		],
 	});
 	
 API.addQuestionsSet('AspirCar',{
@@ -205,17 +212,75 @@ API.addQuestionsSet('AspettCarr',{
 			   ],
                     columns: [
 			{type:'text', textProperty:'left', css : {width:'13.5%'}},
-			{stem:'1. Completamente in disaccordo', css : {width:'7%'}},
+			{stem:'1. Fortemente in disaccordo', css : {width:'7%'}},
 			{stem:'2.', css : {width:'7%'}},
 			{stem:'3.', css : {width:'7%'}},
 			{stem:'4.', css : {width:'7%'}},
-			{stem:'5. Completamente d’accordo', css : {width:'7%'}},
+			{stem:'5. Fortemente d’accordo', css : {width:'7%'}},
 			{type:'text', textProperty:'right', css : {width:'13.5%'}}
 		],
 	
 	});	
 
+API.addQuestionsSet('Resilienza',{
+	type : 'grid',
+	name: 'Resilienza',
+	required : true,
+	errorMsg: {
+		required: "Per favore, rispondi a questa domanda."
+	 	  },
+	help: '<%= pagesMeta.number < 100 %>',
+	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+	stem: '<b>Utilizzando la scala sottostante, indica quanto sia vera o falsa per te ciascuna delle seguenti affermazioni.</b>', 
+                    rows: [
+			   'Tendo a riprendermi in fretta dopo periodi difficili',
+			   'Ho difficoltà a “farcela” dopo eventi stressanti',
+			   'Non mi ci vuole molto per recuperare da un evento stressante',
+			   'È difficile per me ripartire subito quando succede qualcosa di brutto',
+			   'Di solito ho attraversato momenti difficili con poca fatica',
+			   'Mi serve molto tempo per superare battute d’arresto nella mia vita',
+			   ],
+                    columns: [
+			{type:'text', textProperty:'left', css : {width:'13.5%'}},
+			{stem:'1. Forte disaccordo', css : {width:'7%'}},
+			{stem:'2. Disaccordo', css : {width:'7%'}},
+			{stem:'3. Indifferente', css : {width:'7%'}},
+			{stem:'4. D’accordo', css : {width:'7%'}},
+			{stem:'5. Molto d’accordo', css : {width:'7%'}},
+			{type:'text', textProperty:'right', css : {width:'13.5%'}}
+		],
+	
+	});	
 
+API.addQuestionsSet('Distress',{
+	type : 'grid',
+	name: 'Distress',
+	required : true,
+	errorMsg: {
+		required: "Per favore, rispondi a questa domanda."
+	 	  },
+	help: '<%= pagesMeta.number < 100 %>',
+	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+	stem: '<b>Utilizzando la scala sottostante, indica quanto sia vera o falsa per te ciascuna delle seguenti affermazioni.</b>', 
+                    rows: [
+			   'Tendo a riprendermi in fretta dopo periodi difficili',
+			   'Ho difficoltà a “farcela” dopo eventi stressanti',
+			   'Non mi ci vuole molto per recuperare da un evento stressante',
+			   'È difficile per me ripartire subito quando succede qualcosa di brutto',
+			   'Di solito ho attraversato momenti difficili con poca fatica',
+			   'Mi serve molto tempo per superare battute d’arresto nella mia vita',
+			   ],
+                    columns: [
+			{type:'text', textProperty:'left', css : {width:'13.5%'}},
+			{stem:'1. Forte disaccordo', value:0, css : {width:'7%'}},
+			{stem:'2. Disaccordo', value:1, css : {width:'7%'}},
+			{stem:'3. Indifferente', value:2, css : {width:'7%'}},
+			{stem:'4. D’accordo', value:3, css : {width:'7%'}},
+			{stem:'5. Molto d’accordo', value:4, css : {width:'7%'}},
+			{type:'text', textProperty:'right', css : {width:'13.5%'}}
+		],
+	
+	});	
 	
 API.addQuestionsSet('basicDropdown2', {
     type: 'dropdown',
