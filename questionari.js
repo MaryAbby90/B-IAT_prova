@@ -540,7 +540,7 @@ API.addQuestionsSet('basicDropdown2', {
 	});	
 	
 	API.addQuestionsSet('eta',{
-		inherit: 'basicDropdown',
+		inherit: 'basicDropdown2',
 		name: 'eta',
 		stem: '<b>Indica la tua età</b>',
 		answers: [
