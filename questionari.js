@@ -254,7 +254,7 @@ API.addQuestionsSet('Resilienza',{
 	
 	});	
 
-API.addQuestionsSet('COWS',{
+/* API.addQuestionsSet('COWS',{
 	type : 'grid',
 	name: 'COWS',
 	checkboxType : 'colorMark',
@@ -282,7 +282,7 @@ API.addQuestionsSet('COWS',{
 			{type:'text', textProperty:'right', css : {width:'5%'}}
 			],
 	
-	});	
+	});	*/
 
 API.addQuestionsSet('Distress',{
 	type : 'grid',
@@ -391,38 +391,37 @@ API.addQuestionsSet('basicDropdown2', {
         type: 'selectOne',
         autoSubmit:false,
         numericValues:true,
-        required:false,
+        required:true,
         style:'multiButtons',
         answers : [
-            '1 - Extremely negative',
+            '1 - Fortemente in disaccordo',
             '2',
             '3',
             '4',
             '5',
             '6',
-            '7',
-            '8',
-            '9 - Extremely positive'
+            '7 - Fortemente d'accordo'
         ]
     });
 
-    // Set di domande per "people"
-    API.addQuestionsSet('people',
-    [
-        { inherit : 'basicSelect', name : 'Obama', stem : 'Barack Obama' },
-        { inherit : 'basicSelect', name : 'Beyonce', stem : 'Beyonce Knowles' },
-        { inherit : 'basicSelect', name : 'Colbert', stem : 'Stephen Colbert' },
-        { inherit : 'basicSelect', name : 'Letterman', stem : 'David Letterman' }
-    ]);
-
-    // Set di domande per "mele"
-    API.addQuestionsSet('mele',
-    [
-        { inherit : 'basicSelect', name : 'Fuji', stem : 'Mela Fuji' },
-        { inherit : 'basicSelect', name : 'GrannySmith', stem : 'Mela Granny Smith' },
-        { inherit : 'basicSelect', name : 'Gala', stem : 'Mela Gala' },
-        { inherit : 'basicSelect', name : 'Honeycrisp', stem : 'Mela Honeycrisp' }
-    ]);
+	API.addQuestionsSet('COWS',
+	[
+		{
+			inherit : 'basicSelect',
+			name : 'COWS_1_1',
+			stem : 'Questo sarà interessante e importante per me provarlo'
+		},
+		{
+			inherit : 'basicSelect',
+			name : 'COWS_1_2',
+			stem : 'Sentirò la pressione di dover fare come dice la/il mia/o docente'
+		},
+		{
+			inherit : 'basicSelect',
+			name : 'COWS_1_3',
+			stem : 'Probabilmente sarà inutile per me farlo'
+		}
+	]);
 	
 
 
@@ -441,14 +440,13 @@ API.addPagesSet('basicPage',
 
     API.addPagesSet('basicPage2',
     {
-        progressBar: '<%= pagesMeta.number %> out of 1',
-        header: 'How positive or negative are your feelings toward the people and apples listed below?',
+        header: '1. La/il tua/o docente ti ha informato dell’introduzione di nuove procedure che potrebbero aiutarti a migliorare il tuo rendimento accademico. La prima cosa che pensi è:',
         headerStyle : {'font-size':'1em'},
         questions : {
             mixer: 'repeat',
+	    times : 3,
             data: [
-                {inherit: 'people'},  // Prende tutte le domande di "people"
-                {inherit: 'mele'}     // Prende tutte le domande di "mele"
+                {inherit: {set: 'people'}}
             ]
 	},
         v1style:2,
