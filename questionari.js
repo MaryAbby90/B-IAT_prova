@@ -61,6 +61,24 @@ API.addQuestionsSet('basicDropdown', {
         ]
     });
 
+	API.addQuestionsSet('DiscriminazioneGruppo',{
+	inherit : 'singleChoice',
+	name: 'DiscriminazioneGruppo',
+	required : true,
+	errorMsg: {
+		required: "Per favore, rispondi a questa domanda."
+	  	  },
+	help: '<%= pagesMeta.number < 100 %>',
+	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+	stem: '<b>Quanto spesso ritieni che le donne siano discriminate a causa del loro genere?</b>',
+	answers: [
+		{text:'Mai',value: 1},
+		{text:'Raramente',value: 2},
+		{text:'Qualche volta',value: 3},
+		{text:'Spesso',value: 4}
+		]
+	});
+	
 	API.addQuestionsSet('DiscriminazioneIndividuale',{
 	inherit : 'singleChoice',
 	name: 'DiscriminazioneIndividuale',
@@ -78,30 +96,6 @@ API.addQuestionsSet('basicDropdown', {
 		{text:'Spesso',value: 4}
 		]
 	});
-	
-API.addQuestionsSet('SoddAcc',{
-	type : 'grid',
-	name: 'SoddAcc',
-	required : true,
-	errorMsg: {
-		required: "Per favore, rispondi a questa domanda."
-	  	  },
-	help: '<%= pagesMeta.number < 100 %>',
-	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	stem: 'Utilizzando la scala sottostante, indica il tuo grado di accordo con ciascuna delle seguenti affermazioni.', 
-                    rows: [
-			    'Sono soddisfatta/o della decisione di laurearmi nel mio campo di studi' ,
-			   'Mi sento a mio agio nell’ambiente universitario e accademico del mio corso di studi',
-			   'In generale, mi piacciono le attività del mio corso di laurea',
-			   'Sono complessivamente soddisfatta/o della mia vita universitaria e accademica',
-			   'Apprezzo molto il livello di stimolazione intellettuale che trovo nei miei corsi',
-			   'Mi sento entusiasta riguardo agli argomenti trattati nel mio corso di studi',
-			   'Mi piace quello che sto imparando durante le mie lezioni'
-			   ],
-                    columns: ['Fortemente in disaccordo', 'In disaccordo', 'Né in disaccordo né in accordo', 'D’accordo', 'Fortemente d’accordo']
-	
-	});
-
 
 API.addQuestionsSet('BPNSFS',{
 	type : 'grid',
@@ -140,7 +134,29 @@ API.addQuestionsSet('BPNSFS',{
 	
 	});
 
-
+API.addQuestionsSet('SoddAcc',{
+	type : 'grid',
+	name: 'SoddAcc',
+	required : true,
+	errorMsg: {
+		required: "Per favore, rispondi a questa domanda."
+	  	  },
+	help: '<%= pagesMeta.number < 100 %>',
+	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+	stem: 'Utilizzando la scala sottostante, indica il tuo grado di accordo con ciascuna delle seguenti affermazioni.', 
+                    rows: [
+			    'Sono soddisfatta/o della decisione di laurearmi nel mio campo di studi' ,
+			   'Mi sento a mio agio nell’ambiente universitario e accademico del mio corso di studi',
+			   'In generale, mi piacciono le attività del mio corso di laurea',
+			   'Sono complessivamente soddisfatta/o della mia vita universitaria e accademica',
+			   'Apprezzo molto il livello di stimolazione intellettuale che trovo nei miei corsi',
+			   'Mi sento entusiasta riguardo agli argomenti trattati nel mio corso di studi',
+			   'Mi piace quello che sto imparando durante le mie lezioni'
+			   ],
+                    columns: ['Fortemente in disaccordo', 'In disaccordo', 'Né in disaccordo né in accordo', 'D’accordo', 'Fortemente d’accordo']
+	
+	});
+	
 API.addQuestionsSet('AspirCar',{
 	type : 'grid',
 	name: 'AspirCar',
@@ -198,6 +214,8 @@ API.addQuestionsSet('AspettCarr',{
 		],
 	
 	});	
+
+
 	
 API.addQuestionsSet('basicDropdown2', {
     type: 'dropdown',
