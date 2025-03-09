@@ -30,7 +30,7 @@ API.addQuestionsSet('SoddAcc',{
 			   'Mi sento entusiasta riguardo agli argomenti trattati nel mio corso di studi',
 			   'Mi piace quello che sto imparando durante le mie lezioni'
 			   ],
-                    columns: ['Fortemente in disaccordo', 'In disaccordo', 'Né in disaccordo né in accordo', 'D'accordo', 'Fortemente d'accordo']
+                    columns: ['Fortemente in disaccordo', 'In disaccordo', 'Né in disaccordo né in accordo', 'D’accordo', 'Fortemente d’accordo']
 	
 	});
 
