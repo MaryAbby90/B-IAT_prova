@@ -16,6 +16,68 @@ API.addQuestionsSet('basicDropdown', {
 		required: "Per favore, rispondi a questa domanda"
 	}
 });
+
+    API.addQuestionsSet('vittima',{
+        inherit : 'singleChoice',
+        name: 'vittima',
+	required : true,
+	errorMsg: {
+		required: "Per favore, rispondi a questa domanda."
+	  	  },
+	help: '<%= pagesMeta.number < 100 %>',
+	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+        stem: '<b>Quanto fortemente associ il seguente concetto alla donna o all’uomo:',
+	    '<font color="red">Vittima di Discriminazione</font></b>?',
+        answers: [
+		{text:'Fortemente all’uomo.',value:1},
+		{text:'Moderatamente all’uomo',value:2},
+		{text:'Leggermente all’uomo',value:3},
+		{text:'Né all’uomo né alla donna',value:4},
+		{text:'Leggermente alla donna',value:5},
+		{text:'Moderatamente alla donna',value:6},
+		{text:'Fortemente alla donna',value:7}
+        ]
+    });
+
+    API.addQuestionsSet('autore',{
+        inherit : 'singleChoice',
+        name: 'autore',
+	required : true,
+	errorMsg: {
+		required: "Per favore, rispondi a questa domanda."
+	  	  },
+	help: '<%= pagesMeta.number < 100 %>',
+	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+        stem: '<b>Quanto fortemente associ il seguente concetto alla donna o all’uomo:',
+	    '<font color="red">Autore di Discriminazione</font></b>?',
+        answers: [
+		{text:'Fortemente all’uomo.',value:1},
+		{text:'Moderatamente all’uomo',value:2},
+		{text:'Leggermente all’uomo',value:3},
+		{text:'Né all’uomo né alla donna',value:4},
+		{text:'Leggermente alla donna',value:5},
+		{text:'Moderatamente alla donna',value:6},
+		{text:'Fortemente alla donna',value:7}
+        ]
+    });
+
+	API.addQuestionsSet('DiscriminazioneIndividuale',{
+	inherit : 'singleChoice',
+	name: 'DiscriminazioneIndividuale',
+	required : true,
+	errorMsg: {
+		required: "Per favore, rispondi a questa domanda."
+	  	  },
+	help: '<%= pagesMeta.number < 100 %>',
+	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+	stem: '<b>Quanto spesso ritieni di essere stata/o personalmente discriminata/o a causa del tuo genere?</b>',
+	answers: [
+		{text:'Mai',value: 1},
+		{text:'Raramente',value: 2},
+		{text:'Qualche volta',value: 3},
+		{text:'Spesso',value: 4}
+		]
+	});
 	
 API.addQuestionsSet('SoddAcc',{
 	type : 'grid',
@@ -107,6 +169,35 @@ API.addQuestionsSet('AspirCar',{
 		],
 	
 	});	
+
+API.addQuestionsSet('AspettCarr',{
+	type : 'grid',
+	name: 'AspettCarr',
+	required : true,
+	errorMsg: {
+		required: "Per favore, rispondi a questa domanda."
+	 	  },
+	help: '<%= pagesMeta.number < 100 %>',
+	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+	stem: '<b>Utilizzando la scala sottostante, indica quanto sia vera o falsa per te ciascuna delle seguenti affermazioni.</b>', 
+                    rows: [
+			   'Ho sempre sperato di avere un lavoro nelle STEM un giorno',
+			   'Per me è molto importante avere un lavoro nelle STEM in futuro',
+			   'Mi aspetto di ottenere la laurea necessaria per un lavoro in STEM',
+			   'È molto probabile che, in futuro, troverò un lavoro nelle STEM',
+			   'Mi aspetto di avere una carriera professionale solida nel campo delle STEM',
+			   ],
+                    columns: [
+			{type:'text', textProperty:'left', css : {width:'13.5%'}},
+			{stem:'1. Completamente in disaccordo', css : {width:'7%'}},
+			{stem:'2.', css : {width:'7%'}},
+			{stem:'3.', css : {width:'7%'}},
+			{stem:'4.', css : {width:'7%'}},
+			{stem:'5. Completamente d’accordo', css : {width:'7%'}},
+			{type:'text', textProperty:'right', css : {width:'13.5%'}}
+		],
+	
+	});	
 	
 API.addQuestionsSet('basicDropdown2', {
     type: 'dropdown',
@@ -120,17 +211,6 @@ API.addQuestionsSet('basicDropdown2', {
 	}
 });
 
-	API.addQuestionsSet('individualdiscrimination',{
-	inherit : 'singleChoice',
-	name: 'individualdiscrimination',
-	stem: 'How often do you feel that you, personally, have been discriminated against because of your race, ethnicity, or color?',
-	answers: [
-		{text:'Never',value: 1},
-		{text:'Rarely',value: 2},
-		{text:'Sometimes',value: 3},
-		{text:'oroften',value: 4}
-		]
-	});	
 	
 	API.addQuestionsSet('singleChoice', [
      {
@@ -187,39 +267,12 @@ API.addQuestionsSet('basicDropdown2', {
     });
 
 	
-    API.addQuestionsSet('vittima',{
-        inherit : 'singleChoice',
-        name: 'vittima',
-        stem: '<b>Quanto fortemente associ il seguente concetto alla donna o all’uomo: <font color="red"><i>Vittima di Discriminazione</i></font></b>?',
-        answers: [
-		{text:'Fortemente all’uomo.',value:1},
-		{text:'Moderatamente all’uomo',value:2},
-		{text:'Leggermente all’uomo',value:3},
-		{text:'Né all’uomo né alla donna',value:4},
-		{text:'Leggermente alla donna',value:5},
-		{text:'Moderatamente alla donna',value:6},
-		{text:'Fortemente alla donna',value:7}
-        ]
-    });
 
-    API.addQuestionsSet('autore',{
-        inherit : 'singleChoice',
-        name: 'autore',
-        stem: '<b>Quanto fortemente associ il seguente concetto alla donna o all’uomo: <font color="red"><i>Autore di Discriminazione</i></font></b>?',
-        answers: [
-		{text:'Fortemente all’uomo.',value:1},
-		{text:'Moderatamente all’uomo',value:2},
-		{text:'Leggermente all’uomo',value:3},
-		{text:'Né all’uomo né alla donna',value:4},
-		{text:'Leggermente alla donna',value:5},
-		{text:'Moderatamente alla donna',value:6},
-		{text:'Fortemente alla donna',value:7}
-        ]
-    });
 
 	/**
 	* Page prototype
 	*/
+
 API.addPagesSet('basicPage',
 {
 	v1style:2,
