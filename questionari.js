@@ -445,8 +445,8 @@ API.addPagesSet('basicPage',
         header: 'How positive or negative are your feelings toward the people and apples listed below?',
         headerStyle : {'font-size':'1em'},
         questions : [
-            {inherit:{set:'people', type:'exRandom'}}, // Mostra una domanda casuale da "people"
-            {inherit:{set:'mele', type:'exRandom'}}    // Mostra una domanda casuale da "mele"
+            {inherit:'people'}, // Mostra una domanda casuale da "people"
+            {inherit:'mele'}    // Mostra una domanda casuale da "mele"
         ],
         v1style:2,
         decline:false,
