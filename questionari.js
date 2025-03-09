@@ -105,8 +105,7 @@ API.addQuestionsSet('BPNSFS',{
 	 	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	stem: '<b>Di seguito sono riportate delle affermazioni che si riferiscono a sentimenti vissuti nella propria vita. Leggi ciascuna affermazione con attenzione.<br/>' +
-		'Puoi rispondere scegliendo un numero da 1=(Completamente in disaccordo) a 5=(Completamente d’accordo) per indicare il grado d’accordo a ciascuna affermazione in riferimento a come ti senti <font color="red"><i>nel tuo contesto universitario.</i></font></b>', 
+	stem: '<b>Di seguito sono riportate delle affermazioni che si riferiscono a sentimenti vissuti nella propria vita. Leggi ciascuna affermazione con attenzione. Puoi rispondere scegliendo un numero da 1=(Completamente in disaccordo) a 5=(Completamente d’accordo) per indicare il grado d’accordo a ciascuna affermazione in riferimento a come ti senti <font color="red"><i>nel tuo contesto universitario.</i></font></b>', 
                     rows: [
 			   'Sento un senso di possibilità di scelta e di libertà nelle cose in cui mi impegno',
 			   'La maggior parte delle cose faccio, le faccio perché "le devo fare"',
@@ -122,6 +121,7 @@ API.addQuestionsSet('BPNSFS',{
 			   'Mi sento esclusa/o dal gruppo a cui vorrei appartenere',
 			   ],
                     columns: [
+			{type:'text', textProperty:'left', css : {width:'5%'}},
 			{stem:'1. Completamente in disaccordo', css : {width:'7%'}},
 			{stem:'2.', css : {width:'7%'}},
 			{stem:'3.', css : {width:'7%'}},
@@ -134,6 +134,7 @@ API.addQuestionsSet('BPNSFS',{
 API.addQuestionsSet('SoddAcc',{
 	type : 'grid',
 	name: 'SoddAcc',
+	checkboxType : 'colorMark',
 	required : true,
 	errorMsg: {
 		required: "Per favore, rispondi a questa domanda."
@@ -151,6 +152,7 @@ API.addQuestionsSet('SoddAcc',{
 			   'Mi piace quello che sto imparando durante le mie lezioni'
 			   ],
                     columns: [
+			{type:'text', textProperty:'left', css : {width:'5%'}},
 			{stem:'1. Fortemente in disaccordo', css : {width:'12%'}},
 			{stem:'2. In disaccordo', css : {width:'12%'}},
 			{stem:'3. Né in disaccordo né in accordo', css : {width:'12%'}},
@@ -162,6 +164,7 @@ API.addQuestionsSet('SoddAcc',{
 API.addQuestionsSet('AspirCar',{
 	type : 'grid',
 	name: 'AspirCar',
+	checkboxType : 'colorMark',
 	required : true,
 	errorMsg: {
 		required: "Per favore, rispondi a questa domanda."
@@ -175,6 +178,7 @@ API.addQuestionsSet('AspirCar',{
 			   'Sto considerando una carriera nel campo delle STEM',
 			   ],
                     columns: [
+			{type:'text', textProperty:'left', css : {width:'5%'}},
 			{stem:'1. Per niente vero', css : {width:'7%'}},
 			{stem:'2.', css : {width:'7%'}},
 			{stem:'3.', css : {width:'7%'}},
@@ -189,6 +193,7 @@ API.addQuestionsSet('AspirCar',{
 API.addQuestionsSet('AspettCarr',{
 	type : 'grid',
 	name: 'AspettCarr',
+	checkboxType : 'colorMark',
 	required : true,
 	errorMsg: {
 		required: "Per favore, rispondi a questa domanda."
@@ -204,6 +209,7 @@ API.addQuestionsSet('AspettCarr',{
 			   'Mi aspetto di avere una carriera professionale solida nel campo delle STEM',
 			   ],
                     columns: [
+			{type:'text', textProperty:'left', css : {width:'5%'}},
 			{stem:'1. Fortemente in disaccordo', css : {width:'7%'}},
 			{stem:'2.', css : {width:'7%'}},
 			{stem:'3.', css : {width:'7%'}},
@@ -216,6 +222,7 @@ API.addQuestionsSet('AspettCarr',{
 API.addQuestionsSet('Resilienza',{
 	type : 'grid',
 	name: 'Resilienza',
+	checkboxType : 'colorMark',
 	required : true,
 	errorMsg: {
 		required: "Per favore, rispondi a questa domanda."
@@ -232,6 +239,7 @@ API.addQuestionsSet('Resilienza',{
 			   'Mi serve molto tempo per superare battute d’arresto nella mia vita',
 			   ],
                     columns: [
+			{type:'text', textProperty:'left', css : {width:'5%'}},
 			{stem:'1. Forte disaccordo', css : {width:'7%'}},
 			{stem:'2. Disaccordo', css : {width:'7%'}},
 			{stem:'3. Indifferente', css : {width:'7%'}},
@@ -244,6 +252,7 @@ API.addQuestionsSet('Resilienza',{
 API.addQuestionsSet('Distress',{
 	type : 'grid',
 	name: 'Distress',
+	checkboxType : 'colorMark',
 	required : true,
 	errorMsg: {
 		required: "Per favore, rispondi a questa domanda."
@@ -264,6 +273,7 @@ API.addQuestionsSet('Distress',{
 			'Nelle ultime 4 settimane quante volte ti sei sentita/o inutile?',
 			   ],
                     columns: [
+			{type:'text', textProperty:'left', css : {width:'5%'}},
 			{stem:'1. Nemmeno una volta', value:0, css : {width:'7%'}},
 			{stem:'2. Poche volte', value:1, css : {width:'7%'}},
 			{stem:'3. Diverse volte', value:2, css : {width:'7%'}},
@@ -372,12 +382,18 @@ API.addPagesSet('basicPage',
 	        ]
 	    },
 	    {
-	        inherit:'basicPage', 
-	        questions: {inherit:'sex'}
-	    },
-	    {
-	        inherit:'basicPage', 
-	        questions: {inherit:'SoddAcc'}
+	        mixer : 'random', 
+	        wrapper: true, 
+	        data : [
+	            {
+	                inherit:'basicPage', 
+	                questions: {inherit:'DiscriminazioneGruppo'}
+	            },
+	            {
+	                inherit:'basicPage', 
+	                questions: {inherit:'DiscriminazioneIndividuale'}							
+	            }
+	        ]
 	    },
 	    {
 	        inherit:'basicPage', 
@@ -385,8 +401,24 @@ API.addPagesSet('basicPage',
 	    },
 	    {
 	        inherit:'basicPage', 
+	        questions: {inherit:'SoddAcc'}
+	    },	
+	    {
+	        inherit:'basicPage', 
 	        questions: {inherit:'AspirCar'}
-	    }
+	    },
+	    {
+	        inherit:'basicPage', 
+	        questions: {inherit:'AspettCarr'}
+	    },	
+	    {
+	        inherit:'basicPage', 
+	        questions: {inherit:'Resilienza'}
+	    },	
+	    {
+	        inherit:'basicPage', 
+	        questions: {inherit:'Distress'}
+	    }	
 	]);
 
 
