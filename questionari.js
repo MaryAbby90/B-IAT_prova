@@ -414,7 +414,7 @@ API.addQuestionsSet('basicDropdown2', {
 		{
 			inherit : 'basicSelect',
 			name : 'COWS_1_1',
-			stem : '<b>1. La/il tua/o docente ti ha informato dell’introduzione di nuove procedure che potrebbero aiutarti a migliorare il tuo rendimento accademico. La prima cosa che pensi è:</b></br>', + 
+			stem : '<b>1. La/il tua/o docente ti ha informato dell’introduzione di nuove procedure che potrebbero aiutarti a migliorare il tuo rendimento accademico. La prima cosa che pensi è:</b><br/>' + 
 				'Questo sarà interessante e importante per me provarlo'
 		},
 		{
