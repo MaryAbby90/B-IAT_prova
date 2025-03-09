@@ -762,10 +762,7 @@ API.addPagesSet('basicPage',
     });
 
 	API.addSequence([
-	            {
-		       inherit:'basicPage', 
-	               questions: {inherit:'eta'}							
-	            },
+
 		{
 	        mixer : 'random', 
 	        wrapper: true, 
@@ -825,8 +822,46 @@ API.addPagesSet('basicPage',
 	   		inherit:'basicPage', 
 	 		questions: {inherit:'Distress'}
 	 	    }
+
 		]
-	    }
+	    },
+	  	    {
+		       inherit:'basicPage', 
+	               questions: {inherit:'nazione'}							
+	            },
+	    	    {
+		       inherit:'basicPage', 
+	               questions: {inherit:'sesso'}							
+	            },
+		    {
+		       inherit:'basicPage', 
+	               questions: {inherit:'genere'}							
+	            },
+	    	    {
+		       inherit:'basicPage', 
+	               questions: {inherit:'eta'}							
+	            },
+		    {
+		       inherit:'basicPage', 
+	               questions: {inherit:'regione'}							
+	            },
+		    {
+		       inherit:'basicPage', 
+	               questions: {inherit:'istruzione'}							
+	            },
+		    {
+		       inherit:'basicPage', 
+	               questions: {inherit:'corsodistudio'}							
+	            },
+		    {
+		       inherit:'basicPage', 
+	               questions: {inherit:'annodistudio'}							
+	            },
+		    {
+		       inherit:'basicPage', 
+	               questions: {inherit:'occupazione'}							
+	            }
+		
 	]);
 
 
