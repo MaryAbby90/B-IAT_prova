@@ -254,6 +254,36 @@ API.addQuestionsSet('Resilienza',{
 	
 	});	
 
+API.addQuestionsSet('COWS',{
+	type : 'grid',
+	name: 'COWS',
+	checkboxType : 'colorMark',
+	required : true,
+	errorMsg: {
+		required: "Per favore, rispondi a questa domanda."
+	 	  },
+	help: '<%= pagesMeta.number < 100 %>',
+	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+	stem: '<b>1. La/il tua/o docente ti ha informato dell’introduzione di nuove procedure che potrebbero aiutarti a migliorare il tuo rendimento accademico. La prima cosa che pensi è:</b>', 
+                    rows: [
+			'Questo sarà interessante e importante per me provarlo',
+			'Sentirò la pressione di dover fare come dice la/il mia/o docente',
+			'Probabilmente sarà inutile per me farlo',
+			   ],
+                    columns: [
+			{type:'text', textProperty:'left', css : {width:'5%'}},
+			{stem:'1. Fortemente in disaccordo', css : {width:'7%'}},
+			{stem:'2.', css : {width:'7%'}},
+			{stem:'3.', css : {width:'7%'}},
+			{stem:'4.', css : {width:'7%'}},
+			{stem:'5.', css : {width:'7%'}},
+			{stem:'6.', css : {width:'7%'}},
+			{stem:'7. Fortemente d’accordo', css : {width:'7%'}},
+			{type:'text', textProperty:'right', css : {width:'5%'}}
+			],
+	
+	});	
+
 API.addQuestionsSet('Distress',{
 	type : 'grid',
 	name: 'Distress',
