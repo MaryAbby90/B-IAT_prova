@@ -449,7 +449,7 @@ API.addPagesSet('basicPage',
         header: '<b>Immagina di ritrovarti nelle sei situazioni sottoelencate ed indica il tuo grado di accordo con ciascuna delle seguenti affermazioni, su una scala da 1 (= Fortemente in disaccordo) a 7 (=Fortemente d’accordo).</b>',
         headerStyle : {'font-size':'1em'},
         questions : {
-            mixer: 'repeat',
+            //mixer: 'repeat',
 	    times : 3,
             data: [
                 {inherit: {set: 'COWS'}}
