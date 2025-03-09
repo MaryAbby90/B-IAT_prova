@@ -126,7 +126,8 @@ API.addQuestionsSet('BPNSFS',{
 			{stem:'2.', css : {width:'7%'}},
 			{stem:'3.', css : {width:'7%'}},
 			{stem:'4.', css : {width:'7%'}},
-			{stem:'5. Completamente d’accordo', css : {width:'7%'}}
+			{stem:'5. Completamente d’accordo', css : {width:'7%'}},
+			{type:'text', textProperty:'right', css : {width:'5%'}}
 			],
 	
 	});
@@ -157,7 +158,8 @@ API.addQuestionsSet('SoddAcc',{
 			{stem:'2. In disaccordo', css : {width:'12%'}},
 			{stem:'3. Né in disaccordo né in accordo', css : {width:'12%'}},
 			{stem:'4. D’accordo', css : {width:'12%'}},
-			{stem:'5. Fortemente d’accordo', css : {width:'12%'}}
+			{stem:'5. Fortemente d’accordo', css : {width:'12%'}},
+			{type:'text', textProperty:'right', css : {width:'5%'}}
 			],
 	});
 	
@@ -185,7 +187,8 @@ API.addQuestionsSet('AspirCar',{
 			{stem:'4.', css : {width:'7%'}},
 			{stem:'5.', css : {width:'7%'}},
 			{stem:'6.', css : {width:'7%'}},
-			{stem:'7. Completamente vero', css : {width:'7%'}}
+			{stem:'7. Completamente vero', css : {width:'7%'}},
+			{type:'text', textProperty:'right', css : {width:'5%'}}
 			],
 	
 	});	
@@ -214,7 +217,8 @@ API.addQuestionsSet('AspettCarr',{
 			{stem:'2.', css : {width:'7%'}},
 			{stem:'3.', css : {width:'7%'}},
 			{stem:'4.', css : {width:'7%'}},
-			{stem:'5. Fortemente d’accordo', css : {width:'7%'}}
+			{stem:'5. Fortemente d’accordo', css : {width:'7%'}},
+			{type:'text', textProperty:'right', css : {width:'5%'}}
 			],
 	
 	});	
@@ -244,7 +248,8 @@ API.addQuestionsSet('Resilienza',{
 			{stem:'2. Disaccordo', css : {width:'7%'}},
 			{stem:'3. Indifferente', css : {width:'7%'}},
 			{stem:'4. D’accordo', css : {width:'7%'}},
-			{stem:'5. Molto d’accordo', css : {width:'7%'}}
+			{stem:'5. Molto d’accordo', css : {width:'7%'}},
+			{type:'text', textProperty:'right', css : {width:'5%'}}
 			],
 	
 	});	
@@ -278,7 +283,8 @@ API.addQuestionsSet('Distress',{
 			{stem:'2. Poche volte', value:1, css : {width:'7%'}},
 			{stem:'3. Diverse volte', value:2, css : {width:'7%'}},
 			{stem:'4. Quasi sempre', value:3, css : {width:'7%'}},
-			{stem:'5. Sempre', value:4, css : {width:'7%'}}
+			{stem:'5. Sempre', value:4, css : {width:'7%'}},
+			{type:'text', textProperty:'right', css : {width:'5%'}}
 			],
 	
 	});	
