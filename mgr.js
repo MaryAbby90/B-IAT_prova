@@ -58,14 +58,6 @@ define(['managerAPI',
             scriptUrl: 'BIAT.js'
         }],
 
-        questdemo: [{
-            type: 'quest',
-            name: 'questdemo',
-            scriptUrl: 'questdemo.js',
-            title: 'Questionario',
-            header: 'Questionario'
-        }],
-
         questionari: [{
             type: 'quest',
             name: 'questionari',
@@ -175,9 +167,7 @@ define(['managerAPI',
     {
         inherit: 'biat'
     },
-    {
-        inherit: 'questdemo'
-    }, 
+ 
 	{inherit: 'uploading'},
         {inherit: 'debriefing'},
         {inherit: 'redirect'}
