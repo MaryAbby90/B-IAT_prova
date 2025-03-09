@@ -309,11 +309,11 @@ API.addQuestionsSet('Distress',{
 			   ],
                     columns: [
 			{type:'text', textProperty:'left', css : {width:'5%'}},
-			{stem:'1. Nemmeno una volta', value:0, css : {width:'7%'}},
-			{stem:'2. Poche volte', value:1, css : {width:'7%'}},
-			{stem:'3. Diverse volte', value:2, css : {width:'7%'}},
-			{stem:'4. Quasi sempre', value:3, css : {width:'7%'}},
-			{stem:'5. Sempre', value:4, css : {width:'7%'}},
+			{stem:'1. Nemmeno una volta', value:0, css : {width:'12%'}},
+			{stem:'2. Poche volte', value:1, css : {width:'12%'}},
+			{stem:'3. Diverse volte', value:2, css : {width:'12%'}},
+			{stem:'4. Quasi sempre', value:3, css : {width:'12%'}},
+			{stem:'5. Sempre', value:4, css : {width:'12%'}},
 			{type:'text', textProperty:'right', css : {width:'5%'}}
 			],
 	
@@ -392,6 +392,12 @@ API.addQuestionsSet('basicDropdown2', {
         autoSubmit:false,
         numericValues:true,
         style:'multiButtons',
+	required : true,
+	errorMsg: {
+	required: "Per favore, rispondi a questa domanda."
+	  	  },
+	help: '<%= pagesMeta.number < 100 %>',
+	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
         answers : [
             '1 - Fortemente in disaccordo',
             '2',
@@ -442,12 +448,6 @@ API.addPagesSet('basicPage',
     {
         header: '<b>Immagina di ritrovarti nelle sei situazioni sottoelencate ed indica il tuo grado di accordo con ciascuna delle seguenti affermazioni, su una scala da 1 (= Fortemente in disaccordo) a 7 (=Fortemente d’accordo).</b>',
         headerStyle : {'font-size':'1.5em'},
-	required : true,
-	errorMsg: {
-		required: "Per favore, rispondi a questa domanda."
-	  	  },
-	help: '<%= pagesMeta.number < 100 %>',
-	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
 	submitText: "Invia",
         questions : {
             mixer: 'repeat',
