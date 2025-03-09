@@ -47,7 +47,7 @@ API.addQuestionsSet('basicDropdown2', {
 });
 
 	API.addQuestionsSet('individualdiscrimination',{
-	inherit : 'basicSelect',
+	inherit : 'singleChoice',
 	name: 'individualdiscrimination',
 	stem: 'How often do you feel that you, personally, have been discriminated against because of your race, ethnicity, or color?',
 	answers: [
@@ -155,33 +155,30 @@ API.addPagesSet('basicPage',
 	submitText: "Invia"
 });
 
-		API.addSequence([
-			//First, we present the three direct liking questions.
-			{
-
-						mixer : 'random', 
-						wrapper:true, 
-						data : {[
-							{
-								inherit:'basicPage', 
-								questions: {inherit:'vittima'}
-							},
-							{
-								inherit:'basicPage', 
-								questions: {inherit:'autore'}							
-							}
-						]
-					},
-					{
-						inherit:'basicPage', 
-						questions: {inherit:'sex'
-					},
-					{
-						inherit:'basicPage', 
-						questions: {inherit:'eod3'
-					}
-			}
-		]);
+	API.addSequence([
+	    {
+	        mixer : 'random', 
+	        wrapper: true, 
+	        data : [
+	            {
+	                inherit:'basicPage', 
+	                questions: {inherit:'vittima'}
+	            },
+	            {
+	                inherit:'basicPage', 
+	                questions: {inherit:'autore'}							
+	            }
+	        ]
+	    },
+	    {
+	        inherit:'basicPage', 
+	        questions: {inherit:'sex'}
+	    },
+	    {
+	        inherit:'basicPage', 
+	        questions: {inherit:'eod3'}
+	    }
+	]);
 
 
     return API.script;
