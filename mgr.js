@@ -73,12 +73,11 @@ define(['managerAPI',
             last: true
         }],	    
 
-      
-        //Use if you want to redirect the participants elsewhere at the end of the study
-        redirect:
-        [{ 
-			//Replace with any URL you need to put at the end of your study, or just remove this task from the sequence below
-            type:'redirect', name:'redirecting', url: 'https://www.google.com/search' 
+          
+        redirect: [{ 
+	    type:'redirect',
+	    name:'redirect', 
+	    url: 'https://www.google.com' 
         }],
 		
 		//This task waits until the data are sent to the server.
@@ -139,7 +138,7 @@ define(['managerAPI',
             ],
             elseData: [// if participants does not agree to participate, they are redirected.
                 {
-                    inherit: 'redirecting'
+                    inherit: 'redirect'
                 }
             ]
     },
