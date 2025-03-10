@@ -68,21 +68,12 @@ define(['managerAPI',
 	    
         debriefing: [{
             type: 'quest',
-            name: 'lastpage',
+            name: 'debriefing',
             scriptUrl: 'debriefing.js',
             last: true
         }],	    
 
-        lastpage: [{
-            type: 'message',
-            name: 'lastpage',
-            templateUrl: 'debriefing.jst',
-            title: 'End',
-            //Uncomment the following if you want to end the study here.
-            //last:true, 
-            header: 'You have completed the study'
-        }], 
-        
+      
         //Use if you want to redirect the participants elsewhere at the end of the study
         redirect:
         [{ 
@@ -148,10 +139,7 @@ define(['managerAPI',
             ],
             elseData: [// if participants does not agree to participate, they are redirected.
                 {
-                    inherit: 'redirectpage'
-                },
-                {
-                    inherit: 'redirect'
+                    inherit: 'redirecting'
                 }
             ]
     },
@@ -169,8 +157,7 @@ define(['managerAPI',
     },
             
 	{inherit: 'uploading'},
-        {inherit: 'debriefing'},
-        {inherit: 'redirect'}
+        {inherit: 'debriefing'}
     ]);
 
     return API.script;
