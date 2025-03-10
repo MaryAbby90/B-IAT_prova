@@ -1,6 +1,67 @@
 define(['questAPI'], function(Quest){
 	var API = new Quest();
 
+API.addQuestionsSet('basicDropdown2', {
+    type: 'dropdown',
+    autoSubmit: false,
+    numericValues: true,
+    required:true,
+    help: '<%= pagesMeta.number < 100 %>',
+	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+	errorMsg: {
+		required: "Per favore, rispondi a questa domanda"
+	}
+});
+
+	
+	API.addQuestionsSet('singleChoice', [
+     {
+        type: 'selectOne',
+        autoSubmit: false,
+        numericValues: true,
+        required: true,
+        help: '<%= pagesMeta.number < 100 %>',
+    	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+	    errorMsg: {
+    		required: "Per favore, rispondi a questa domanda"
+    	}
+		}]);
+	
+	API.addQuestionsSet('multiChoice', [
+     {
+        type: 'selectMulti',
+        autoSubmit: false,
+        numericValues: true,
+        required: true,
+        help: '<%= pagesMeta.number < 100 %>',
+    	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+	    errorMsg: {
+    		required: "Per favore, rispondi a questa domanda"
+    	}
+		}]);
+	
+
+    API.addQuestionsSet('basicSelect',
+    {
+        type: 'selectOne',
+        autoSubmit:false,
+        numericValues:true,
+        style:'multiButtons',
+	required : true,
+	errorMsg: {
+	required: "Per favore, rispondi a questa domanda."
+	  	  },
+        answers : [
+            '1 - Fortemente in disaccordo',
+            '2',
+            '3',
+            '4',
+            '5',
+            '6',
+            '7 - Fortemente d’accordo'
+        ]
+    });
+	
 	// ### Questions
 	// Create the template
 
@@ -241,133 +302,7 @@ API.addQuestionsSet('Resilienza',{
 	
 	});	
 
-
-API.addQuestionsSet('Distress',{
-	type : 'grid',
-	name: 'Distress',
-	checkboxType : 'colorMark',
-	required : true,
-	errorMsg: {
-		required: "Per favore, rispondi a questa domanda."
-	 	  },
-	help: '<%= pagesMeta.number < 100 %>',
-	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	stem: '<b>Nelle prossime dieci domande ti verrà chiesto come ti sei sentita/o nelle ultime 4 settimane <font color="red"><i>nel tuo contesto universitario</i></font>. Per ognuna di esse, contrassegna la risposta che più di tutte rispecchia la frequenza delle emozioni descritte. Presta attenzione! Ti compariranno 10 affermazioni.</b>', 
-                    rows: [
-			'Nelle ultime 4 settimane quante volte ti sei sentita/o esausta/o senza una ragione apparente?',
-			'Nelle ultime 4 settimane quante volte ti sei sentita/o nervosa/o?',
-			'Nelle ultime 4 settimane quante volte ti sei sentita/o così nervosa/o da non riuscire in nessun modo a calmarti?',
-			'Nelle ultime 4 settimane quante volte sei stata/o presa/o dalla disperazione?',
-			'Nelle ultime 4 settimane quante volte ti sei sentita/o irrequieta/o o agitata/o?',
-			'Nelle ultime 4 settimane quante volte ti sei sentita/o così irrequieta/o da non riuscire a stare ferma/o?',
-			'Nelle ultime 4 settimane quante volte ti sei sentita/o depressa/o?',
-			'Nelle ultime 4 settimane quante volte hai sentito che ogni cosa che facevi richiedeva uno sforzo?',
-			'Nelle ultime 4 settimane quante volte ti sei sentita/o così triste che nulla riusciva a rasserenarti?',
-			'Nelle ultime 4 settimane quante volte ti sei sentita/o inutile?',
-			   ],
-                    columns: [
-			{type:'text', textProperty:'left', css : {width:'5%'}},
-			{stem:'Nemmeno una volta', value:0, css : {width:'12%'}},
-			{stem:'Poche volte', value:1, css : {width:'12%'}},
-			{stem:'Diverse volte', value:2, css : {width:'12%'}},
-			{stem:'Quasi sempre', value:3, css : {width:'12%'}},
-			{stem:'Sempre', value:4, css : {width:'12%'}},
-			{type:'text', textProperty:'right', css : {width:'5%'}}
-			],
 	
-	});	
-	
-API.addQuestionsSet('basicDropdown2', {
-    type: 'dropdown',
-    autoSubmit: false,
-    numericValues: true,
-    required:true,
-    help: '<%= pagesMeta.number < 100 %>',
-	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	errorMsg: {
-		required: "Per favore, rispondi a questa domanda"
-	}
-});
-
-	
-	API.addQuestionsSet('singleChoice', [
-     {
-        type: 'selectOne',
-        autoSubmit: false,
-        numericValues: true,
-        required: true,
-        help: '<%= pagesMeta.number < 100 %>',
-    	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	    errorMsg: {
-    		required: "Per favore, rispondi a questa domanda"
-    	}
-		}]);
-	
-	API.addQuestionsSet('multiChoice', [
-     {
-        type: 'selectMulti',
-        autoSubmit: false,
-        numericValues: true,
-        required: true,
-        help: '<%= pagesMeta.number < 100 %>',
-    	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	    errorMsg: {
-    		required: "Per favore, rispondi a questa domanda"
-    	}
-		}]);
-	
-	API.addQuestionsSet('basicGrid',
-	{
-		type: 'grid',
-		cellLabels:true,
-		rowStemHide: true,
-		checkboxType : 'colorMark',
-		required : true,
-		errorMsg: {
-			required: "Per favore, rispondi a questa domanda."
-		},
-		help: '<%= pagesMeta.number < 100 %>',
-		helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-		columnStemHide: true,
-		maxWidth:420,
-		name : '<%=questionsData.name%>',
-		columns: [
-			{type:'text', textProperty:'left', css : {width:'13.5%'}},
-			{stem:'1', css : {width:'7%'}},
-			{stem:'2', css : {width:'7%'}},
-			{stem:'3', css : {width:'7%'}},
-			{stem:'4', css : {width:'7%'}},
-			{stem:'5', css : {width:'7%'}},
-			{type:'text', textProperty:'right', css : {width:'13.5%'}}
-		],
-	
-        rows: [
-			{left:'Completamente in disaccordo', right:'Completamente d’accordo', name:'<%=questionsData.name%>.agree'}
-		]
-	});
-	
-
-    API.addQuestionsSet('basicSelect',
-    {
-        type: 'selectOne',
-        autoSubmit:false,
-        numericValues:true,
-        style:'multiButtons',
-	required : true,
-	errorMsg: {
-	required: "Per favore, rispondi a questa domanda."
-	  	  },
-        answers : [
-            '1 - Fortemente in disaccordo',
-            '2',
-            '3',
-            '4',
-            '5',
-            '6',
-            '7 - Fortemente d’accordo'
-        ]
-    });
-
 	API.addQuestionsSet('COWS_1',
 	[
 		{
@@ -488,6 +423,44 @@ API.addQuestionsSet('basicDropdown2', {
 		}
 	]);	
 
+
+
+API.addQuestionsSet('Distress',{
+	type : 'grid',
+	name: 'Distress',
+	checkboxType : 'colorMark',
+	required : true,
+	errorMsg: {
+		required: "Per favore, rispondi a questa domanda."
+	 	  },
+	help: '<%= pagesMeta.number < 100 %>',
+	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
+	stem: '<b>Nelle prossime dieci domande ti verrà chiesto come ti sei sentita/o nelle ultime 4 settimane <font color="red"><i>nel tuo contesto universitario</i></font>. Per ognuna di esse, contrassegna la risposta che più di tutte rispecchia la frequenza delle emozioni descritte. Presta attenzione! Ti compariranno 10 affermazioni.</b>', 
+                    rows: [
+			'Nelle ultime 4 settimane quante volte ti sei sentita/o esausta/o senza una ragione apparente?',
+			'Nelle ultime 4 settimane quante volte ti sei sentita/o nervosa/o?',
+			'Nelle ultime 4 settimane quante volte ti sei sentita/o così nervosa/o da non riuscire in nessun modo a calmarti?',
+			'Nelle ultime 4 settimane quante volte sei stata/o presa/o dalla disperazione?',
+			'Nelle ultime 4 settimane quante volte ti sei sentita/o irrequieta/o o agitata/o?',
+			'Nelle ultime 4 settimane quante volte ti sei sentita/o così irrequieta/o da non riuscire a stare ferma/o?',
+			'Nelle ultime 4 settimane quante volte ti sei sentita/o depressa/o?',
+			'Nelle ultime 4 settimane quante volte hai sentito che ogni cosa che facevi richiedeva uno sforzo?',
+			'Nelle ultime 4 settimane quante volte ti sei sentita/o così triste che nulla riusciva a rasserenarti?',
+			'Nelle ultime 4 settimane quante volte ti sei sentita/o inutile?',
+			   ],
+                    columns: [
+			{type:'text', textProperty:'left', css : {width:'5%'}},
+			{stem:'Nemmeno una volta', value:0, css : {width:'12%'}},
+			{stem:'Poche volte', value:1, css : {width:'12%'}},
+			{stem:'Diverse volte', value:2, css : {width:'12%'}},
+			{stem:'Quasi sempre', value:3, css : {width:'12%'}},
+			{stem:'Sempre', value:4, css : {width:'12%'}},
+			{type:'text', textProperty:'right', css : {width:'5%'}}
+			],
+	
+	});
+	
+	
     API.addQuestionsSet('nazione',{
         inherit : 'singleChoice',
         name: 'nazione',
@@ -521,24 +494,6 @@ API.addQuestionsSet('basicDropdown2', {
         ]
     });	
 
-	API.addQuestionsSet('basicQ',{
-		decline: true,
-		required : true,
-		errorMsg: {
-			required: "Per favore, rispondi a questa domanda."
-		  	  },
-		help: '<%= pagesMeta.number < 100 %>',
-		helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-		autoSubmit:true,
-		numericValues:true
-	});
-	
-	API.addQuestionsSet('singleChoicedrop',{
-		inherit: 'basicQ',
-		autoSubmit:false,
-		type: 'dropdown'
-	});	
-	
 	API.addQuestionsSet('eta',{
 		inherit: 'basicDropdown2',
 		name: 'eta',
@@ -634,26 +589,26 @@ API.addQuestionsSet('basicDropdown2', {
 		name: 'regione',
 		stem: '<b>Regione in cui vivi</b>',
 		answers: [
-			{text:'Abruzzo', value:1},
-			{text:'Basilicata', value:2},
-			{text:'Calabria', value:3},
-			{text:'Campania', value:4},
-			{text:'Emilia-Romagna', value:5},
-			{text:'Friuli Venezia Giulia', value:6},
-			{text:'Lazio', value:7},
-			{text:'Liguria', value:8},
-			{text:'Lombardia', value:9},
-			{text:'Marche', value:10},
-			{text:'Molise', value:11},
-			{text:'Piemonte', value:12},
-			{text:'Puglia', value:13},
-			{text:'Sardegna', value:14},
-			{text:'Sicilia', value:15},
-			{text:'Toscana', value:16},
-			{text:'Trentino-Alto Adige', value:17},
-			{text:'Umbria', value:18},
-			{text:'Valle d’Aosta', value:19},
-			{text:'Veneto', value:20}
+			'Abruzzo',
+			'Basilicata',
+			'Calabria',
+			'Campania',
+			'Emilia-Romagna',
+			'Friuli Venezia Giulia',
+			'Lazio',
+			'Liguria',
+			'Lombardia',
+			'Marche',
+			'Molise',
+			'Piemonte',
+			'Puglia',
+			'Sardegna',
+			'Sicilia',
+			'Toscana',
+			'Trentino-Alto Adige',
+			'Umbria',
+			'Valle d’Aosta',
+			'Veneto'
 		]
 	});	
 
@@ -705,11 +660,11 @@ API.addQuestionsSet('basicDropdown2', {
         name: 'occupazione',
         stem: '<b>Indica la tua occupazione (puoi selezionare più risposte)</b>',
         answers: [
-		{text:'Studentessa/e'},
-		{text:'Disoccupata/o'},
-		{text:'Lavoratrice/ore Part-time'},
-		{text:'Lavoratrice/ore Full-time'},
-		{text:'Altro'}
+		'Studentessa/e',
+		'Disoccupata/o',
+		'Lavoratrice/ore Part-time',
+		'Lavoratrice/ore Full-time',
+		'Altro'
         ]
     });	
 		
