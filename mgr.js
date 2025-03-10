@@ -25,7 +25,7 @@ define(['managerAPI',
 		name: 'consent', 
 		scriptUrl: 'consent.js', 
 		header: 'Consent', 
-		title: 'Consent Agreement', 
+		title: 'Consenso Informato', 
 		buttonText: 'Invia' }],	    
 
         biat_instructions: [{
@@ -156,10 +156,6 @@ define(['managerAPI',
             ]
     },
     {
-        inherit: 'questionari'
-    },
-	    /*
-    {
         inherit: 'practice'
     },
     {
@@ -168,7 +164,10 @@ define(['managerAPI',
     {
         inherit: 'biat'
     },
-            */
+    {
+        inherit: 'questionari'
+    },
+            
 	{inherit: 'uploading'},
         {inherit: 'debriefing'},
         {inherit: 'redirect'}
