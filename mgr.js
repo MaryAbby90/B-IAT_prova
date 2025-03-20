@@ -85,7 +85,7 @@ define(['managerAPI',
     });
 
     API.addSequence([
-        /*{ type: 'isTouch' }, // Usa il rilevamento touch di Minno
+        { type: 'isTouch' }, // Usa il rilevamento touch di Minno
     
     // Se il dispositivo è touch, blocca la pagina
     {
@@ -100,7 +100,7 @@ define(['managerAPI',
                 }
             }
         ]
-    },     */    
+    },         
         
         {inherit: 'consent'},
         {
