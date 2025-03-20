@@ -1,12 +1,12 @@
-	<script>
+<script>
     // Rilevamento dispositivo touch
     if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-        // Blocca la pagina e mostra messaggio
-        document.write('<h1 style="font-family:sans-serif; text-align:center; margin-top:20%; color:#333;">Aprire il link da un PC con tastiera.</h1>');
+        // Blocca la pagina e mostra solo il messaggio
+        document.body.innerHTML = '<h1 style="font-family:sans-serif; text-align:center; margin-top:20%; color:#333;">Aprire il link da un PC con tastiera.</h1>';
         // Ferma l'esecuzione di ulteriori script
         throw new Error('Bloccato su dispositivo touch');
- 	   }
-	</script>
+    }
+</script>
 
 <html>
     <head>
