@@ -85,22 +85,7 @@ define(['managerAPI',
     });
 
     API.addSequence([
-        { type: 'isTouch' }, // Usa il rilevamento touch di Minno
-    
-    // Se il dispositivo è touch, blocca la pagina
-    {
-        mixer: 'branch',
-        conditions: { compare: 'global.$isTouch', to: true },
-        data: [
-            {
-                type: 'script',
-                script: function() {
-                    document.body.innerHTML = '<h1>Aprire lo studio da un PC con tastiera.</h1>';
-                    throw new Error('Accesso bloccato su dispositivo touch');
-                }
-            }
-        ]
-    },         
+         
         
         {inherit: 'consent'},
         {
