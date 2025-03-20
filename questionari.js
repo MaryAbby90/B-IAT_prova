@@ -74,7 +74,7 @@ API.addQuestionsSet('basicDropdown2', {
 	  	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-        stem: '<b>Quanto fortemente associ il seguente concetto alla donna o all’uomo: <font color="red">Vittima di Discriminazione</font></b>?',
+        stem: 'Quanto fortemente associ il seguente concetto alla donna o all’uomo: <b>Vittima di Discriminazione</b>?',
         answers: [
 		{text:'Fortemente all’uomo',value:1},
 		{text:'Moderatamente all’uomo',value:2},
@@ -95,7 +95,7 @@ API.addQuestionsSet('basicDropdown2', {
 	  	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-        stem: '<b>Quanto fortemente associ il seguente concetto alla donna o all’uomo: <font color="red">Autore di Discriminazione</font></b>?',
+        stem: 'Quanto fortemente associ il seguente concetto alla donna o all’uomo: <b>Autore di Discriminazione</b>?',
         answers: [
 		{text:'Fortemente all’uomo',value:1},
 		{text:'Moderatamente all’uomo',value:2},
@@ -153,7 +153,7 @@ API.addQuestionsSet('BPNSFS',{
 	 	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	stem: '<b>Di seguito sono riportate delle affermazioni che si riferiscono a sentimenti vissuti nella propria vita. Leggi ciascuna affermazione con attenzione. Puoi rispondere scegliendo un numero da 1=(Completamente in disaccordo) a 5=(Completamente d’accordo) per indicare il grado d’accordo a ciascuna affermazione in riferimento a come ti senti <font color="red"><i>nel tuo contesto universitario.</i></font></b>', 
+	stem: 'Di seguito sono riportate delle affermazioni che si riferiscono a sentimenti vissuti nella propria vita. Leggi ciascuna affermazione con attenzione. Puoi rispondere scegliendo un numero da 1=(Completamente in disaccordo) a 5=(Completamente d’accordo) per indicare il grado d’accordo a ciascuna affermazione in riferimento a come ti senti <b><i>nel tuo contesto universitario</i></b>.', 
                     rows: [
 			   'Sento un senso di possibilità di scelta e di libertà nelle cose in cui mi impegno',
 			   'La maggior parte delle cose faccio, le faccio perché "le devo fare"',
@@ -435,7 +435,7 @@ API.addQuestionsSet('Distress',{
 	 	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	stem: '<b>Nelle prossime dieci domande ti verrà chiesto come ti sei sentita/o nelle ultime 4 settimane <font color="red"><i>nel tuo contesto universitario</i></font>. Per ognuna di esse, contrassegna la risposta che più di tutte rispecchia la frequenza delle emozioni descritte. Presta attenzione! Ti compariranno 10 affermazioni.</b>', 
+	stem: 'Nelle prossime dieci domande ti verrà chiesto come ti sei sentita/o nelle ultime 4 settimane <b><i>nel tuo contesto universitario</i></b>. Per ognuna di esse, contrassegna la risposta che più di tutte rispecchia la frequenza delle emozioni descritte. Presta attenzione! Ti compariranno 10 affermazioni.', 
                     rows: [
 			'Nelle ultime 4 settimane quante volte ti sei sentita/o esausta/o senza una ragione apparente?',
 			'Nelle ultime 4 settimane quante volte ti sei sentita/o nervosa/o?',
