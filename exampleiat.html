@@ -4,7 +4,16 @@
 		<style type="text/css">
         .container {padding-top: 15px;}
 		</style>
-	
+	<script>
+    // Rilevamento dispositivo touch
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+        // Blocca la pagina e mostra messaggio
+        document.write('<h1 style="font-family:sans-serif; text-align:center; margin-top:20%; color:#333;">Aprire il link da un PC con tastiera.</h1>');
+        // Ferma l'esecuzione di ulteriori script
+        throw new Error('Bloccato su dispositivo touch');
+ 	   }
+	</script>
+	    
         <script>
             // load MinnoJS from the CDN (you probably don't need to change this)
             var scriptTag                = document.createElement('script');
