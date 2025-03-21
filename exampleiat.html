@@ -1,30 +1,31 @@
 <script>
-    // Rilevamento dispositivo touch
+	// Rilevamento dispositivo touch
     if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+	document.addEventListener("DOMContentLoaded", function(){
         // Blocca la pagina e mostra solo il messaggio
         document.body.innerHTML = '<h1 style="font-family:sans-serif; text-align:center; margin-top:20%; color:#333;">Aprire il link da un PC con tastiera.</h1>';
-        // Ferma l'esecuzione di ulteriori script
+        });
+	    // Ferma l'esecuzione di ulteriori script
         throw new Error('Bloccato su dispositivo touch');
     }
 </script>
 
 <html>
     <head>
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/minnojs/minno-quest@0.3/dist/main.css" />
-		<style type="text/css">
-        .container {padding-top: 15px;}
-		</style>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/minnojs/minno-quest@0.3/dist/main.css" />
+	<style type="text/css">
+        	.container {padding-top: 15px;}
+	</style>
 
 	    
         <script>
             // load MinnoJS from the CDN (you probably don't need to change this)
-            if (!('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
-	    var scriptTag                = document.createElement('script');
+            var scriptTag                = document.createElement('script');
             scriptTag.src                = 'https://cdn.jsdelivr.net/gh/minnojs/minno-quest@0.3/dist/pi-minno.js';
             scriptTag.onload             = onLoad;
             scriptTag.onreadystatechange = onLoad;
             document.head.appendChild(scriptTag);
-      		  }
+      		  
             // This function gets activated only after MinnoJS is loaded
             function onLoad() {
 				// Create a div with class 'container' and id 'minno-app'
