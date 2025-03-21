@@ -1,12 +1,10 @@
 <script>
 	// Rilevamento dispositivo touch
-    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+    var isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+    if (isTouch) {
 	document.addEventListener("DOMContentLoaded", function(){
-        // Blocca la pagina e mostra solo il messaggio
         document.body.innerHTML = '<h1 style="font-family:sans-serif; text-align:center; margin-top:20%; color:#333;">Aprire il link da un PC con tastiera.</h1>';
         });
-	    // Ferma l'esecuzione di ulteriori script
-        throw new Error('Bloccato su dispositivo touch');
     }
 </script>
 
@@ -20,7 +18,8 @@
 	    
         <script>
             // load MinnoJS from the CDN (you probably don't need to change this)
-            var scriptTag                = document.createElement('script');
+            if (!isTouch) {
+	    var scriptTag                = document.createElement('script');
             scriptTag.src                = 'https://cdn.jsdelivr.net/gh/minnojs/minno-quest@0.3/dist/pi-minno.js';
             scriptTag.onload             = onLoad;
             scriptTag.onreadystatechange = onLoad;
@@ -42,7 +41,8 @@
             minnoJS(canvas, 'mgr.js');
             // We need to wait a few miliseconds to register the value that we entered
             minnoJS.onEnd = function () { setTimeout(proceed, 100); }
-         }
+       	  }
+	 }
         </script>
     </head>
     <body>
