@@ -28,26 +28,21 @@
       		  
             // This function gets activated only after MinnoJS is loaded
             function onLoad() {
-				// Create a div with class 'container' and id 'minno-app'
-				var container = document.createElement('div');
-				container.className = 'container';
+	    // Create a div with class 'container' and id 'minno-app'
+	    var container = document.createElement('div');
+            container.className = 'container';
 
-				// Create the canvas object
-				var canvas = document.createElement('div');
-
-				// Append the canvas object to the container
-				container.appendChild(canvas);
-			
-
-				// Append the container to the body
-				document.body.appendChild(container);
-                
-                // Run your study (just set the correct URL)
-                minnoJS(canvas, 'mgr.js');
-                
-                // We need to wait a few miliseconds to register the value that we entered
-                minnoJS.onEnd = function () { setTimeout(proceed, 100); }
-            }
+	    // Create the canvas object
+	    var canvas = document.createElement('div');
+            // Append the canvas object to the container
+	    container.appendChild(canvas);
+	    // Append the container to the body
+	    document.body.appendChild(container);
+            // Run your study (just set the correct URL)
+            minnoJS(canvas, 'mgr.js');
+            // We need to wait a few miliseconds to register the value that we entered
+            minnoJS.onEnd = function () { setTimeout(proceed, 100); }
+         }
         </script>
     </head>
     <body>
