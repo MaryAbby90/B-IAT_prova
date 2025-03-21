@@ -74,7 +74,7 @@ API.addQuestionsSet('basicDropdown2', {
 	  	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-        stem: 'Quanto fortemente associ il seguente concetto alla donna o all’uomo: <b>Vittima di Discriminazione</b>?',
+        stem: 'Quanto fortemente associ il seguente concetto alla donna o all’uomo: <b>Vittima di Discriminazione</b>',
         answers: [
 		{text:'Fortemente all’uomo',value:1},
 		{text:'Moderatamente all’uomo',value:2},
@@ -95,7 +95,7 @@ API.addQuestionsSet('basicDropdown2', {
 	  	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-        stem: 'Quanto fortemente associ il seguente concetto alla donna o all’uomo: <b>Autore di Discriminazione</b>?',
+        stem: 'Quanto fortemente associ il seguente concetto alla donna o all’uomo: <b>Autore di Discriminazione</b>',
         answers: [
 		{text:'Fortemente all’uomo',value:1},
 		{text:'Moderatamente all’uomo',value:2},
@@ -116,7 +116,7 @@ API.addQuestionsSet('basicDropdown2', {
 	  	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	stem: '<b>Quanto spesso ritieni che le donne siano discriminate a causa del loro genere?</b>',
+	stem: 'Quanto spesso ritieni che le donne siano discriminate a causa del loro genere?',
 	answers: [
 		{text:'Mai',value: 1},
 		{text:'Raramente',value: 2},
@@ -134,7 +134,7 @@ API.addQuestionsSet('basicDropdown2', {
 	  	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	stem: '<b>Quanto spesso ritieni di essere stata/o personalmente discriminata/o a causa del tuo genere?</b>',
+	stem: 'Quanto spesso ritieni di essere stata/o personalmente discriminata/o a causa del tuo genere?',
 	answers: [
 		{text:'Mai',value: 1},
 		{text:'Raramente',value: 2},
@@ -153,7 +153,7 @@ API.addQuestionsSet('BPNSFS',{
 	 	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	stem: 'Di seguito sono riportate delle affermazioni che si riferiscono a sentimenti vissuti nella propria vita. Leggi ciascuna affermazione con attenzione. Puoi rispondere scegliendo un numero da 1=(Completamente in disaccordo) a 5=(Completamente d’accordo) per indicare il grado d’accordo a ciascuna affermazione in riferimento a come ti senti <b><i>nel tuo contesto universitario</i></b>.', 
+	stem: 'Di seguito sono riportate delle affermazioni che si riferiscono a sentimenti vissuti nella propria vita. Leggi ciascuna affermazione con attenzione. Puoi rispondere scegliendo un numero da 1=(Completamente in disaccordo) a 5=(Completamente d’accordo) per indicare il grado d’accordo a ciascuna affermazione in riferimento a come ti senti <b>nel tuo contesto universitario</b>.', 
                     rows: [
 			   'Sento un senso di possibilità di scelta e di libertà nelle cose in cui mi impegno',
 			   'La maggior parte delle cose faccio, le faccio perché "le devo fare"',
@@ -190,7 +190,7 @@ API.addQuestionsSet('SoddAcc',{
 	  	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	stem: '<b>Utilizzando la scala sottostante, indica il tuo grado di accordo con ciascuna delle seguenti affermazioni.</b>', 
+	stem: 'Utilizzando la scala sottostante, indica il tuo grado di accordo con ciascuna delle seguenti affermazioni.', 
                     rows: [
 			   'Sono soddisfatta/o della decisione di laurearmi nel mio campo di studi' ,
 			   'Mi sento a mio agio nell’ambiente universitario e accademico del mio corso di studi',
@@ -221,7 +221,7 @@ API.addQuestionsSet('AspirCar',{
 	 	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	stem: ': <b>Utilizzando la scala sottostante, indica quanto sia vera o falsa per te ciascuna delle seguenti affermazioni.</b>', 
+	stem: 'Utilizzando la scala sottostante, indica quanto sia vera o falsa per te ciascuna delle seguenti affermazioni.', 
                     rows: [
 			   'Mi piacerebbe lavorare in un settore in cui le mie competenze nelle discipline STEM siano particolarmente valorizzate',
 			   'Mi piacerebbe lavorare in un ambiente in cui le competenze STEM siano fondamentali per il successo professionale',
@@ -251,7 +251,7 @@ API.addQuestionsSet('AspettCarr',{
 	 	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	stem: '<b>Utilizzando la scala sottostante, indica quanto sia vera o falsa per te ciascuna delle seguenti affermazioni.</b>', 
+	stem: 'Utilizzando la scala sottostante, indica quanto sia vera o falsa per te ciascuna delle seguenti affermazioni.', 
                     rows: [
 			   'Ho sempre sperato di avere un lavoro nelle STEM un giorno',
 			   'Per me è molto importante avere un lavoro nelle STEM in futuro',
@@ -281,7 +281,7 @@ API.addQuestionsSet('Resilienza',{
 	 	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	stem: '<b>Utilizzando la scala sottostante, indica quanto sia vera o falsa per te ciascuna delle seguenti affermazioni.</b>', 
+	stem: 'Utilizzando la scala sottostante, indica quanto sia vera o falsa per te ciascuna delle seguenti affermazioni.', 
                     rows: [
 			   'Tendo a riprendermi in fretta dopo periodi difficili',
 			   'Ho difficoltà a “farcela” dopo eventi stressanti',
@@ -308,7 +308,7 @@ API.addQuestionsSet('Resilienza',{
 		{
 			inherit : 'basicSelect',
 			name : 'COWS_1_1',
-			stem : '<b>1. La/il tua/o docente ti ha informato dell’introduzione di nuove procedure che potrebbero aiutarti a migliorare il tuo rendimento accademico. La prima cosa che pensi è:</b><br/><br/>' + 
+			stem : '1. La/il tua/o docente ti ha informato dell’introduzione di nuove procedure che potrebbero aiutarti a migliorare il tuo rendimento accademico. La prima cosa che pensi è:<br/><br/>' + 
 				'Questo sarà interessante e importante per me provarlo'
 		},
 		{
@@ -328,7 +328,7 @@ API.addQuestionsSet('Resilienza',{
 		{
 			inherit : 'basicSelect',
 			name : 'COWS_2_1',
-			stem : '<b>2. La/il tua/o docente desidera che tu sia più autonoma/o e indipendente nello studio. La prima cosa che probabilmente penserai sarà:</b><br/><br/>' + 
+			stem : '2. La/il tua/o docente desidera che tu sia più autonoma/o e indipendente nello studio. La prima cosa che probabilmente penserai sarà:<br/><br/>' + 
 				'Sarà importante per me mettermi alla prova per vedere se funziona'
 		},
 		{
@@ -348,7 +348,7 @@ API.addQuestionsSet('Resilienza',{
 		{
 			inherit : 'basicSelect',
 			name : 'COWS_3_1',
-			stem : '<b>3. La/il tua/o docente ti ha chiesto di affrontare la questione del tuo interesse per lo studio, che ultimamente sembra essere un po’ calato. Probabilmente penserai/sentirai:</b><br/><br/>' + 
+			stem : '3. La/il tua/o docente ti ha chiesto di affrontare la questione del tuo interesse per lo studio, che ultimamente sembra essere un po’ calato. Probabilmente penserai/sentirai:<br/><br/>' + 
 				'Vorrei parlare con la/il mia/o docente per cercare insieme una soluzione adeguata'
 		},
 		{
@@ -368,7 +368,7 @@ API.addQuestionsSet('Resilienza',{
 		{
 			inherit : 'basicSelect',
 			name : 'COWS_4_1',
-			stem : '<b>4. La/il tua/o docente ti ha chiesto di frequentare un corso per migliorare le tue competenze accademiche. Probabilmente penserai/sentirai:</b><br/><br/>' + 
+			stem : '4. La/il tua/o docente ti ha chiesto di frequentare un corso per migliorare le tue competenze accademiche. Probabilmente penserai/sentirai:<br/><br/>' + 
 				'Penso che potrebbe essere interessante e stimolante'
 		},
 		{
@@ -388,7 +388,7 @@ API.addQuestionsSet('Resilienza',{
 		{
 			inherit : 'basicSelect',
 			name : 'COWS_5_1',
-			stem : '<b>5. La/il tua/o docente ti ha suggerito di lavorare con una/o studentessa/e più esperta/o per migliorare le tue competenze. Probabilmente penserai o sentirai:</b><br/><br/>' + 
+			stem : '5. La/il tua/o docente ti ha suggerito di lavorare con una/o studentessa/e più esperta/o per migliorare le tue competenze. Probabilmente penserai o sentirai:<br/><br/>' + 
 				'Ritengo che questa possa essere un’opportunità importante per me'
 		},
 		{
@@ -408,7 +408,7 @@ API.addQuestionsSet('Resilienza',{
 		{
 			inherit : 'basicSelect',
 			name : 'COWS_6_1',
-			stem : '<b>6. La/il tua/o docente ti ha chiesto di collaborare di più con i tuoi colleghi di corso. Probabilmente penserai, sentirai o farai:</b><br/><br/>' + 
+			stem : '6. La/il tua/o docente ti ha chiesto di collaborare di più con i tuoi colleghi di corso. Probabilmente penserai, sentirai o farai:<br/><br/>' + 
 				'Mi impegnerò a individuare con chi collaborare e li contatterò'
 		},
 		{
@@ -435,7 +435,7 @@ API.addQuestionsSet('Distress',{
 	 	  },
 	help: '<%= pagesMeta.number < 100 %>',
 	helpText: 'Puoi cambiare la tua risposta selezionando un’altra opzione. <br/>Per confermare, clicca su "Invia"',
-	stem: 'Nelle prossime dieci domande ti verrà chiesto come ti sei sentita/o nelle ultime 4 settimane <b><i>nel tuo contesto universitario</i></b>. Per ognuna di esse, contrassegna la risposta che più di tutte rispecchia la frequenza delle emozioni descritte. Presta attenzione! Ti compariranno 10 affermazioni.', 
+	stem: 'Nelle prossime dieci domande ti verrà chiesto come ti sei sentita/o nelle ultime 4 settimane <b>nel tuo contesto universitario</b>. Per ognuna di esse, contrassegna la risposta che più di tutte rispecchia la frequenza delle emozioni descritte. Presta attenzione! Ti compariranno 10 affermazioni.', 
                     rows: [
 			'Nelle ultime 4 settimane quante volte ti sei sentita/o esausta/o senza una ragione apparente?',
 			'Nelle ultime 4 settimane quante volte ti sei sentita/o nervosa/o?',
@@ -638,8 +638,17 @@ API.addQuestionsSet('Distress',{
 		{text:'Informatica'},
 		{text:'Chimica'},
 		{text:'Astronomia'},
-		{text:'Altro'}
-        ]
+		{ 
+            		text:'Altro', 
+            		forceOpen: true, 
+            		requireOpen: true, // Obbliga a compilare il campo aperto
+            		openText: 'Specifica il tuo corso di studio', 
+            		openError: 'Per favore specifica il tuo corso di studio' // Messaggio di errore custom
+        	}
+    	],
+    			errorMsg: {
+        		required: "Per favore seleziona un'opzione"
+    	}
     });	
 
     API.addQuestionsSet('annodistudio',{
@@ -660,7 +669,7 @@ API.addQuestionsSet('Distress',{
         name: 'occupazione',
         stem: '<b>Indica la tua occupazione (puoi selezionare più risposte)</b>',
         answers: [
-		'Studentessa/e',
+		'Studentessa/Studente',
 		'Disoccupata/o',
 		'Lavoratrice/ore Part-time',
 		'Lavoratrice/ore Full-time',
