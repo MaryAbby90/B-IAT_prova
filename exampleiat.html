@@ -1,50 +1,44 @@
 <script>
-	// Rilevamento dispositivo touch
-    var isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-    if (isTouch) {
-	document.addEventListener("DOMContentLoaded", function(){
-        document.body.innerHTML = '<h1 style="font-family:sans-serif; text-align:center; margin-top:20%; color:#333;">Aprire il link da un PC con tastiera.</h1>';
+    function isMobileOrTablet() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
+               || (window.innerWidth < 1024 && ('ontouchstart' in window || navigator.maxTouchPoints > 0));
+    }
+
+    if (isMobileOrTablet()) {
+        document.addEventListener("DOMContentLoaded", function(){
+            document.body.innerHTML = '<h1 style="font-family:sans-serif; text-align:center; margin-top:20%; color:#333;">Aprire il link da un PC con tastiera.</h1>';
         });
     }
 </script>
 
 <html>
     <head>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/minnojs/minno-quest@0.3/dist/main.css" />
-	<style type="text/css">
-        	.container {padding-top: 15px;}
-	</style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/minnojs/minno-quest@0.3/dist/main.css" />
+        <style type="text/css">
+            .container {padding-top: 15px;}
+        </style>
 
-	    
         <script>
-            // load MinnoJS from the CDN (you probably don't need to change this)
-            if (!isTouch) {
-	    var scriptTag                = document.createElement('script');
-            scriptTag.src                = 'https://cdn.jsdelivr.net/gh/minnojs/minno-quest@0.3/dist/pi-minno.js';
-            scriptTag.onload             = onLoad;
-            scriptTag.onreadystatechange = onLoad;
-            document.head.appendChild(scriptTag);
-      		  
-            // This function gets activated only after MinnoJS is loaded
-            function onLoad() {
-	    // Create a div with class 'container' and id 'minno-app'
-	    var container = document.createElement('div');
-            container.className = 'container';
+            if (!isMobileOrTablet()) {
+                var scriptTag = document.createElement('script');
+                scriptTag.src = 'https://cdn.jsdelivr.net/gh/minnojs/minno-quest@0.3/dist/pi-minno.js';
+                scriptTag.onload = onLoad;
+                scriptTag.onreadystatechange = onLoad;
+                document.head.appendChild(scriptTag);
 
-	    // Create the canvas object
-	    var canvas = document.createElement('div');
-            // Append the canvas object to the container
-	    container.appendChild(canvas);
-	    // Append the container to the body
-	    document.body.appendChild(container);
-            // Run your study (just set the correct URL)
-            minnoJS(canvas, 'mgr.js');
-            // We need to wait a few miliseconds to register the value that we entered
-            minnoJS.onEnd = function () { setTimeout(proceed, 100); }
-       	  }
-	 }
+                function onLoad() {
+                    var container = document.createElement('div');
+                    container.className = 'container';
+
+                    var canvas = document.createElement('div');
+                    container.appendChild(canvas);
+                    document.body.appendChild(container);
+
+                    minnoJS(canvas, 'mgr.js');
+                    minnoJS.onEnd = function () { setTimeout(proceed, 100); }
+                }
+            }
         </script>
     </head>
-    <body>
-    </body>
+    <body></body>
 </html>
