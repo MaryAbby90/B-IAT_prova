@@ -638,18 +638,26 @@ API.addQuestionsSet('Distress',{
 		{text:'Informatica'},
 		{text:'Chimica'},
 		{text:'Astronomia'},
-		{ 
-            		text:'Altro', 
-            		forceOpen: true, 
-            		requireOpen: true, // Obbliga a compilare il campo aperto
-            		openText: 'Specifica il tuo corso di studio', 
-            		openError: 'Per favore specifica il tuo corso di studio' // Messaggio di errore custom
-        	}
-    	],
-    			errorMsg: {
-        		required: "Per favore seleziona un'opzione"
+		{text:'Altro', value: 'Altro'} 
+            ],
+    		errorMsg: {
+        	    required: "Per favore seleziona un'opzione"
     	}
     });	
+
+    API.addQuestionsSet('altroCorso', {
+    	type: 'text',
+    	name: 'altroCorso',
+    	stem: 'Specifica il tuo corso di studio',
+    	required: true,
+    	errorMsg: {
+            required: "Per favore specifica il tuo corso di studio"
+    },
+    // Condizione di visibilità: appare solo se "Altro" è stato selezionato sopra
+    visibility: function(data) {
+        return data.corsodistudio === 'Altro';
+    }
+});
 
     API.addQuestionsSet('annodistudio',{
         inherit : 'singleChoice',
@@ -815,8 +823,11 @@ API.addPagesSet('basicPage',
 	            },
 		    {
 		       inherit:'basicPage', 
-	               questions: {inherit:'corsodistudio'}							
-	            },
+	               questions: [
+				{inherit:'corsodistudio'},
+			    	{inherit: 'altroCorso'}
+	            	]
+		    },
 		    {
 		       inherit:'basicPage', 
 	               questions: {inherit:'annodistudio'}							
