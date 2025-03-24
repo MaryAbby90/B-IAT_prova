@@ -308,7 +308,7 @@ API.addQuestionsSet('Resilienza',{
 		{
 			inherit : 'basicSelect',
 			name : 'COWS_1_1',
-			stem : '1. La/il tua/o docente ti ha informato dell’introduzione di nuove procedure che potrebbero aiutarti a migliorare il tuo rendimento accademico. La prima cosa che pensi è:<br/><br/>' + 
+			stem : '<b>1. La/il tua/o docente ti ha informato dell’introduzione di nuove procedure che potrebbero aiutarti a migliorare il tuo rendimento accademico. La prima cosa che pensi è:</b><br/><br/>' + 
 				'Questo sarà interessante e importante per me provarlo'
 		},
 		{
@@ -328,7 +328,7 @@ API.addQuestionsSet('Resilienza',{
 		{
 			inherit : 'basicSelect',
 			name : 'COWS_2_1',
-			stem : '2. La/il tua/o docente desidera che tu sia più autonoma/o e indipendente nello studio. La prima cosa che probabilmente penserai sarà:<br/><br/>' + 
+			stem : '<br><br><b>2. La/il tua/o docente desidera che tu sia più autonoma/o e indipendente nello studio. La prima cosa che probabilmente penserai sarà:</b><br/><br/>' + 
 				'Sarà importante per me mettermi alla prova per vedere se funziona'
 		},
 		{
@@ -348,7 +348,7 @@ API.addQuestionsSet('Resilienza',{
 		{
 			inherit : 'basicSelect',
 			name : 'COWS_3_1',
-			stem : '3. La/il tua/o docente ti ha chiesto di affrontare la questione del tuo interesse per lo studio, che ultimamente sembra essere un po’ calato. Probabilmente penserai/sentirai:<br/><br/>' + 
+			stem : '<br><br><b>3. La/il tua/o docente ti ha chiesto di affrontare la questione del tuo interesse per lo studio, che ultimamente sembra essere un po’ calato. Probabilmente penserai/sentirai:</b><br/><br/>' + 
 				'Vorrei parlare con la/il mia/o docente per cercare insieme una soluzione adeguata'
 		},
 		{
@@ -368,7 +368,7 @@ API.addQuestionsSet('Resilienza',{
 		{
 			inherit : 'basicSelect',
 			name : 'COWS_4_1',
-			stem : '4. La/il tua/o docente ti ha chiesto di frequentare un corso per migliorare le tue competenze accademiche. Probabilmente penserai/sentirai:<br/><br/>' + 
+			stem : '<br><br><b>4. La/il tua/o docente ti ha chiesto di frequentare un corso per migliorare le tue competenze accademiche. Probabilmente penserai/sentirai:</b><br/><br/>' + 
 				'Penso che potrebbe essere interessante e stimolante'
 		},
 		{
@@ -388,7 +388,7 @@ API.addQuestionsSet('Resilienza',{
 		{
 			inherit : 'basicSelect',
 			name : 'COWS_5_1',
-			stem : '5. La/il tua/o docente ti ha suggerito di lavorare con una/o studentessa/e più esperta/o per migliorare le tue competenze. Probabilmente penserai o sentirai:<br/><br/>' + 
+			stem : '<br><br><b>5. La/il tua/o docente ti ha suggerito di lavorare con una/o studentessa/e più esperta/o per migliorare le tue competenze. Probabilmente penserai o sentirai:</b><br/><br/>' + 
 				'Ritengo che questa possa essere un’opportunità importante per me'
 		},
 		{
@@ -408,7 +408,7 @@ API.addQuestionsSet('Resilienza',{
 		{
 			inherit : 'basicSelect',
 			name : 'COWS_6_1',
-			stem : '6. La/il tua/o docente ti ha chiesto di collaborare di più con i tuoi colleghi di corso. Probabilmente penserai, sentirai o farai:<br/><br/>' + 
+			stem : '<br><br><b>6. La/il tua/o docente ti ha chiesto di collaborare di più con i tuoi colleghi di corso. Probabilmente penserai, sentirai o farai:</b><br/><br/>' + 
 				'Mi impegnerò a individuare con chi collaborare e li contatterò'
 		},
 		{
