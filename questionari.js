@@ -653,12 +653,25 @@ API.addQuestionsSet('Distress',{
     	errorMsg: {
             required: "Per favore specifica il tuo corso di studio"
     },
-    // Condizione di visibilità: appare solo se "Altro" è stato selezionato sopra
-    visibility: function(data) {
+      visibility: function(data) {
         return data.corsodistudio === 'Altro';
     }
 });
 
+    API.addQuestionsSet('corsodilaurea',{
+        inherit : 'singleChoice',
+        name: 'corsodilaurea',
+        stem: '<b>Indica a quale corso di laurea sei iscritta/o</b>',
+        answers: [
+		{text:'Laurea Triennale'},
+		{text:'Laurea Magistrale'},
+		{text:'Laurea a Ciclo Unico'} 
+            ],
+    		errorMsg: {
+        	    required: "Per favore seleziona un'opzione"
+    	}
+    });
+	
     API.addQuestionsSet('annodistudio',{
         inherit : 'singleChoice',
         name: 'annodistudio',
@@ -668,7 +681,8 @@ API.addQuestionsSet('Distress',{
 		{text:'2'},
 		{text:'3'},
 		{text:'4'},
-		{text:'5'}
+		{text:'5'},
+		{text: 'Fuoricorso'}
         ]
     });	
 
@@ -828,6 +842,10 @@ API.addPagesSet('basicPage',
 			    	{inherit: 'altroCorso'}
 	            	]
 		    },
+		    {
+		       inherit:'basicPage', 
+	               questions: {inherit:'corsodilaurea'}							
+	            },
 		    {
 		       inherit:'basicPage', 
 	               questions: {inherit:'annodistudio'}							
