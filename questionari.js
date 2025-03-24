@@ -651,10 +651,10 @@ API.addQuestionsSet('Distress',{
     	stem: 'Specifica il tuo corso di studio',
     	required: true,
     	errorMsg: {
-            required: "Per favore specifica il tuo corso di studio"
+            required: "Per favore inserisci il tuo corso di studio"
     },
-      visibility: function(data) {
-        return data.corsodistudio === 'Altro';
+    displayIf: {
+        corsodistudio: 'Altro'  // La domanda "altroCorso" sarà visibile solo se "Altro" è selezionato
     }
 });
 
