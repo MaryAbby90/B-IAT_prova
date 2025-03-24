@@ -653,9 +653,7 @@ API.addQuestionsSet('Distress',{
     	errorMsg: {
             required: "Per favore inserisci il tuo corso di studio"
     },
-    displayIf: {
-        corsodistudio: 'Altro'  // La domanda "altroCorso" sarà visibile solo se "Altro" è selezionato
-    }
+
 });
 
     API.addQuestionsSet('corsodilaurea',{
@@ -839,9 +837,20 @@ API.addPagesSet('basicPage',
 		       inherit:'basicPage', 
 	               questions: [
 				{inherit:'corsodistudio'},
-			    	{inherit: 'altroCorso'}
-	            	]
+			    ]
 		    },
+		    {
+        		mixer: 'branch',
+        		conditions: [{compare: 'corsodistudio', to: 'Altro'}],
+        		data: [
+            		    {
+                		inherit: 'basicPage',
+                		questions: [
+                    		{inherit: 'altroCorso'}
+                	      ]
+            		    }
+        		]
+   		    },
 		    {
 		       inherit:'basicPage', 
 	               questions: {inherit:'corsodilaurea'}							
