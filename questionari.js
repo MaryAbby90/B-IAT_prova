@@ -839,7 +839,7 @@ API.addPagesSet('basicPage',
 					data: [
 						{inherit:'open'}
 					]
-				]
+				],
 		    },
 		    {
 		       inherit:'basicPage', 
