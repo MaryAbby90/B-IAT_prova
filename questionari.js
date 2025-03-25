@@ -638,12 +638,16 @@ API.addQuestionsSet('Distress',{
 		{text:'Informatica'},
 		{text:'Chimica'},
 		{text:'Astronomia'},
-		//{text:'Altro', value: 'Altro'}
-		{stem:'Altro', type:'input'}
-            ],
+		{text:'Altro', value: 'Altro'}
+	   ],
     		errorMsg: {
         	    required: "Per favore seleziona un'opzione"
     	},
+	open: [{
+			type: 'text',
+			name:'Altro',
+			stem:'Inserisci il tipo di corso di studio.'
+		}]
     });	
 
     API.addQuestionsSet('corsodilaurea',{
@@ -691,6 +695,15 @@ API.addQuestionsSet('Distress',{
 	* Page prototype
 	*/
 
+	API.addPagesSet('basicPage3',
+	{
+		progressBar: '<%= pagesMeta.number %> out of 3',
+		headerStyle : {'font-size':'1em'},
+		v1style:2,
+		decline:true,
+		numbered: false
+	});	
+	
 API.addPagesSet('basicPage',
 {
 	v1style:2,
@@ -824,8 +837,22 @@ API.addPagesSet('basicPage',
 	               questions: {inherit:'istruzione'}							
 	            },
 		    {
-		       inherit:'basicPage', 
-	               questions: {inherit:'corsodistudio'},
+			inherit :'basicPage3',
+			questions:[
+				// always show this question
+				{inherit:'corsodistudio'},
+				// this question should be shown only if "other was selected"
+				{
+					remix: true, // remix:true is neccessary so that the mixer is re-evaluated each time that the responses change
+					mixer:'branch',
+		            conditions: [
+						{compare: 'Altro', to: 'AltroCorso'}
+					],
+					data: [
+						{inherit:'open'}
+					]
+				}
+			]
 		    },
 		    {
 		       inherit:'basicPage', 
