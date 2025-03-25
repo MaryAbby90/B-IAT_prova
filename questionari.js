@@ -627,7 +627,7 @@ API.addQuestionsSet('Distress',{
         ]
     });	
 
-    API.addQuestionsSet('corsodistudio',{
+   /* API.addQuestionsSet('corsodistudio',{
         inherit : 'singleChoice',
         name: 'corsodistudio',
         stem: '<b>Indica a quale tipo di corso di studio sei iscritta/o</b>',
@@ -648,7 +648,22 @@ API.addQuestionsSet('Distress',{
 			name:'Altro',
 			stem:'Inserisci il tipo di corso di studio.'
 		}]
-    });	
+    });	*/
+
+	API.addQuestionsSet({
+	   corsodistudio: [
+	       {
+    		inherit: 'singleChoice',
+    		name:'corsodistudio',
+    		stem:'<b>Indica a quale tipo di corso di studio sei iscritta/o</b>',
+    		answers : ['Ingegneria', 'Matematica', 'Fisica', 'Informatica', 'Chimica', 'Astronomia', 'Altro']
+        }],
+        open: [{
+        	type: 'text',
+        	name:'Altro',
+        	stem:'Specifica il tipo di corso di studio nella casella in basso.'
+        }]
+    });
 
     API.addQuestionsSet('corsodilaurea',{
         inherit : 'singleChoice',
@@ -695,15 +710,6 @@ API.addQuestionsSet('Distress',{
 	* Page prototype
 	*/
 
-	API.addPagesSet('basicPage3',
-	{
-		headerStyle : {'font-size':'1em'},
-		v1style:2,
-		numbered: false,
-		noSubmit: false,
-		numericValues:true,
-		submitText: "Invia"
-	});	
 	
 API.addPagesSet('basicPage',
 {
@@ -838,7 +844,7 @@ API.addPagesSet('basicPage',
 	               questions: {inherit:'istruzione'}							
 	            },
 		    {
-			inherit :'basicPage3',
+			inherit :'basicPage',
 			questions:[
 				// always show this question
 				{inherit:'corsodistudio'},
