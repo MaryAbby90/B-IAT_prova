@@ -638,16 +638,12 @@ API.addQuestionsSet('Distress',{
 		{text:'Informatica'},
 		{text:'Chimica'},
 		{text:'Astronomia'},
-		{text:'Altro', value: 'Altro'} 
+		//{text:'Altro', value: 'Altro'}
+		{stem:'Altro', type:'input'}
             ],
     		errorMsg: {
         	    required: "Per favore seleziona un'opzione"
     	},
-	open: [{
-			type: 'text',
-			name:'altroCorso',
-			stem:'Per favore inserisci il tuo corso di studio'
-		}]
     });	
 
     API.addQuestionsSet('corsodilaurea',{
@@ -829,18 +825,7 @@ API.addPagesSet('basicPage',
 	            },
 		    {
 		       inherit:'basicPage', 
-	               questions: [
-				{inherit:'corsodistudio'},
-		    		{
-		        		remix: true,
-		        		mixer:'branch',
-		  		        conditions: [
-						{compare: 'corsodistudio', to: 'Altro'}], // Se "Altro" è selezionato, mostra altroCorso
-					data: [
-						{inherit:'open'}
-					]
-				    }
-				]
+	               questions: {inherit:'corsodistudio'},
 		    },
 		    {
 		       inherit:'basicPage', 
