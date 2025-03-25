@@ -638,7 +638,7 @@ API.addQuestionsSet('Distress',{
 		{text:'Informatica'},
 		{text:'Chimica'},
 		{text:'Astronomia'},
-		{text:'Altro', value: 'Altro'}
+		{text:'Altro'}
 	   ],
     		errorMsg: {
         	    required: "Per favore seleziona un'opzione"
@@ -697,11 +697,12 @@ API.addQuestionsSet('Distress',{
 
 	API.addPagesSet('basicPage3',
 	{
-		progressBar: '<%= pagesMeta.number %> out of 3',
 		headerStyle : {'font-size':'1em'},
 		v1style:2,
-		decline:true,
-		numbered: false
+		numbered: false,
+		noSubmit: false,
+		numericValues:true,
+		submitText: "Invia"
 	});	
 	
 API.addPagesSet('basicPage',
@@ -846,7 +847,7 @@ API.addPagesSet('basicPage',
 					remix: true, // remix:true is neccessary so that the mixer is re-evaluated each time that the responses change
 					mixer:'branch',
 		            conditions: [
-						{compare: 'Altro', to: 'AltroCorso'}
+						{compare: 7, to: 'current.questions.corsodistudio.response'}
 					],
 					data: [
 						{inherit:'open'}
