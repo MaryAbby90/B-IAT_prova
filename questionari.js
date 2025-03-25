@@ -661,9 +661,15 @@ API.addQuestionsSet('Distress',{
         open: [{
         	type: 'text',
         	name:'Altro',
-        	stem:'Specifica il tipo di corso di studio nella casella in basso.'
-        }]
-    });
+        	stem:'Specifica il tipo di corso di studio nella casella in basso.',
+		required: function(data) {
+            	   return data.corsodistudio === 'Altro';  // Rende obbligatorio il campo solo se "Altro" è selezionato
+        },
+        errorMsg: {
+            required: "Per favore specifica il tuo corso di studio" // Mostra il messaggio di errore se il campo è vuoto
+	}
+   }],
+});
 
     API.addQuestionsSet('corsodilaurea',{
         inherit : 'singleChoice',
