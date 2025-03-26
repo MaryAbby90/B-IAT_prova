@@ -627,29 +627,6 @@ API.addQuestionsSet('Distress',{
         ]
     });	
 
-   /* API.addQuestionsSet('corsodistudio',{
-        inherit : 'singleChoice',
-        name: 'corsodistudio',
-        stem: '<b>Indica a quale tipo di corso di studio sei iscritta/o</b>',
-        answers: [
-		{text:'Ingegneria'},
-		{text:'Matematica'},
-		{text:'Fisica'},
-		{text:'Informatica'},
-		{text:'Chimica'},
-		{text:'Astronomia'},
-		{text:'Altro'}
-	   ],
-    		errorMsg: {
-        	    required: "Per favore seleziona un'opzione"
-    	},
-	open: [{
-			type: 'text',
-			name:'Altro',
-			stem:'Inserisci il tipo di corso di studio.'
-		}]
-    });	*/
-
 	API.addQuestionsSet({
 	   corsodistudio: [
 	       {
@@ -850,11 +827,9 @@ API.addPagesSet('basicPage',
 		    {
 			inherit :'basicPage',
 			questions:[
-				// always show this question
 				{inherit:'corsodistudio'},
-				// this question should be shown only if "other was selected"
 				{
-					remix: true, // remix:true is neccessary so that the mixer is re-evaluated each time that the responses change
+					remix: true, 
 					mixer:'branch',
 		            conditions: [
 						{compare: 7, to: 'current.questions.corsodistudio.response'}
