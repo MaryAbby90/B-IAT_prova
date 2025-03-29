@@ -633,21 +633,13 @@ API.addQuestionsSet('Distress',{
     		inherit: 'singleChoice',
     		name:'corsodistudio',
     		stem:'<b>Indica a quale tipo di corso di studio sei iscritta/o</b>',
-    		answers : ['Ingegneria', 'Matematica', 'Fisica', 'Informatica', 'Chimica', 'Astronomia', 'Altro'],
-		onFinish: function(data) {
-		            // Se il partecipante NON ha scelto "Altro", aggiungiamo una variabile vuota
-		            if (data.response !== 'Altro') {
-		                data.Altro = ""; // Forziamo la presenza della variabile Altro nel CSV
-		            }
-		        }
+    		answers : ['Ingegneria', 'Matematica', 'Fisica', 'Informatica', 'Chimica', 'Astronomia', 'Altro']
         }],
         open: [{
         	type: 'text',
         	name:'Altro',
         	stem:'Specifica il tipo di corso di studio nella casella in basso.',
-		required: function(data) {
-            return data.response === 'Altro'; // Rende obbligatorio il campo solo se è stato selezionato "Altro"
-        },
+		required: true,
         	errorMsg: {
             	    required: "Per favore specifica il tuo corso di studio" // Mostra il messaggio di errore se il campo è vuoto
 	}
