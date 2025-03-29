@@ -628,28 +628,28 @@ API.addQuestionsSet('Distress',{
     });	
 
 	API.addQuestionsSet({
-	   corsodistudio: [
+	   areadisciplinare: [
 	       {
     		inherit: 'singleChoice',
-    		name:'corsodistudio',
-    		stem:'<b>Indica a quale tipo di corso di studio sei iscritta/o</b>',
+    		name:'areadisciplinare',
+    		stem:'<b>Indica l’area disciplinare a cui appartiene il tuo percorso di studi</b>',
     		answers : ['Ingegneria', 'Matematica', 'Fisica', 'Informatica', 'Chimica', 'Astronomia', 'Altro']
         }],
         open: [{
         	type: 'text',
         	name:'Altro',
-        	stem:'Specifica il tipo di corso di studio nella casella in basso.',
+        	stem:'Specifica l’area disciplinare a cui appartiene il tuo percorso di studi',
 		required: true,
         	errorMsg: {
-            	    required: "Per favore specifica il tuo corso di studio" // Mostra il messaggio di errore se il campo è vuoto
+            	    required: "Per favore specifica l’area disciplinare a cui appartiene il tuo percorso di studi" // Mostra il messaggio di errore se il campo è vuoto
 	}
    }],
 });
 
-    API.addQuestionsSet('corsodilaurea',{
+    API.addQuestionsSet('corsodistudio',{
         inherit : 'singleChoice',
-        name: 'corsodilaurea',
-        stem: '<b>Indica a quale corso di laurea sei iscritta/o</b>',
+        name: 'corsodistudio',
+        stem: '<b>Indica a quale tipo di corso di studio sei iscritta/o</b>',
         answers: [
 		{text:'Laurea Triennale'},
 		{text:'Laurea Magistrale'},
@@ -850,12 +850,12 @@ API.addPagesSet('basicPage',
 		    {
 			inherit :'basicPage',
 			questions:[
-				{inherit:'corsodistudio'},
+				{inherit:'areadisciplinare'},
 				{
 					remix: true, 
 					mixer:'branch',
 		            conditions: [
-						{compare: 7, to: 'current.questions.corsodistudio.response'}
+						{compare: 7, to: 'current.questions.areadisciplinare.response'}
 					],
 					data: [
 						{inherit:'open'}
@@ -865,7 +865,7 @@ API.addPagesSet('basicPage',
 		    },
 		    {
 		       inherit:'basicPage', 
-	               questions: {inherit:'corsodilaurea'}							
+	               questions: {inherit:'corsodistudio'}							
 	            },
 		    {
 		       inherit:'basicPage', 
