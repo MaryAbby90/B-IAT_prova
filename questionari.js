@@ -633,13 +633,21 @@ API.addQuestionsSet('Distress',{
     		inherit: 'singleChoice',
     		name:'corsodistudio',
     		stem:'<b>Indica a quale tipo di corso di studio sei iscritta/o</b>',
-    		answers : ['Ingegneria', 'Matematica', 'Fisica', 'Informatica', 'Chimica', 'Astronomia', 'Altro']
+    		answers : ['Ingegneria', 'Matematica', 'Fisica', 'Informatica', 'Chimica', 'Astronomia', 'Altro'],
+		onFinish: function(data) {
+		            // Se il partecipante NON ha scelto "Altro", aggiungiamo una variabile vuota
+		            if (data.response !== 'Altro') {
+		                data.Altro = ""; // Forziamo la presenza della variabile Altro nel CSV
+		            }
+		        }
         }],
         open: [{
         	type: 'text',
         	name:'Altro',
         	stem:'Specifica il tipo di corso di studio nella casella in basso.',
-		required: true,
+		required: function(data) {
+            return data.response === 'Altro'; // Rende obbligatorio il campo solo se è stato selezionato "Altro"
+        },
         	errorMsg: {
             	    required: "Per favore specifica il tuo corso di studio" // Mostra il messaggio di errore se il campo è vuoto
 	}
@@ -684,7 +692,30 @@ API.addQuestionsSet('Distress',{
 		'Lavoratrice/ore Part-time',
 		'Lavoratrice/ore Full-time',
 		'Altro'
-        ]
+        ],
+    onFinish: function(data) {
+        let occupazioni = data.response || []; // Selezioni fatte dal partecipante
+        let nuoveRighe = [];
+
+        // Separa ogni risposta in una nuova riga
+        occupazioni.forEach(function(occ) {
+            nuoveRighe.push({
+                id_partecipante: data.id_partecipante, // Mantiene l'ID della persona
+                occupazione: occ // Salva solo una risposta per riga
+            });
+        });
+
+        // Se il partecipante non ha selezionato nulla, aggiungiamo una riga vuota per lui
+        if (nuoveRighe.length === 0) {
+            nuoveRighe.push({
+                id_partecipante: data.id_partecipante,
+                occupazione: ""
+            });
+        }
+
+        // Sovrascrive data con le nuove righe
+        data.response = nuoveRighe;
+    }
     });	
 		
 	/**
