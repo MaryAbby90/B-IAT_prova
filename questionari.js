@@ -675,39 +675,18 @@ API.addQuestionsSet('Distress',{
     });	
 
 	    API.addQuestionsSet('occupazione',{
-        inherit : 'multiChoice',
+        inherit : 'singleChoice',
         name: 'occupazione',
-        stem: '<b>Indica la tua occupazione (puoi selezionare più risposte)</b>',
+        stem: '<b>Indica la tua occupazione</b>',
         answers: [
 		'Studentessa/Studente',
-		'Disoccupata/o',
+		'Inoccupata/o',
 		'Lavoratrice/ore Part-time',
 		'Lavoratrice/ore Full-time',
+		'Studentessa/Studente e Lavoratrice/ore Part-time',
+		'Studentessa/Studente e Lavoratrice/ore Full-time',
 		'Altro'
-        ],
-    onFinish: function(data) {
-        let occupazioni = data.response || []; // Selezioni fatte dal partecipante
-        let nuoveRighe = [];
-
-        // Separa ogni risposta in una nuova riga
-        occupazioni.forEach(function(occ) {
-            nuoveRighe.push({
-                id_partecipante: data.id_partecipante, // Mantiene l'ID della persona
-                occupazione: occ // Salva solo una risposta per riga
-            });
-        });
-
-        // Se il partecipante non ha selezionato nulla, aggiungiamo una riga vuota per lui
-        if (nuoveRighe.length === 0) {
-            nuoveRighe.push({
-                id_partecipante: data.id_partecipante,
-                occupazione: ""
-            });
-        }
-
-        // Sovrascrive data con le nuove righe
-        data.response = nuoveRighe;
-    }
+        ]
     });	
 		
 	/**
