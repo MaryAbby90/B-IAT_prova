@@ -653,7 +653,8 @@ API.addQuestionsSet('Distress',{
         answers: [
 		{text:'Laurea Triennale'},
 		{text:'Laurea Magistrale'},
-		{text:'Laurea a Ciclo Unico'} 
+		{text:'Laurea a Ciclo Unico'},
+		{text: 'Dottorato di Ricerca o altra formazione post-laurea'}
             ],
     		errorMsg: {
         	    required: "Per favore seleziona un'opzione"
